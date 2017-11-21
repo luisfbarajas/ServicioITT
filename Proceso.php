@@ -61,6 +61,7 @@
 			<span class="numero">#1</span>
 		</div>
 		<div class="col-xs-12 col-sm-7">
+			<h4 class="titulo-pasos">Realiza tu pago.</h4>
 			<p class="paso1-texto">Con tu numero de control, acude al departamento de servicios financieros del <span class="tec"><b>Instituto Tecnologico de Tijuana</b></span> y realiza el pago correspondiente. Es importante que <span class="text-danger"><b>conserve su comprobante</b></span> ya que contiene datos que seran necesarios mas adelante.</p>
 		</div>
 		<div  class="ccol-xs-12 col-sm-4">
@@ -76,21 +77,59 @@
 		<div class="row">
 	
 		<div class="col-xs-12 col-sm-4">
-			
+				<img src="img/inscribite.png" class="img-responsive " style="height: 60%; width: 60%;">
 		</div>
 		<div class="col-xs-12 col-sm-7">
-			<p class="paso1-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repudiandae, neque error id ipsa deleniti voluptatibus laborum possimus illum, quos sapiente rerum atque ipsam provident nam adipisci aliquam nostrum odit.</p>
+			<h4 class="titulo-pasos">Registrate en linea.</h4>
+			<p class="paso1-texto">Lleva a cabo tu registro en la pagina para poder acceder y registrarte en la fecha que deseas. Recuerda Unicamente puedes <span class="text-danger"><b>utilizar correo institucional para registrarte</b></span>. Si no cuentas con tu correo institucional solicitalo cuanto antes!.</p>
 		</div>
 		<div  class="ccol-xs-12 col-sm-1">
 			<span class="numero">#2</span>
+		</div>
+	</div>
+	</div>
+</section>
+<br>
+<section class="Paso1">
+	<div class="container">
+		<div class="row">
+	
+		<div class="col-xs-12 col-sm-1">
+			<span class="numero">#3</span>
+		</div>
+		<div class="col-xs-12 col-sm-7">
+			<h4 class="titulo-pasos">Escoje la fecha.</h4>
+			<p class="paso1-texto">Ingresa y escoje la fecha para presentar tu examen.<br><span class="text-danger"><b>Importante Recuerda:</b></span></p>
+			<ul class="paso1-texto">
+				<li>Una vez que se escojiste la fecha no podras cambiarla.</li>
+				<li>El cupo es limitado a 30 alumnos por fecha.</li>
+			</ul>
+		</div>
+		<div  class="ccol-xs-12 col-sm-4">
+			<img src="img/fecha.jpg" class="img-responsive ">
 		</div>
 	
 	</div>
 	</div>
 </section>
-
-
-
+<br>
+<section class="Paso2">
+		<div class="container">
+		<div class="row">
+	
+		<div class="col-xs-12 col-sm-4">
+				<img src="img/examen.jpg" class="img-responsive " style="height: 60%; width: 60%; margin-top: 10px;">
+		</div>
+		<div class="col-xs-12 col-sm-7">
+			<h4 class="titulo-pasos">Preparate.</h4>
+			<p class="paso1-texto">Una vez que completaste el registro, solamente queda esperar la fecha que escojiste para tu examen. Estudia lo que creas necesario para aprobar. El dia de tu examen recuerda llevar tu recibo de pago, tu lapiz y borrador, es importante <span class="text-danger"><b>llegar 15 minutos antes</b></span> de la hora que se te cito.</p>
+		</div>
+		<div  class="ccol-xs-12 col-sm-1">
+			<span class="numero">#4</span>
+		</div>
+	</div>
+	</div>
+</section>
 
     <footer class="app-footer">
             <div class="app-texto">

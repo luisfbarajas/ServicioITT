@@ -88,7 +88,7 @@ font-family: cursive;
 }
 .proceso-texto{
 	letter-spacing: 2px;
-	text-transform: uppercase;
+text-align: center;
 		font-size: 1.5em;
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
 }
@@ -106,10 +106,16 @@ font-size: 5.5em;
 .paso1-texto{
 	text-align: justify;
 	letter-spacing: 2px;
-	text-transform: uppercase;
+	
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
 			font-size: 1em;
 }
 .Paso2{
 	background: #AED6F1;
+}
+.titulo-pasos{
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Avenir", Futura, Helvetica, sans-serif;
+			font-size: 1.5em;
 }
