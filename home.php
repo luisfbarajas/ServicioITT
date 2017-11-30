@@ -38,6 +38,11 @@
                 
 echo "Entro";
 ?>
+<div class="header">
+    <?php
+    include 'menuUsuario.php';
+    ?>
+</div>
 
 
 
