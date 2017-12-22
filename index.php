@@ -26,8 +26,7 @@
 
     </head>
     <body>
-     
- <?php
+       <?php
             session_start();
             ob_start();
                 if(isset($_SESSION['sesion_exito']))
@@ -44,6 +43,10 @@
                     $_SESSION['sesion_exito']=0;
                 }
                 ?>
+         <div class="header">
+       <?php include 'menu.php'; ?>
+      </div><br/><br/>
+
 
 
 
@@ -51,9 +54,7 @@
    <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/header.jpg')" >
       <div class="container my-auto">
         <div class="row">
-              <div class="header">
-       <?php include 'menu.php'; ?>
-      </div><br/><br/>
+          
           <div class="">
          
             <h1 class="text-uppercase">

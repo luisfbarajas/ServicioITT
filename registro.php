@@ -20,9 +20,29 @@
     </head>
 
      <body>  
-<div id="header">
-    <?php include 'menu.php'; ?>
-</div> <br/><br/><br/>
+      <?php
+            session_start();
+            ob_start();
+                if(isset($_SESSION['sesion_exito']))
+                {
+                    //if($_SESSION['sesion_exito']==0) Como dije en el video, esto no es estrictamente necesario
+                    // {echo "inicie sesion por favor";} Ya que si lo dejamos, siempre que accedemos a index arroja error.
+                    if($_SESSION['sesion_exito']==2)
+                        {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
+                    if($_SESSION['sesion_exito']==3)
+                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
+                }
+                else
+                {
+                    $_SESSION['sesion_exito']=0;
+                }
+                ?>
+         <div class="header">
+       <?php include 'menu.php'; ?>
+      </div><br/><br/>
+
+
+     
       <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -39,20 +59,22 @@
                                         <input type="text" name="Nombre" id="nombre" tabindex="1" class="form-control" placeholder="Nombre" value="">
                                         </div>
                              <span class="help-block" id="error"></span>                     
-                             
+                             </div>
+                             <div class="form-group">
                                         <label for="Apellido">Apellidos:</label>
                                        
                                         <input type="text" name="Apellido" id="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
-
+</div>
                                    
                                     <div class="form-group">  
                                         <label for="NCtrl">Número  de control:</label> 
                                         <div class="input-group">
                       <div class="input-group-addon"><span class="icon-credit-card icon"></span></div>
                                         <input type="text" name="NCtrl" id="NCtrl" tabindex="3" class="form-control" placeholder="Número  de control."> </div>
-                                           <span class="help-block" id="error"></span>   </div>
+                                           <span class="help-block" id="error"></span>   
+                                         </div>
 
-
+ <div class="form-group">
                                         <label for="Carrera">Carrera:</label>
                                         <div class="input-group">
                       <div class="input-group-addon"><span class="icon-book icon"></span></div>
@@ -80,9 +102,9 @@
                                         </select>
                                                     </div>
                              <span class="help-block" id="error"></span> 
+</div>
 
-
-
+                     <div class="form-group">
                                         <label for="Semestre">Semestre:</label>
                                          <div class="input-group">
                                    <div class="input-group-addon"><span class="icon-list-numbered icon"></span></div>
@@ -114,7 +136,7 @@
                                                <span class="help-block" id="error"></span>       
                                     </div>
 
-
+                                          </div>
                                     <div class="form-group">
                                        
 
@@ -125,15 +147,15 @@
                                         <input type="password" name="password"  id="popover" data-toggle="popover" data-content=" 1 letra mayuscula 1caracter especial alfanumerica longitud de 8 a 15 caracteres" data-placement="right" tabindex="7" class="form-control" placeholder="Contraseña" title="La contraseña debe contener:" >
                                                </div> 
                                                <span class="help-block" id="error"></span>    
+                                            </div>
 
-
-
+                                        <div class="form-group">
                                         <label for="passconfirm">Confirme contraseña:</label>
                                          <div class="input-group">
                                                <div class="input-group-addon"><span class="glyphicon glyphicon-lock" id="Correos"></span></div>
                                         <input type="password" name="passconfirm" id="passconfirm" tabindex="8" placeholder="Confirmar" class="form-control" >
                                           </div> 
-                                               <span class="help-block" id="error"></span>    
+                                                 
                                     </div>
                                     
                                     <div class="form-group">
@@ -151,6 +173,54 @@
             </div>
         </div>
     </div>
+     <!--ventana modal para login -->
+ <div class="modal fade" id="myModal" role="dialog">
+
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Iniciar sesion.</h4>
+        </div>
+        <div class="modal-body">
+      
+
+      <div class="container">
+      <div class="row">
+      <div class="col-md-6 col-md-offset-0">
+        <div class="panel panel-login" style="border-color: green;">
+        <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+        <form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
+        <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                  </div>
+                  <div class="form-group text-center">
+                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                    <label for="remember"> Recordarme</label><br/>
+                    <a href="registro.php">Registrarse.</a>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="login" id="login" tabindex="4" class="form-control btn btn-success" value="Iniciar sesión">
+                      </div>
+                    </div>
+                  </div>
+          </form>     
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 <script>
 
     function pregunta(){

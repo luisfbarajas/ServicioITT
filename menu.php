@@ -22,7 +22,8 @@
       </nav>
 
 
-       <div class="modal fade" id="myModal" role="dialog">
+      <!--ventana modal para login -->
+ <div class="modal fade" id="myModal" role="dialog">
 
     <div class="modal-dialog">
     
@@ -44,7 +45,7 @@
               <div class="col-lg-12">
         <form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
         <div class="form-group">
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo Electronico" value="">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
                   </div>
                   <div class="form-group">
                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
