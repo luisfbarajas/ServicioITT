@@ -62,7 +62,6 @@ font-family: cursive;
 	background: #f7f8fa;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-
 }
 .app-texto{
 	margin-bottom: 50px;
@@ -147,7 +146,20 @@ text-align: justify;
 .icon{
 	color: black;
 }
-
+.Fecha-Texto{
+	letter-spacing: 2px;
+text-align: justify;
+		font-size: 1em;
+	font-family: "Avenir", Futura, Helvetica, sans-serif;
+	padding-right: 150px;
+	padding-left: 150px;
+}
+.Fecha-Titulo{
+		text-align: center;
+	text-transform: uppercase;
+	font-family: "Avenir", Futura, Helvetica, sans-serif;
+			font-size: 1.5em;
+}
 
 @media (max-width: 768px) {
     body{font-size: 14px;}
@@ -155,6 +167,10 @@ text-align: justify;
     	padding-right: 10px;
 	padding-left: 10px;
     }
+    .Fecha-Texto{
+	padding-right: 10px;
+	padding-left: 10px;
+}
     footer{
     	size: 90% !important;
     }

@@ -6,21 +6,27 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Departamento de ingles|Home.</title>
+        <title>Departamento de ingles.|Inicio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-   <link rel="stylesheet" href="css/icomoon.css">
+        <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="js/vendor/jquery-1.11.2.min.js">
+        
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
- <link rel="stylesheet" href="js/vendor/jquery.validate.min.js">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
 
-     <body>  
-      <?php
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+
+   
+
+
+
+    </head>
+    <body>
+       <?php
             session_start();
             ob_start();
                 if(isset($_SESSION['sesion_exito']))
@@ -42,11 +48,13 @@
       </div><br/><br/>
 
 
-     
-      <div class="container">
+
+
+<br>
+  <div class="container" >
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <div class="panel panel-login" style="border-color: green;">
+                <div class="panel panel-login" style="border-color: green; ">
     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
@@ -173,7 +181,8 @@
             </div>
         </div>
     </div>
-     <!--ventana modal para login -->
+
+ <!--ventana modal para login -->
  <div class="modal fade" id="myModal" role="dialog">
 
     <div class="modal-dialog">
@@ -221,6 +230,28 @@
       </div>
     </div>
   </div>
+
+        </div>
+    
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+    <footer class="app-footer">
+            <div class="app-texto">
+                <h4>Instituto nacional de Mexico</h4>
+                <h5>Instituto Tecnologico de Tijuana</h5>
+                <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
+                     C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
+                     <img src="img/galgo.gif">
+            </div>
+          
+        </footer>
+
 <script>
 
     function pregunta(){
@@ -235,24 +266,13 @@
 
 
 </script>
-
-
-
-
-<script src="js/vendor/jquery.validate.min.js"></script>
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-<script src="js/main.js"></script>
- <script src="js/vendor/bootstrap.min.js"></script>
-
-
-
-
-
+      
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

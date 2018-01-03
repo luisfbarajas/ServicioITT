@@ -15,7 +15,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
                   <li><a href="registro.php"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
-                   <li><a href="#">Fechas</a></li>
+                   <li><a href="infoFecha.php">Fechas</a></li>
                    <li><a href="Proceso.php">Proceso</a></li>
               </ul>
           </div>
