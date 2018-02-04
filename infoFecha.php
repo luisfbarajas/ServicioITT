@@ -27,7 +27,7 @@
     </head>
     <body>
        <?php
-       include ("conexion.php");
+          include ("conexion.php");
             session_start();
             ob_start();
                 if(isset($_SESSION['sesion_exito']))
@@ -44,136 +44,126 @@
                     $_SESSION['sesion_exito']=0;
                 }
        
-                ?>
+         ?>
        <div class="header">
         <?php include 'menu.php'; ?>
        </div>
        <br/>
        <br/> 
-   <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/infoFechas.jpg'); width: 100%;" >
-      <div class="container my-auto">
-        <div class="row">
-          
-          <div class="">
-         
-            <h1 class="text-uppercase">
-              <img src="img/logo.png"><br/>
-              <p> Instituto Nacional de Mexico.</p><br/>
-            </h1>
-            <h3>Instituto Tecnologico de Tijuana</h3>
-            <hr>
-          </div>
-          <div >
-            <b><p class="proceso-texto">Fechas de examen.</p></b>
+       <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/infoFechas.jpg'); width: 100%;" >
+           <div class="container my-auto">
+              <div class="row">         
+                 <h1 class="text-uppercase">
+                 <img src="img/logo.png" alt="logo"><br/>
+                 <p> Instituto Nacional de Mexico.</p><br/>
+                 </h1>
+                 <h3>Instituto Tecnologico de Tijuana</h3>
+                 <hr>
+   
+                 <div >
+                    <b><p class="proceso-texto">Fechas de examen.</p></b>
             
-          </div>
-        </div>
-      </div>
-    </header>
+                 </div>
+              </div>
+           </div>
+       </header>
 
 
  <!--ventana modal para login -->
      <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog">   
+        <!-- Modal content-->
+          <div class="modal-content">
+             <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Iniciar sesion.</h4>
+             </div>
+             <div class="modal-body">
+              <div class="container">
+              	<div class="row">
+        		    	<div class="col-md-6 col-md-offset-0">
+			             	<div class="panel panel-login" style="border-color: green;">
+			               	<div class="panel-body">
+					             	<div class="row">
+						            	<div class="col-lg-12">
+			                       	<form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
+			                           	<div class="form-group">
+									                 	<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+								                	</div>
+									                <div class="form-group">
+									                 	<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+								                	</div>
+									               <div class="form-group text-center">
+									                 	<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+									                 	<label for="remember"> Recordarme</label><br/>
+									                	<a href="registro.php">Registrarse.</a>
+									               </div>
+									               <div class="form-group">
+									               	<div class="row">
+										              	<div class="col-sm-6 col-sm-offset-3">
+											               	<input type="submit" name="login" id="login" tabindex="4" class="form-control btn btn-success" value="Iniciar sesión">
+										              	</div>
+									               	</div>
+								              	</div>
+				                    	</form>			
+					               	</div>
+				              	</div>
+				              </div>
+		              	</div>
+		            	</div>
+	             	</div>
+            	</div>
+            </div>   
+         </div>     
+       </div>
+     </div>
+    <div class="container">
+     <b> <h3 class="Fecha-Titulo">Fechas de examen</h3></b><br>
+      <p class="Fecha-Texto">Las Fechas de los examenes de ingles estan programadas en la fecha y lugar especificados. En cada fecha se cuenta con diferentes horarios en los cuales se puede presentar el examen para que se tenga la flexibilidad necesaria en cuanto horario se refiere.
 
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Iniciar sesion.</h4>
-        </div>
-        <div class="modal-body">
-      
-
-			<div class="container">
-    	<div class="row">
-			<div class="col-md-6 col-md-offset-0">
-				<div class="panel panel-login" style="border-color: green;">
-				<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-				<form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
-				<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
-									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Recordarme</label><br/>
-										<a href="registro.php">Registrarse.</a>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login" id="login" tabindex="4" class="form-control btn btn-success" value="Iniciar sesión">
-											</div>
-										</div>
-									</div>
-					</form>			
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-    	</div>
-        </div>   
-      </div>     
+      A continuacion se muestran las fechas de examenes disponibles en el semestre en curso.</p><br>
+       
+          <div class="row" >
+             <?php 
+             $Consulta=mysqli_query($conexion,"SELECT * FROM $Fechas ");    
+               //ciclo para la lectura de datos de la consulta      
+             echo $tabla="<table class=\"table table-striped table-hover \" >
+                   <thead>
+                   <tr>
+                    <th>Fecha</th>
+                    <th>Horario</th>
+                    <th>Salon</th>
+                    <th>Unidad</th>
+                   </tr>
+                   </thead>";
+                  //ciclo de consulta 
+             while($row = mysqli_fetch_array($Consulta))
+                {             
+                     echo $tablabody="
+                          <tr>
+                            <td>".$row["Fecha"]."</td>
+                            <td>".$row["Horario"]."</td>
+                            <td>".$row["Salon"]."</td>
+                            <td>".$row["unidad"]."</td>
+                         </tr>";    
+                }    
+                
+                
+                 echo "</table><br><br>";
+           ?>
+          </div>
     </div>
-  </div>
-<div class="container">
- <b> <h3 class="Fecha-Titulo">Fechas de examen</h3></b><br>
-  <p class="Fecha-Texto">Las Fechas de los examenes de ingles estan programadas en la fecha y lugar especificados. En cada fecha se cuenta con diferentes horarios en los cuales se puede presentar el examen para que se tenga la flexibilidad necesaria en cuanto horario se refiere.
 
-  A continuacion se muestran las fechas de examenes disponibles en el semestre en curso.</p><br>
-    <?php 
-        $Consulta=mysqli_query($conexion,"SELECT * FROM $Fechas ");    
-           //ciclo para la lectura de datos de la consulta      
-        $tabla="<table class=\"table table-striped table-hover table-condensed\" >
-              <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Horario</th>
-                <th>Salon</th>
-                <th>Unidad</th>
-              </tr>
-              </thead>";
-              //ciclo de consulta 
-         while($row = mysqli_fetch_array($Consulta))
-            {             
-                  $tablabody="<tbody>
-                      <tr>
-                        <td>".$row["Fecha"]."</td>
-                        <td>".$row["Horario"]."</td>
-                        <td>".$row["Salon"]."</td>
-                        <td>".$row["unidad"]."</td>
-                     </tr>
-                 </tbody>";            
-            }    
-             echo $tabla;
-             echo $tablabody;
-             echo "<br><br><br>";
-      ?>
-</div>
 
-<div class="container" >
-  <div class="row">
-    
+<footer class="app-footer">
+  <div class="app-texto">
+   <h4>Instituto nacional de Mexico</h4>
+   <h5>Instituto Tecnologico de Tijuana</h5>
+   <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
+      C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
+   <img src="img/galgo.gif" alt="galgo">
   </div>
-</div>
-    <footer class="app-footer">
-            <div class="app-texto">
-                <h4>Instituto nacional de Mexico</h4>
-                <h5>Instituto Tecnologico de Tijuana</h5>
-                <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
-                     C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgo.gif">
-            </div>
-          
-        </footer>
+</footer>
 
 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
