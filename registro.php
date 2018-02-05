@@ -42,9 +42,7 @@
          <br/>
          <br/>
          <br>
-    <div class="container" >
-        <div class="row">
-         <div class="col-md-6 col-md-offset-3">
+    <div class="container" >       
           <div class="panel panel-login" style="border-color: green; ">
            <div class="panel-body">
              <div class="row">
@@ -66,6 +64,7 @@
                    <label for="Apellido" class="control-label">Apellidos:</label>                                       
                    <input type="text" name="Apellido" id="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
                   </div>
+                   <span class="help-block" id="error"></span>
                      <!--NCTRL-->                
                   <div class="form-group">  
                    <label for="NCtrl" class="control-label">Número  de control:</label> 
@@ -180,8 +179,6 @@
              </div>
            </div>
           </div>
-         </div>
-        </div>
     </div>
 
 <!--ventana modal para login -->

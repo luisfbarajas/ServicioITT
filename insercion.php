@@ -8,7 +8,7 @@ $Apellido=$_POST['Apellido'];
 $NCtrl=$_POST['NCtrl'];
 $Carrera=$_POST['Carrera'];
 $Semetre=$_POST['Semestre'];
-$pass=$_POST['password'];
+$pass=$_POST['popover'];
 $correo=$_POST['correo'];
 $confirmacionpass=$_POST['passconfirm'];
 //encriptacion de Contraseña
