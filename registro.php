@@ -45,138 +45,166 @@
     <div class="container" >       
           <div class="panel panel-login" style="border-color: green; ">
            <div class="panel-body">
-             <div class="row">
-               <div class="col-lg-12">
+           
+              
                 <form class="login-form " action="insercion.php" style="display: block;" role="form" name="form" method="POST" id="Registro">
                   <!--NOMBRE-->
-                  <div class="form-group">
-                    <label for="nombre" class="control-label">Nombre(s):</label>
-                      <div class="input-group">
-                       <div class="input-group-addon" >
-                          <span class="glyphicon glyphicon-user" id="Correos"></span>
-                       </div>
-                       <input type="text" name="Nombre" id="nombre" tabindex="1" class="form-control" placeholder="Nombre" value="">
-                      </div>
-                      <span class="help-block" id="error"></span>                     
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="form-group">
+                              <label for="nombre" class="control-label">Nombre(s):</label>
+                                <div class="input-group">
+                                 <div class="input-group-addon" >
+                                    <span class="glyphicon glyphicon-user" id="Correos"></span>
+                                 </div>
+                                 <input type="text" name="Nombre" id="nombre" tabindex="1" class="form-control" placeholder="Nombre" value="">
+                                </div>
+                                <span class="help-block" id="error"></span>                     
+                            </div>
                   </div>
                     <!--APELLIDO-->
-                  <div class="form-group">
-                   <label for="Apellido" class="control-label">Apellidos:</label>                                       
-                   <input type="text" name="Apellido" id="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
-                  </div>
-                   <span class="help-block" id="error"></span>
-                     <!--NCTRL-->                
-                  <div class="form-group">  
-                   <label for="NCtrl" class="control-label">Número  de control:</label> 
-                   <div class="input-group">
-                     <div class="input-group-addon">
-                        <span class="icon-credit-card icon"></span>
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                         <label for="Apellido" class="control-label">Apellidos:</label>                                       
+                         <input type="text" name="Apellido" id="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
+                        </div>
+                         <span class="help-block" id="error"></span>
                      </div>
-                     <input type="text" name="NCtrl" id="NCtrl" tabindex="3" class="form-control" placeholder="Número  de control.">
-                   </div>
-                   <span class="help-block" id="error"></span>   
-                  </div>
-                    <!--CARRERA-->
-                  <div class="form-group">
-                    <label for="Carrera" class="control-label">Carrera:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <span class="icon-book icon"></span>
+                        <!--NCTRL-->    
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">            
+                          <div class="form-group">  
+                           <label for="NCtrl" class="control-label">Número  de control:</label> 
+                           <div class="input-group">
+                             <div class="input-group-addon">
+                                <span class="icon-credit-card icon"></span>
+                             </div>
+                             <input type="text" name="NCtrl" id="NCtrl" tabindex="3" class="form-control intento" placeholder="Número  de control.">
+                           </div>
+                           <span class="help-block" id="error"></span>   
+                          </div>
                       </div>
-                      <select class="form-control" id="Carrera" tabindex="4" name="Carrera">
-                       <option value="Arquitectura">Arquitectura</option>
-                       <option value="contador publico">Contador publico</option>
-                       <option value="IAB">Ing. Ambiental</option>
-                       <option value="IBM">Ing. Biomedica</option>
-                       <option value="IBQ">Ing. Bioquimica</option>
-                       <option value="IC">Ing. Civil</option>
-                       <option value="IEM">Ing. Electromecanica</option>
-                       <option value="IET">Ing. Electronica</option>
-                       <option value="IAT">Ing. Aeronautica</option>
-                       <option value="IDI">Ing. en Diseño industrial</option>
-                       <option value="IGE">Ing. Gestion Empresarial</option>
-                       <option value="IIF">Ing. Informatica</option>
-                       <option value="IEL">Ing. en Logistica</option>
-                       <option value="IEN">Ing. en Nanotecnologia</option>
-                       <option value="ISC">Ing. en Sistemas Computacionales</option>
-                       <option value="TIC">Ing. en Tecnologias de la Informacion y Comunicaciones</option>
-                       <option value="IDT">Ing. Industrial</option>
-                       <option value="IQ">Ing. Quimica</option>
-                       <option value="IM">Ing. Mecanica</option>
-                       <option value="LEA">Lic. en Administracion</option>
-                      </select>
-                    </div>
-                    <span class="help-block" id="error"></span> 
-                  </div>
+
+                       <!--CARRERA-->
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                          <div class="form-group">
+                            <label for="Carrera" class="control-label">Carrera:</label>
+                            <div class="input-group">
+                              <div class="input-group-addon">
+                                <span class="icon-book icon"></span>
+                              </div>
+                              <select class="form-control" id="Carrera" tabindex="4" name="Carrera">
+                               <option value="Arquitectura">Arquitectura</option>
+                               <option value="contador publico">Contador publico</option>
+                               <option value="IAB">Ing. Ambiental</option>
+                               <option value="IBM">Ing. Biomedica</option>
+                               <option value="IBQ">Ing. Bioquimica</option>
+                               <option value="IC">Ing. Civil</option>
+                               <option value="IEM">Ing. Electromecanica</option>
+                               <option value="IET">Ing. Electronica</option>
+                               <option value="IAT">Ing. Aeronautica</option>
+                               <option value="IDI">Ing. en Diseño industrial</option>
+                               <option value="IGE">Ing. Gestion Empresarial</option>
+                               <option value="IIF">Ing. Informatica</option>
+                               <option value="IEL">Ing. en Logistica</option>
+                               <option value="IEN">Ing. en Nanotecnologia</option>
+                               <option value="ISC">Ing. en Sistemas Computacionales</option>
+                               <option value="TIC">Ing. en Tecnologias de la Informacion y Comunicaciones</option>
+                               <option value="IDT">Ing. Industrial</option>
+                               <option value="IQ">Ing. Quimica</option>
+                               <option value="IM">Ing. Mecanica</option>
+                               <option value="LEA">Lic. en Administracion</option>
+                              </select>
+                            </div>
+                            <span class="help-block" id="error"></span> 
+                          </div>
+                   </div>
                     <!--SEMESTRE-->
-                  <div class="form-group">
-                   <label for="Semestre" class="control-label">Semestre:</label>
-                   <div class="input-group">
-                    <div class="input-group-addon">
-                      <span class="icon-list-numbered icon"></span>
+                     
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="form-group">
+                             <label for="Semestre" class="control-label">Semestre:</label>
+                             <div class="input-group">
+                              <div class="input-group-addon">
+                                <span class="icon-list-numbered icon"></span>
+                              </div>
+                                <select class="form-control" id="Semestre" tabindex="5" name="Semestre" >
+                                 <option value="1">1</option>
+                                 <option value="2">2</option>
+                                 <option value="3">3</option>
+                                 <option value="4">4</option>
+                                 <option value="5">5</option>
+                                 <option value="6">6</option>
+                                 <option value="7">7</option>
+                                 <option value="8">8</option>
+                                 <option value="9">9</option>
+                                 <option value="10">10</option>
+                                 <option value="11">11</option>
+                                 <option value="12">12</option>
+                                 <option value="otro">Otro</option>
+                                </select>
+                             </div>
+                             <span class="help-block" id="error"></span>     
+                            </div>
+                   </div>
+                  
+                       <!--CORREO ELECTRONICO-->
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                         <label for="email">Correo electrónico :</label>
+                         <div class="form-group">
+                          <div class="input-group">
+                             <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-envelope" id="Correos"></span>
+                             </div>
+                             <input type="email" name="correo" id="email" class="form-control" placeholder="Correo electrónico" tabindex="6" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
+                          </div> 
+                          <span class="help-block" id="error"></span>       
+                         </div>
+                        </div>
                     </div>
-                      <select class="form-control" id="Semestre" tabindex="5" name="Semestre">
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                       <option value="6">6</option>
-                       <option value="7">7</option>
-                       <option value="8">8</option>
-                       <option value="9">9</option>
-                       <option value="10">10</option>
-                       <option value="11">11</option>
-                       <option value="12">12</option>
-                      </select>
-                   </div>
-                   <span class="help-block" id="error"></span>     
-                  </div>
-                    <!--CORREO ELECTRONICO-->
-                  <div class="form-group">
-                   <label for="email">Correo electrónico :</label>
-                   <div class="form-group">
-                    <div class="input-group">
-                       <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-envelope" id="Correos"></span>
-                       </div>
-                       <input type="email" name="correo" id="email" class="form-control" placeholder="Correo electrónico" tabindex="6" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
-                    </div> 
-                    <span class="help-block" id="error"></span>       
-                   </div>
-                  </div>
+                  
+                   
+                   
+                   
                     <!--CONTRASEñA-->
-                  <div class="form-group">
-                    <label for="password"> Contraseña:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock" id="Correos"></span>
-                      </div>
-                      <input type="password" name="password"  id="popover" data-toggle="popover" data-content=" 1 letra mayuscula 1caracter especial alfanumerica longitud de 8 a 15 caracteres" data-placement="right" tabindex="7" class="form-control" placeholder="Contraseña" title="La contraseña debe contener:" >
-                    </div> 
-                    <span class="help-block" id="error"></span>    
-                  </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                           
+                          <label for="password"> Contraseña:</label>
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-lock" id="Correos"></span>
+                            </div>
+                            <input type="password" name="password"  id="popover" data-toggle="popover" data-content=" 1 letra mayuscula 1caracter especial alfanumerica longitud de 8 a 15 caracteres" data-placement="right" tabindex="7" class="form-control" placeholder="Contraseña" title="La contraseña debe contener:" >
+                          </div> 
+                          <span class="help-block" id="error"></span>    
+                        </div>
+                     </div>
+
+
                       <!--CONFIRMACION-->
-                  <div class="form-group">
-                   <label for="passconfirm" class="control-label">Confirme contraseña:</label>
-                   <div class="input-group">
-                    <div class="input-group-addon">
-                      <span class="glyphicon glyphicon-lock" id="Correos"></span>
-                    </div>
-                    <input type="password" name="passconfirm" id="passconfirm" tabindex="8" placeholder="Confirmar" class="form-control" >
-                   </div> 
-                  </div>
+                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="form-group">
+                         <label for="passconfirm" class="control-label">Confirme contraseña:</label>
+                         <div class="input-group">
+                          <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock" id="Correos"></span>
+                          </div>
+                          <input type="password" name="passconfirm" id="passconfirm" tabindex="8" placeholder="Confirmar" class="form-control intento" >
+                         </div> 
+                        </div>
+                       </div>
+                 
                    <!--botones--> 
                   <div class="form-group">
-                    <div class="row">
+                   
                       <div class="col-sm-6 col-sm-offset-3">
-                        <input type="button" name="login" id="login" tabindex="9" class="form-control btn btn-success" value="Registrar" onclick="pregunta();" >
+                        <input type="button" name="login" id="Entrar" tabindex="9" class="form-control btn btn-success" value="Registrar" onclick="pregunta();" >
                       </div>
-                    </div>
+                   
                   </div>
                 </form>         
-               </div>
-             </div>
+            
+             
            </div>
           </div>
     </div>
@@ -200,20 +228,20 @@
                           <div class="col-lg-12">
                               <form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
                                   <div class="form-group">
-                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+                                    <input type="text" name="username" id="username2" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+                                    <input type="password" name="password" id="password2" tabindex="2" class="form-control" placeholder="Contraseña">
                                   </div>
                                  <div class="form-group text-center">
-                                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember2">
                                     <label for="remember"> Recordarme</label><br/>
                                     <a href="registro.php">Registrarse.</a>
                                  </div>
                                  <div class="form-group">
                                   <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
-                                      <input type="submit" name="login" id="login" tabindex="4" class="form-control btn btn-success" value="Iniciar sesión">
+                                      <input type="submit" name="login" id="login2" tabindex="4" class="form-control btn btn-success" value="Iniciar sesión">
                                     </div>
                                   </div>
                                 </div>

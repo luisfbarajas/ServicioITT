@@ -161,7 +161,21 @@ text-align: justify;
 			font-size: 1.5em;
 }
 
-@media (max-width: 768px) {
+
+.popover{
+    width:200px;
+
+}
+.boton{
+	margin-left: auto;
+	 display: flex;
+  justify-content: center;
+ 
+}
+/**********************************
+PANTALLA MEDIA
+*********************************/
+@media screen and (max-width: 800px) {
     body{font-size: 14px;}
     .indicacion-fecha{
     	padding-right: 10px;
@@ -174,15 +188,9 @@ text-align: justify;
     footer{
     	size: 90% !important;
     }
-}
-.popover{
-    width:200px;
-      
-}
-.boton{
-	margin-left: auto;
-	 display: flex;
-  justify-content: center;
- 
+
+    .intento{
+    	float: right; 
+    }
 }
 

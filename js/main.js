@@ -67,7 +67,7 @@ Validacion de correo institucional
 });
 
 $('#email').keyup(function(){
-   var nameregex2 = /^[a-zA-Z(0-9)?]{4,}(\.)?[a-zA-Z(0-9)?]{3,}@tectijuana\.edu\.mx$/;
+   var nameregex2 = /^[a-zA-Z(0-9)?]{4,}((\.)?[a-zA-Z(0-9)?]{3,})?@tectijuana\.edu\.mx$/;
 
    if ($('#email').val().match(nameregex2)) {
    	$("#iconotexto").remove();
