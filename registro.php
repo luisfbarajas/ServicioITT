@@ -43,7 +43,7 @@
          <br/>
          <br>
     <div class="container" >       
-          <div class="panel panel-login" style="border-color: green; ">
+          <div class="panel panel-login forma" >
            <div class="panel-body">
            
               
@@ -91,7 +91,7 @@
                               <div class="input-group-addon">
                                 <span class="icon-book icon"></span>
                               </div>
-                              <select class="form-control" id="Carrera" tabindex="4" name="Carrera">
+                              <select class="form-control" id="Carrera" tabindex="4" name="Carrera" style="height: 45px;">
                                <option value="Arquitectura">Arquitectura</option>
                                <option value="contador publico">Contador publico</option>
                                <option value="IAB">Ing. Ambiental</option>
@@ -119,14 +119,14 @@
                    </div>
                     <!--SEMESTRE-->
                      
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 intento">
                             <div class="form-group">
                              <label for="Semestre" class="control-label">Semestre:</label>
                              <div class="input-group">
                               <div class="input-group-addon">
                                 <span class="icon-list-numbered icon"></span>
                               </div>
-                                <select class="form-control" id="Semestre" tabindex="5" name="Semestre" >
+                                <select class="form-control" id="Semestre" tabindex="5" name="Semestre" style="height: 45px;" >
                                  <option value="1">1</option>
                                  <option value="2">2</option>
                                  <option value="3">3</option>
@@ -166,7 +166,7 @@
                    
                    
                     <!--CONTRASEñA-->
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
                         <div class="form-group">
                            
                           <label for="password"> Contraseña:</label>

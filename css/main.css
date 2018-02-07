@@ -40,7 +40,10 @@ body{
 	border-color: #ccc;
 }
 
-
+.forma{
+	border-color: green;
+	margin-top: 20px;
+}
 .intro{
 font-family: cursive;
 	font-size: 16;
@@ -172,6 +175,7 @@ text-align: justify;
   justify-content: center;
  
 }
+
 /**********************************
 PANTALLA MEDIA
 *********************************/
@@ -189,8 +193,21 @@ PANTALLA MEDIA
     	size: 90% !important;
     }
 
-    .intento{
-    	float: right; 
-    }
 }
+@media all and (min-width:780px){
+	.intento{
+	clear: left;
+	float: left;
+	text-align: left;	
+}
+}
+@media all and (min-width:1000px){
+
+		.intento{
+	clear: right;
+	float: right;
+	text-align: left;	
+
+}
+	}
 
