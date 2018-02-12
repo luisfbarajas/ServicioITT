@@ -84,6 +84,29 @@ $('#email').keyup(function(){
 		return false;
    }
 });
+
+/****************************************
+
+VERIFICACION DE EMAIL REPETIDO CON AJAX
+***************************************/
+
+$("#email").blur(function(){
+
+var email= $(this).val();
+ var datos= 'email'+email;
+
+ $.ajax({
+ 	type: "POST",
+ 	url: "php/Email.php",
+ 	data: datos,
+ 	success: function(data){
+ 		$('#Info').fadeIn(1000).html(data);
+ 	}
+ });
+
+});
+
+
 /****************************************
 VALIDACION DE NUMERO DE CONTROL
 *****************************************/
@@ -171,7 +194,9 @@ $("#iconoSemestreOtro").remove();
 	}	   
 });
 	}
-
+/************************************************
+VALIDACION DE CARRERA
+************************************************/
 	$("#Carrera").focusout(function(){
 			if ($("#Carrera").val() === "" || $("#Carrera").val()===""){
 					$("#iconoCarrera").remove();

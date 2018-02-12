@@ -44,9 +44,7 @@
          <br>
     <div class="container" >       
           <div class="panel panel-login forma" >
-           <div class="panel-body">
-           
-              
+           <div class="panel-body">              
                 <form class="login-form " action="insercion.php" style="display: block;" role="form" name="form" method="POST" id="Registro">
                   <!--NOMBRE-->
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -82,7 +80,6 @@
                            <span class="help-block" id="error"></span>   
                           </div>
                       </div>
-
                        <!--CARRERA-->
                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                           <div class="form-group">
@@ -117,8 +114,7 @@
                             <span class="help-block" id="error"></span> 
                           </div>
                    </div>
-                    <!--SEMESTRE-->
-                     
+                    <!--SEMESTRE-->                    
                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 intento" id="dSemestre">
                             <div class="form-group" >
                              <label for="Semestre" class="control-label">Semestre:</label>
@@ -147,10 +143,8 @@
                              <div id="dOtro" style="display:none;">
                                 <label for="txtOtro">Especifique:</label>
                                 <input type="text" name="txtOtro" id="txtOtro" placeholder="Especifique." class="form-control">
-                             </div>
-
+                           </div>
                    </div>
-                  
                        <!--CORREO ELECTRONICO-->
                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <div class="form-group">
@@ -160,16 +154,13 @@
                              <div class="input-group-addon">
                               <span class="glyphicon glyphicon-envelope" id="Correos"></span>
                              </div>
-                             <input type="email" name="correo" id="email" class="form-control" placeholder="Correo electrónico" tabindex="6" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
+                             <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" tabindex="6" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
                           </div> 
-                          <span class="help-block" id="error"></span>       
+                          <span class="help-block" id="error"></span> 
+                          <div id="Info" class="alerta"></div>      
                          </div>
                         </div>
-                    </div>
-                  
-                   
-                   
-                   
+                    </div>              
                     <!--CONTRASEñA-->
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
                         <div class="form-group">
@@ -196,14 +187,11 @@
                          </div> 
                         </div>
                        </div>
-                 
                    <!--botones--> 
-                  <div class="form-group">
-                   
+                  <div class="form-group">                  
                       <div class="col-sm-6 col-sm-offset-3">
                         <input type="button" name="login" id="Entrar" tabindex="9" class="form-control btn btn-success" value="Registrar" onclick="pregunta();" >
                       </div>
-                   
                   </div>
                 </form>         
             
@@ -298,6 +286,7 @@
                 
             }
         }
+        
 </script>
       
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

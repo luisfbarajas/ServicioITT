@@ -175,7 +175,9 @@ text-align: justify;
   justify-content: center;
  
 }
-
+.alerta{
+	color:#FF0000;
+}
 /**********************************
 PANTALLA MEDIA
 *********************************/
