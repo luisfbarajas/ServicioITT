@@ -119,14 +119,14 @@
                    </div>
                     <!--SEMESTRE-->
                      
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 intento">
-                            <div class="form-group">
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 intento" id="dSemestre">
+                            <div class="form-group" >
                              <label for="Semestre" class="control-label">Semestre:</label>
                              <div class="input-group">
                               <div class="input-group-addon">
                                 <span class="icon-list-numbered icon"></span>
                               </div>
-                                <select class="form-control" id="Semestre" tabindex="5" name="Semestre" style="height: 45px;" >
+                                <select class="form-control" id="Semestre" tabindex="5" name="Semestre" style="height: 45px;" onChange="CambioSemestre(this)" >
                                  <option value="1">1</option>
                                  <option value="2">2</option>
                                  <option value="3">3</option>
@@ -139,11 +139,16 @@
                                  <option value="10">10</option>
                                  <option value="11">11</option>
                                  <option value="12">12</option>
-                                 <option value="otro">Otro</option>
+                                 <option value="Otro">Otro</option>
                                 </select>
                              </div>
                              <span class="help-block" id="error"></span>     
                             </div>
+                             <div id="dOtro" style="display:none;">
+                                <label for="txtOtro">Especifique:</label>
+                                <input type="text" name="txtOtro" id="txtOtro" placeholder="Especifique." class="form-control">
+                             </div>
+
                    </div>
                   
                        <!--CORREO ELECTRONICO-->
@@ -179,8 +184,6 @@
                           <span class="help-block" id="error"></span>    
                         </div>
                      </div>
-
-
                       <!--CONFIRMACION-->
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <div class="form-group">
@@ -208,7 +211,6 @@
            </div>
           </div>
     </div>
-
 <!--ventana modal para login -->
      <div class="modal fade" id="myModal" role="dialog">
        <div class="modal-dialog">   
@@ -259,7 +261,7 @@
      </div>
 <!--FOOTER -->
     <footer class="app-footer">
-            <div class="app-texto">
+            <div class="app-texto container-fluid">
                 <h4>Instituto nacional de Mexico</h4>
                 <h5>Instituto Tecnologico de Tijuana</h5>
                 <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
@@ -270,13 +272,32 @@
     </footer>
 <!--SCRIPTS -->
 <script>
+  //FUNCION DE CONFIRMACION DE ACCION
     function pregunta(){
         if(confirm('Se guardaran los datos. ¿Desea continuar?.')){
-                document.form.submit() 
+                document.form.submit();
         }else{
-
+              //sin accion
         }
 }
+      //FUNCION PARA AVILITAR CAMPO DE OTRO SEMESTRE 
+       function CambioSemestre(sel) {
+          var elemento=document.getElementById("dOtro");
+             if (sel.value == "Otro") {
+                divT = document.getElementById("dOtro");
+                 divT.style.display = "block";
+                document.getElementById("txtOtro").focus();
+                 
+            } else {
+
+                divC = document.getElementById("dSemestre");
+                divC.style.display = "block";
+
+                divT = document.getElementById("dOtro");
+                divT.style.display = "none";
+                
+            }
+        }
 </script>
       
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
