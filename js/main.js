@@ -171,5 +171,22 @@ $("#iconoSemestreOtro").remove();
 	}	   
 });
 	}
+
+	$("#Carrera").focusout(function(){
+			if ($("#Carrera").val() === "" || $("#Carrera").val()===""){
+					$("#iconoCarrera").remove();
+		$("#Carrera").parent().parent().attr("class","form-group has-error has-feedback");
+		$("#Carrera").parent().children("span").text("").remove();
+		$("#Carrera").parent().append("<span id='iconoCarrera' class='glyphicon glyphicon-remove form-control-feedback'></span>");
+		return false;
+			}
+			else{
+				$("#iconoCarrera").remove();		
+		$("#Carrera").parent().parent().attr("class","form-group has-success has-feedback");
+		$("#Carrera").parent().children("span").text("").remove();
+		$("#Carrera").parent().append("<span id='iconoCarrera' class='glyphicon glyphicon-ok form-control-feedback'></span>");
+		return true;
+			}
+	});
 });
 
