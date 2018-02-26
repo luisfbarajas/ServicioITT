@@ -1,8 +1,6 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
+ <html class="no-js" lang=""> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -33,19 +31,44 @@
                     if($_SESSION['sesion_exito']==2)
                         {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
                     if($_SESSION['sesion_exito']==3)
-                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
-               
-                
-echo "Entro";
+                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}  
+
+                        include 'menuUsuario.php';              
 ?>
-<div class="header">
-    <?php
-    include 'menuUsuario.php';
-    ?>
-</div>
 
 
-
+    <div class="container mover caja" >
+        <div class="row contiene-datos">
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <img src="img/user.png" alt="usuario" name="usuario" class=" foto-usuario">
+                </div>
+                <div class="col-lg-4">
+                    <label class="letra-datos">Nombre(s): </label><br>
+                    <label class="letra-datos">Apellidos: </label><br>
+                    <label class="letra-datos">Carrera: </label><br>
+                    <label class="letra-datos">Correo:</label><br>
+                </div>
+                <div class="col-lg-4"> 
+                 <label class="letra-datos">Numero de control:</label><br>
+                 <label class="letra-datos">Semestre:</label><br>
+                 <label class="letra-datos">Numero de control:</label><br>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+ <footer class="app-footer">
+            <div class="app-texto container-fluid">
+                <h4>Instituto nacional de Mexico</h4>
+                <h5>Instituto Tecnologico de Tijuana</h5>
+                <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
+                     C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
+                     <img src="img/galgo.gif">
+            </div>
+          
+    </footer>
            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>

@@ -157,7 +157,7 @@
                              <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" tabindex="6" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
                           </div> 
                           <span class="help-block" id="error"></span> 
-                          <div id="Info" class="alerta"></div>      
+                          <div id="Info" class="alerta"><span id="msj"></span></div>      
                          </div>
                         </div>
                     </div>              

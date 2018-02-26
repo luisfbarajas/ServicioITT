@@ -13,6 +13,9 @@ body{
 	font-size: : 16px;
 
 }
+footer{
+	margin-top: : 2%;
+}
 .icon-bar{
 	color: green;
 }
@@ -64,7 +67,8 @@ font-family: cursive;
 	text-align: center;
 	background: #f7f8fa;
 	letter-spacing: 2px;
-	text-transform: uppercase;
+	margin-bottom: 0%;
+	padding-top: 2%;
 }
 .app-texto{
 	margin-bottom: 50px;
@@ -177,6 +181,27 @@ text-align: justify;
 }
 .alerta{
 	color:#FF0000;
+}
+.mover{
+	margin-top: 5em;
+}
+.foto-usuario{
+	border-radius: 50%;
+}
+.caja{
+	-webkit-box-shadow: 0px 2px 42px 1px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 2px 42px 1px rgba(0,0,0,0.44);
+box-shadow: 0px 2px 42px 1px rgba(0,0,0,0.44);
+background-color: #ebe9e4;
+padding-bottom: 6%;
+border-radius: 10px 5px 10px 5px;
+}
+.letra-datos{
+	font-size: 1.25em;
+	padding-top: 3%;
+}
+.contiene-datos{
+	padding-top: 3%;
 }
 /**********************************
 PANTALLA MEDIA

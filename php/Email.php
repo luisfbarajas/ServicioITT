@@ -1,19 +1,27 @@
-
-
 <?php 
-sleep(1);
 
-//$Correo=$_POST["email"];
+
+$email= $_POST['email'];
 
 include ("../Conexion.php");
-if($_REQUEST) {
-$Correo=$_REQUEST["email"];
-$Consulta ="SELECT*FROM $usuario WHERE correo=$Correo";
- $results = mysqli_query($conexion, $Consulta) or die('Error de conexion');
- 	if (!$results ) {
- 		 echo '<div id="Error">Usuario ya existente</div>';
-  
- 	}
- 	else{} 
- 		 mysqli_close($conexion);
- }?>
+
+
+$Consulta ="SELECT COUNT(correo) as 'total' FROM `usuario` WHERE correo='$email'";
+  $results =mysqli_query($conexion,$Consulta);
+ $prueba=mysqli_fetch_assoc($results);
+ // 		while($Resultados = mysqli_fetch_array($results)){
+ // 			echo 1;
+ 			
+ // 			}
+ // 		 mysqli_close($conexion);
+ 	// $resultado=$conexion - > query($Consulta);
+ 	//$fila= mysqli_num_rows($results);
+ 	
+ 	if($prueba['total']!= 0){
+			echo $prueba['total'];
+ 		}
+ 		else{
+ 			echo $prueba['total'];
+ 		}
+ ?>
+
