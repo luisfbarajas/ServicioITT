@@ -84,40 +84,6 @@ $('#email').keyup(function(){
 		return false;
    }
 });
-
-/****************************************
-
-VERIFICACION DE EMAIL REPETIDO CON AJAX
-***************************************/
-
-$("#email").blur(function(){
-
-var email= $(this).val();
- var datos= 'email= '+email;
-
- $.ajax({
- 	type: "POST",
- 	url: "php/Email.php",
- 	data: (datos),
- 	
- 	success: function(data){
- 		if(data == 0){
-		//$('#Info').fadeIn(1000).html(data);
-		$('#msj').html("Correo ya registrado");
- 		}
- 		else{
- 			$('#msj').html("Libre");
- 		}
- 		 
- 		
- 	
- 	}
- });
- 		
-
-});
-
-
 /****************************************
 VALIDACION DE NUMERO DE CONTROL
 *****************************************/

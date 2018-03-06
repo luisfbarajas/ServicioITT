@@ -10,11 +10,14 @@ header{
 
 }
 body{
-	font-size: : 16px;
+	font-size:  16px;
 
 }
 footer{
-	margin-top: : 2%;
+	margin-top:  2%;
+    height: 150px;
+    bottom: 0;
+    width: 100%;
 }
 .icon-bar{
 	color: green;
@@ -71,7 +74,7 @@ font-family: cursive;
 	padding-top: 2%;
 }
 .app-texto{
-	margin-bottom: 50px;
+bottom:o;
 }
 .proceso{
 		background: url("..img/proceso.jpg") no-repeat center top fixed;
@@ -168,7 +171,10 @@ text-align: justify;
 			font-size: 1.5em;
 }
 
-
+.galfo{
+	margin:auto;
+	align-content: center;
+}
 .popover{
     width:200px;
 
@@ -199,6 +205,7 @@ border-radius: 10px 5px 10px 5px;
 .letra-datos{
 	font-size: 1.25em;
 	padding-top: 3%;
+	font-family: 'Times New Roman', Times, serif;
 }
 .contiene-datos{
 	padding-top: 3%;

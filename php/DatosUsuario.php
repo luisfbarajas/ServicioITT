@@ -1,7 +1,7 @@
 <?php
 class DatosUsuario{
     public function Datos($nombre){
-        include ("../Conexion.php");
+        require "Conexion.php";
         $Usuario= $nombre;
         $Consulta="SELECT * FROM $alumno WHERE name ='$Usuario' ";
         $resultado= mysqli_query($conexion,$Consulta) ;
@@ -11,9 +11,5 @@ class DatosUsuario{
             }
             mysqli_close($conexion);
      }
-
     }
-    //llamada a metodo de funcion ejemplo 
-    $funcion = new DatosUsuario;
-   echo $funcion-> Datos("luis");
  ?>
