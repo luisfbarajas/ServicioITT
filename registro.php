@@ -75,7 +75,7 @@
                              <div class="input-group-addon">
                                 <span class="icon-credit-card icon"></span>
                              </div>
-                             <input type="text" name="NCtrl" id="NCtrl" tabindex="3" class="form-control intento" placeholder="Número  de control.">
+                             <input type="text" name="NCtrl" id="NCtrl" tabindex="3" class="form-control intento" placeholder="Número  de control." >
                            </div>
                            <span class="help-block" id="error"></span>   
                           </div>
