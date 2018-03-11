@@ -1,18 +1,19 @@
 <?php 
 //Conexion a la base de datos y tablas a usar 
+//clases para verificaciones antes de registro 
 include ("Conexion.php");
 include ("php/Verificacion.php");
 include ("php/DatosUsuario.php");
 $funcion = new Verificacion;
 $Usuarios= new DatosUsuario;
 	//asignacion de valores
-$Nombre="luis";
-$Apellido="Barajas";
-$NCtrl=13241365;
-$Carrera="ISC";
-$pass="Luis1234@";
-$correo="luis.baajss17@tectijuana.edu.mx";
-$confirmacionpass="Luis1234@";
+$Nombre=$_POST['Nombre'];
+$Apellido=$_POST['Apellido'];
+$NCtrl=intval($_POST['NCtrl']);
+$Carrera=$_POST['Carrera'];
+$pass=$_POST['password'];
+$correo=$_POST['email'];
+$confirmacionpass=$_POST['passconfirm'];
 //verificacion de semestre extendido o dentro del rango 
 if($_POST['Semestre']== null || $_POST['Semestre']=='Otro'){
 	$Semetre= $_POST['txtOtro'];
@@ -20,7 +21,7 @@ if($_POST['Semestre']== null || $_POST['Semestre']=='Otro'){
 else{
 	$Semetre=$_POST['Semestre'];
 }
-echo $Semetre;
+
 //encriptacion de Contraseña
 $passHash = password_hash($pass, PASSWORD_BCRYPT);
 
@@ -34,7 +35,7 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 	if($Nombre=="" || $Nombre==null || $Apellido==""||$Apellido == null || $NCtrl=="" || $NCtrl==null ||$Carrera=="" || $Carrera == null
 	||$pass=="" || $pass==null ||$correo == ""|| $correo == null|| $confirmacionpass == "" || $confirmacionpass == null|| $Semetre=="" || $Semetre ==null){
 		echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');
-						history.go(-1);</script>";
+						</script>";
 	}
 	//verificacion de estructura de correo y existencia en DB
 	else if(preg_match($ExCorreo,$correo)&&$funcion->VerificacionEmail($correo)){
@@ -43,18 +44,19 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 					if(preg_match($ExPass,$pass)&& $pass == $confirmacionpass){
 						//insercion de datos 
 						$DatosAlumno="INSERT INTO alumno(name,last_name,semestre,CARRERA,nctrl) VALUES('$Nombre','$Apellido','$Semetre','$Carrera','$NCtrl');";
+						$ingreso=mysqli_query($conexion,$DatosAlumno);
 						//OBTIENE ID DE ALUMNO PARA INSERTAR DATOS DE USUARIO 
-						$id= $Usuarios->Datos($NCtrl);	
-						//INSERCION A USUARIOS				
+						$id= $Usuarios->Datos($NCtrl);							
+					//	INSERCION A USUARIOS				
 						$DatosUsuario= "INSERT INTO $usuario (id_alumno,email,pass,active) VALUES($id,'$correo','$passHash',0);";
-						//EJECUCION DE COMANDOS
-						$ingreso=mysqli_query($conexion,$DatosUsuario);
-						$insercion= mysqli_query($conexion,$DatosAlumno);
+					//	EJECUCION DE COMANDOS						
+						$insercion= mysqli_query($conexion,$DatosUsuario);
 						//CIERRE DE CONEXION
 						mysqli_close($conexion);
+						echo "<script>alert('Usuario registrado correctamente'); history.go(-1);</script>";
 					}
 					else{
-						echo "<script>alert('Contraseña debil/No coinciden.');";
+						echo "<script>alert('Contraseña debil/No coinciden.');history.go(-1);</script>";
 					}
 				}
 				else{
