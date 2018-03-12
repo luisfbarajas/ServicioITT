@@ -37,6 +37,9 @@
                         {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
                     if($_SESSION['sesion_exito']==3)
                         {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
+                        if($_SESSION['sesion_exito']==4){
+                          echo "<script> alert('Sesion terminada.');</script>";
+                        }
                 }
                 else
                 {
@@ -46,11 +49,6 @@
          <div class="header">
        <?php include 'menu.php'; ?>
       </div><br/><br/>
-
-
-
-
-
    <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/header.jpg')" >
       <div class="container my-auto">
         <div class="row">
@@ -167,9 +165,6 @@
     </div>
   </div>
 </div>
-
-
-
     <footer class="app-footer">
             <div class="app-texto">
                 <h4>Instituto nacional de Mexico</h4>

@@ -16,10 +16,25 @@
                 
                  
                    <li><a href="fechas.php"><span class="glyphicon glyphicon-calendar"></span>Fechas</a></li>
-                   <li><a href="#">Cerrar sesion.</a></li>
+                   <li><a href="#"  id="cerrar" onclick="pregunta();">Cerrar sesion.</a></li>
+                  
               </ul>
           </div>
       </nav>
-
+      <script> 
+      function pregunta(){
+        if(confirm('Desea salir.')){
+                document.form.submit();
+        }else{
+              //sin accion
+        }
+      }
+      </script>
+<?php
+if(isset($_POST['cerrar'])){
+    $_SESSION['sesion_exito']=4;//Cerrar session
+    echo $_SESSION['sesion_exito'];
+}
+?>
 
        

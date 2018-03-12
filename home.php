@@ -20,8 +20,8 @@
         
 <?php 
  
-            // session_start();
-            // ob_start();
+            session_start();
+            ob_start();
              
             //         if($_SESSION['sesion_exito']==0) //Como dije en el video, esto no es estrictamente necesario
             //          {echo "inicie sesion por favor";
@@ -33,15 +33,15 @@
             //         if($_SESSION['sesion_exito']==3)
             //             {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}  
 
-                        include 'menuUsuario.php';   
+                       include 'menuUsuario.php';   
                         include ('php/DatosUsuario.php');
                         include ('Conexion.php');
                        $funcion = new DatosUsuario;         
-                          $id= $funcion->Datos("luis");
-                          echo $id;
+                          $email= $funcion->UsuarioId($_SESSION['emailUser']);
+          
                           //consulta de datos 
                           $Consulta= "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
-                           alumno.semestre FROM alumno INNER JOIN usuario ON usuario.id_alumno=alumno.id";
+                           alumno.semestre FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
                            $resultados = mysqli_query($conexion,$Consulta);
                            //ASIGNACION DE RESULTADOS
                            $resultado = mysqli_fetch_array($resultados);

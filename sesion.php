@@ -29,6 +29,7 @@ $Pass=$_POST['password'];
         
              //verificacion de contraseña encriptada
                if (password_verify($Pass, $consulta['pass'])) {
+                 $_SESSION['emailUser'] =$Usuario;
                	// redireccionamiento a pagina de inicio logeado 
                	 header('Location:home.php');
                }
@@ -45,9 +46,9 @@ $Pass=$_POST['password'];
       }
     
       //redireccionamiento a pagina de inicio por algun error
-    // if($_SESSION['sesion_exito']<>1)
-    // {
-    //   header('Location:index.php');
-    // }
+    if($_SESSION['sesion_exito']<>1)
+    {
+      header('Location:index.php');
+    }
 
 ?>
