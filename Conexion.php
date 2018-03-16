@@ -8,7 +8,7 @@
 	//Lista de Tablas
 	$alumno = "alumno";//tabla de datos del alumno 	   
 	$usuario="usuario";//tabla de usuarios regristrados 
-	$Fechas="fechas"; //tabla de fechas 
+	$Fechas="fechas_examen"; //tabla de fechas 
 	
 	//cadena de conexion
 	$conexion = mysqli_connect($host,$usuariodb,$clavedb,$basededatos);

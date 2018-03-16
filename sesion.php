@@ -30,7 +30,8 @@ $Pass=$_POST['password'];
              //verificacion de contraseña encriptada
                if (password_verify($Pass, $consulta['pass'])) {
                  $_SESSION['emailUser'] =$Usuario;
-               	// redireccionamiento a pagina de inicio logeado 
+                 // redireccionamiento a pagina de inicio logeado
+                 $_SESSION['sesion_exito'] =1; 
                	 header('Location:home.php');
                }
                else{

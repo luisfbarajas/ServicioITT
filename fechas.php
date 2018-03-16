@@ -1,8 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+ <html class="no-js" lang=""> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,65 +19,56 @@
         
 <?php 
  
-            session_start();
-            ob_start();
+            // session_start();
+            // ob_start();
              
-                    if($_SESSION['sesion_exito']==0) //Como dije en el video, esto no es estrictamente necesario
-                     {echo "inicie sesion por favor";
+            //         if($_SESSION['sesion_exito']==0) //Como dije en el video, esto no es estrictamente necesario
+            //          {echo "inicie sesion por favor";
 
-                       header('Location:index.php'); 
-                     } //Ya que si lo dejamos, siempre que accedemos a index arroja error.
-                    if($_SESSION['sesion_exito']==2)
-                        {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
-                    if($_SESSION['sesion_exito']==3)
-                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
-               
-                
-echo "Entro";
+            //            header('Location:index.php'); 
+            //          } //Ya que si lo dejamos, siempre que accedemos a index arroja error.
+            //         if($_SESSION['sesion_exito']==2)
+            //             {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
+            //         if($_SESSION['sesion_exito']==3)
+            //             {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
 ?>
 <!--menu -->
-<div class="header">
+<div class="header menu">
     <?php
     include 'menuUsuario.php';
+    include ('php/DatosUsuario.php');
+    include ('Conexion.php');
+   $funcion = new DatosUsuario;         
+      //$email= $funcion->UsuarioId($_SESSION['emailUser']);
+      $email= $funcion->UsuarioId('cesar.lopez@tectijuana.edu.mx');
+      //consulta de datos 
+      $Consulta= "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
+       alumno.semestre FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
+       $resultados = mysqli_query($conexion,$Consulta);
+       //ASIGNACION DE RESULTADOS
+       $resultado = mysqli_fetch_array($resultados);
     ?>
 </div>
-
-<br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-   
-        <section class="titulo">
+ <section class="titulo">
          <h1>Resgistrar fecha de examen.</h1>
-        </section>
-        
+        </section>      
         <section class="indicaciones">
          <p class="text indicacion-fecha">Completa los datos siguientes para llevar a cabo el registro de tu examen en la fecha indicada. Para completar los datos es necesario que cuentes con tu recibo de pago.</p>
         </section>
-
         <section class="formulario">
           <form id="formulario" style="display: block;" role="form">
                 <div class="container">
-                  <div class="row">
+                  <div class="row pt">
                     <div class="col-xs-12 col-sm-4">
                       <label for="FolioP">Folio de pago (Recibo):</label><br>
-                      <input type="text" name="FolioP" class="form-control">
+                      <input type="text" name="FolioP" class="form-control" id="FolioP">
                     </div>
                     <div class="col-xs-12 col-sm-4">
                       <label for="fechaP">Fecha de pago(Recibo):</label><br>
                         <div class="form-group">
                    <div class="input-group">
                    <div class="input-group-addon"><span class="glyphicon glyphicon-calendar" id="Correos"></span></div>
-                      <input type="Date" name="fechaP" class="form-control" >
+                      <input type="Date" name="fechaP" class="form-control" id="fechaP" >
                        </div>
                      <span class="help-block" id="error"></span>                     
                      </div>
@@ -89,194 +77,79 @@ echo "Entro";
                       
                     </div>
                   </div>
-                </div>
-
-
-
-
-
-
-                   <div class="container">
-                  <div class="row">
-                            <div class="col-xs-12 col-sm-4">
-                              <label for="nombre">Nombre(s):</label><br>
-                                <div class="form-group">
-                           <div class="input-group">
+                <hr/>           
+                <h4 id="fechaV">Verifica que tus datos sean correctos antes de registrar la fecha de tu examen!. </h4>
+                  <div class="row pt">
+                     <div class="col-xs-12 col-sm-4 ">
+                         <label for="nombre">Nombre(s):</label><br>
+                         <div class="form-group">
+                          <div class="input-group">
                            <div class="input-group-addon"><span class="glyphicon glyphicon-user" id="Correos"></span></div>
-                              <input type="text" name="nombre" class="form-control">
+                              <input type="text" name="nombre" class="form-control" value="<?php echo $resultado['name'];?> ">
                             </div>
-                             <span class="help-block" id="error"></span>                     
-                             </div>
-                               </div>
+                            <span class="help-block" id="error"></span>                     
+                           </div>
+                          </div>
                     <div class="col-xs-12 col-sm-4">
-                        <div class="form-group">
+                       <div class="form-group">
                       <label for="Apellidos">Apellidos:</label><br>
-                      <input type="text" name="Apellidos" class="form-control">
+                      <input type="text" name="Apellidos" class="form-control" value="<?php echo $resultado['last_name'];?>">
                     </div>
                     <span class="help-block" id="error"></span>    
-                  </div>
-                                                <div class="col-xs-12 col-sm-4">
-                                                  <label>Correo electronico:</label><br>
-                                                 <div class="form-group">
-                                               <div class="input-group">
-                                               <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" id="Correos"></span></div>
-                                               <input name="email" type="text" class="form-control" placeholder="Correo electronico">
-                                               </div> 
-                                               <span class="help-block" id="error"></span>                     
-                                                </div>
-                                               </div>
-                      
                     </div>
-                  </div>
-
-
-
-
-
-
-              <div class="container">
+                     <div class="col-xs-12 col-sm-4">
+                        <label>Correo electronico:</label><br>
+                        <div class="form-group">
+                          <div class="input-group">
+                             <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" id="Correos"></span></div>
+                                <input name="email" type="text" class="form-control" placeholder="Correo electronico"
+                                 value="<?php echo $resultado['email'];?>">
+                              </div> 
+                              <span class="help-block" id="error"></span>                     
+                            </div>
+                          </div> 
+                       </div>
                 <div class="row">
                   <div class="col-xs-12 col-sm-4">
                     <label>Numero de control:</label><br>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-credit-card icon"></span></div>
-                        <input type="text" name="Nctrl" class="form-control">
+                        <input type="text" name="Nctrl" class="form-control" value="<?php echo $resultado['nctrl'];?>">
                     </div>
                   </div>
                   <div class="col-xs-12 col-sm-4">
                     <label>Semestre:</label><br>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-list-numbered icon"></span></div>
-                      <input type="text" name="Nctrl" class="form-control">
+                      <input type="text" name="Nctrl" class="form-control" value="<?php echo $resultado['semestre'];?>">
                     </div>
                   </div>
                   <div class="col-xs-12 col-sm-4">
                           <label>Carrera</label>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-book icon"></span></div>
-                       <input type="text" name="Nctrl" class="form-control">
+                       <input type="text" name="Nctrl" class="form-control" value="<?php echo $resultado['CARRERA'];?>">
                     </div>
                   </div>
                 </div>
               </div>
 
 
- <div class="container">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-4">
-                    <label for="fExamen">Fecha de examen:</label><br>
-                    <div class="input-group">
-                      <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
-                        <input type="text" name="fExamen" id="mydate" gldp-id="mydate" class="form-control"  >
-                        </div>
-                         <div gldp-el="mydate" style="width:250px; height:150px;  ">
-                           </div>
-                    </div>
-                   
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                    <label></label><br>
-                   <!-- <div class="input-group">
-                      <div class="input-group-addon"><span class="icon-list-numbered icon"></span></div>
-                      <input type="text" name="Nctrl" class="form-control">
-                    </div>-->
-                  </div>
-                  <div class="col-xs-12 col-sm-4">
-                          <label></label>
-                   <!-- <div class="input-group">
-                      <div class="input-group-addon"><span class="icon-list-numbered icon"></span></div>
-                      <input type="text" name="Nctrl" class="form-control">
-                    </div>-->
-                  </div>
-                </div>
-              </div>
 
+              <button type="submit" class="btn btn-success btn-lg boton">
+                 <span class="glyphicon glyphicon-pencil"></span> Registrar
+                 </button>     
           </form>
-
+         
         </section>
 
 
 <div class="container">
                 <div class="row">
               
-               <button type="submit" class="btn btn-success btn-lg boton">
-                 <span class="glyphicon glyphicon-pencil"></span> Registrar
-                 </button>
-               
+                      
                 </div>
               </div><br>
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="js/glDatePicker.min.js"></script>
-
-    <script type="text/javascript">
-        $(window).load(function()
-        {
-            $('mydate').glDatePicker();
-           
-        });
-        var example5 = $('#mydate').glDatePicker(
-    {
-        
-      // showAlways: true,
-        //inabilita columnas de fechas
-         selectableDOW: [2,4],
-         //nombres del mes
-         monthNames: ['Enero', 'Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-         //nombre de los dias
-         dowNames:['Dom','Lun','Mar','Mier','Jue','Vie','Sab'],
-         
-
-    
-    }).glDatePicker(true);
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  <footer class="app-footer">
             <div class="app-texto">
                 <h4>Instituto nacional de Mexico</h4>
@@ -286,13 +159,9 @@ echo "Entro";
                      <img src="img/galgo.gif" class="img-responsive img-footer">
             </div>
         </footer>
-
            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
-
         <script src="js/main.js"></script>
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

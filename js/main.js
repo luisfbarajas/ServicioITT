@@ -190,5 +190,10 @@ VALIDACION DE CARRERA
 		return true;
 			}
 	});
+
+	/**************************************************
+	 VALIDACION DE FOLIO DE PAGO 
+	 ****************************************************/
+	$("#FolioP").focusout(function(){});
 });
 

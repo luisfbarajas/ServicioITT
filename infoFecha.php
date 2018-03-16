@@ -1,8 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+ <html class="no-js" lang="es"> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,40 +7,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-
-
-   
-
-
-
     </head>
     <body>
        <?php
-          include ("conexion.php");
-            session_start();
-            ob_start();
-                if(isset($_SESSION['sesion_exito']))
-                {
-                    //if($_SESSION['sesion_exito']==0) Como dije en el video, esto no es estrictamente necesario
-                    // {echo "inicie sesion por favor";} Ya que si lo dejamos, siempre que accedemos a index arroja error.
-                    if($_SESSION['sesion_exito']==2)
-                        {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
-                    if($_SESSION['sesion_exito']==3)
-                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
-                }
-                else
-                {
-                    $_SESSION['sesion_exito']=0;
-                }
-       
+          include ("conexion.php");                
          ?>
        <div class="header">
         <?php include 'menu.php'; ?>
@@ -67,8 +38,6 @@
               </div>
            </div>
        </header>
-
-
  <!--ventana modal para login -->
      <div class="modal fade" id="myModal" role="dialog">
        <div class="modal-dialog">   
@@ -119,10 +88,9 @@
      </div>
     <div class="container">
      <b> <h3 class="Fecha-Titulo">Fechas de examen</h3></b><br>
-      <p class="Fecha-Texto">Las Fechas de los examenes de ingles estan programadas en la fecha y lugar especificados. En cada fecha se cuenta con diferentes horarios en los cuales se puede presentar el examen para que se tenga la flexibilidad necesaria en cuanto horario se refiere.
-
-      A continuacion se muestran las fechas de examenes disponibles en el semestre en curso.</p><br>
-       
+      <p class="Fecha-Texto">Las Fechas de los examenes de ingles estan programadas en la fecha y lugar especificados. En cada fecha se cuenta con diferentes horarios en los cuales
+       se puede presentar el examen para que se tenga la flexibilidad necesaria en cuanto horario se refiere.
+      A continuacion se muestran las fechas de examenes disponibles en el semestre en curso.</p><br>      
           <div class="row" >
              <?php 
              $Consulta=mysqli_query($conexion,"SELECT * FROM $Fechas ");    
@@ -141,20 +109,16 @@
                 {             
                      echo $tablabody="
                           <tr>
-                            <td>".$row["Fecha"]."</td>
-                            <td>".$row["Horario"]."</td>
-                            <td>".$row["Salon"]."</td>
-                            <td>".$row["unidad"]."</td>
+                            <td>".$row["FECHA"]."</td>
+                            <td>".$row["HORARIO"]."</td>
+                            <td>".$row["SALON"]."</td>
+                            <td>".$row["UNIDAD"]."</td>
                          </tr>";    
-                }    
-                
-                
+                }                
                  echo "</table><br><br>";
            ?>
           </div>
     </div>
-
-
 <footer class="app-footer">
   <div class="app-texto">
    <h4>Instituto nacional de Mexico</h4>
@@ -164,16 +128,10 @@
    <img src="img/galgo.gif" alt="galgo">
   </div>
 </footer>
-
-
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
-
         <script src="js/main.js"></script>
-
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
