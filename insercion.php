@@ -46,7 +46,7 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 						$DatosAlumno="INSERT INTO alumno(name,last_name,semestre,CARRERA,nctrl) VALUES('$Nombre','$Apellido','$Semetre','$Carrera','$NCtrl');";
 						$ingreso=mysqli_query($conexion,$DatosAlumno);
 						//OBTIENE ID DE ALUMNO PARA INSERTAR DATOS DE USUARIO 
-						$id= $Usuarios->Datos($NCtrl);							
+						$id= $Usuarios->Datos($NCtrl,$conexion,$alumno);							
 					//	INSERCION A USUARIOS				
 						$DatosUsuario= "INSERT INTO $usuario (id_alumno,email,pass,active) VALUES($id,'$correo','$passHash',0);";
 					//	EJECUCION DE COMANDOS						

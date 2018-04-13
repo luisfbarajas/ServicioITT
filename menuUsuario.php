@@ -14,7 +14,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 
-                 
+                 <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Actualizar datos</a></li>
                    <li><a href="fechas.php"><span class="glyphicon glyphicon-calendar"></span>Fechas</a></li>
                    <li><form action="menuUsuario.php" method="POST"><a href="#"  id="cerrar" onclick="pregunta();">Cerrar sesion.</a></form></li>
                   

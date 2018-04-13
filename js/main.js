@@ -184,9 +184,9 @@ VALIDACION DE CARRERA
 			}
 			else{
 				$("#iconoCarrera").remove();		
-		$("#Carrera").parent().parent().attr("class","form-group has-success has-feedback");
-		$("#Carrera").parent().children("span").text("").remove();
-		$("#Carrera").parent().append("<span id='iconoCarrera' class='glyphicon glyphicon-ok form-control-feedback'></span>");
+				$("#Carrera").parent().parent().attr("class","form-group has-success has-feedback");
+				$("#Carrera").parent().children("span").text("").remove();
+				$("#Carrera").parent().append("<span id='iconoCarrera' class='glyphicon glyphicon-ok form-control-feedback'></span>");
 		return true;
 			}
 	});
@@ -194,6 +194,66 @@ VALIDACION DE CARRERA
 	/**************************************************
 	 VALIDACION DE FOLIO DE PAGO 
 	 ****************************************************/
-	$("#FolioP").focusout(function(){});
+	$("#FolioP").focusout(function(){
+		var control = /^[0-9]{8,}$/;
+		if($("#FolioP").val().match(control)){
+			$("#iconoFolio").remove();
+			$("#FolioP").parent().parent().attr("class","form-group has-success has-feedback");
+			$("#FolioP").parent().children("span").text("").remove();
+			$("#FolioP").parent().append("<span id='iconoFolio' class='glyphicon glyphicon-ok form-control-feedback'></span>");
+			return true;
+		}
+		else{
+			$("#iconoFolio").remove();		
+			$("#FolioP").parent().parent().attr("class","form-group has-error has-feedback");
+			$("#FolioP").parent().children("span").text("").remove();
+			$("#FolioP").parent().append("<span id='iconoFolio' class='glyphicon glyphicon-remove form-control-feedback'></span>");
+			return false;
+		}
+	});
+	
+	/**************************************************
+	 VALIDACION DE FECHA DE PAGO 
+	 ****************************************************/
+	$("#fechaP").focusout(function(){
+		var RegexFechaP = /^2(\d{3})(\/|-)(0[1-9]|1[0-2])(\/|-)([0-2][0-9]|3[0-1])T([0-1][0-9]|2[0-3])(:)([0-5][0-9])$/;
+		console.log($("#fechaP").val());
+		if($("#fechaP").val().match(RegexFechaP)){
+			$("#iconoFechaP").remove();
+			$("#fechaP").parent().parent().attr("class","form-group has-success has-feedback");
+			$("#fechaP").parent().children("span").text("").remove();
+			$("#fechaP").parent().append("<span id='iconoFechaP' class='glyphicon glyphicon-ok form-control-feedback'></span>");
+			return true;
+		}
+		else{
+			$("#iconoFechaP").remove();		
+			$("#fechaP").parent().parent().attr("class","form-group has-error has-feedback");
+			$("#fechaP").parent().children("span").text("").remove();
+			$("#fechaP").parent().append("<span id='iconoFechaP' class='glyphicon glyphicon-remove form-control-feedback'></span>");
+			return false;
+		}
+	});
+
+	/**************************************************
+	 Envio de datos por ajax en registro de fecha
+	 ****************************************************/
+	$("#btnRegistro").click(function(e){
+		e.preventDefault();
+		var valor= $("#FolioP").val();
+		var datos= {"folioP": valor }
+		$.ajax({
+			url: "php/RegistroExamen.php",
+			method: "POST",
+			data: datos,
+			dataType: "json",
+			beforeSend: function(){console.log("enviando");},
+			success: function(dato){
+				console.log("envio");
+			},
+			error: function(){
+				console.log("Fallo");
+			}
+		});
+	});
 });
 

@@ -1,9 +1,9 @@
 <?php
 class DatosUsuario{
-    public function Datos($nombre){
-        require "Conexion.php";
+    public function Datos($nombre,$conexion,$tabla){
+       // require "../Conexion.php";
         $Usuario= $nombre;
-        $Consulta="SELECT * FROM $alumno WHERE nctrl ='$Usuario' ";
+        $Consulta="SELECT * FROM $tabla WHERE nctrl ='$Usuario' ";
         $resultado= mysqli_query($conexion,$Consulta) ;
             while($row = mysqli_fetch_array($resultado)){     
                 return $row["id"];
