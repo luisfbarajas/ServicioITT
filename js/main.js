@@ -233,7 +233,10 @@ VALIDACION DE CARRERA
 			return false;
 		}
 	});
-
+	/**************************************************
+	DATEPICKER EN REGISTRO DE FECHAS
+	 ****************************************************/
+	$("#Fechas").datepicker();
 	/**************************************************
 	 Envio de datos por ajax en registro de fecha
 	 ****************************************************/

@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
    <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
          <link rel="stylesheet" href="css/icomoon.css">
@@ -140,17 +141,11 @@
                   </div>
                 </div>
               
-              <div class="row">
+              <div class="row pt">
                 <div class="col-xs-12 col-sm-4">
                   <label for="Fechas" class="control-label">Fechas disponibles:</label>
-                  <select id="Fechas" name="Fechas" class="form-control">
-                    <?php
-                           while($row=mysqli_fetch_array($fechaResultado)){
-    
-                            echo "<option>".$row['FECHA']."</option>";
-                          
-                           } ?>
-                  </select>
+                <input type="text" name="Fechas" id="Fechas" class="form-control" 
+                placeholder="Seleccione fecha">
                 </div>
               </div>
               </div>
@@ -174,6 +169,7 @@
         </footer>
            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
         <script src="js/main.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
