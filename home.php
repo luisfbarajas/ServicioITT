@@ -23,17 +23,23 @@
             session_start();
             ob_start();
              
-            //         if($_SESSION['sesion_exito']==0) //Como dije en el video, esto no es estrictamente necesario
-            //          {echo "inicie sesion por favor";
+                    if($_SESSION['sesion_exito']==0) 
+                     {echo "inicie sesion por favor";
 
-            //            header('Location:index.php'); 
-            //          } //Ya que si lo dejamos, siempre que accedemos a index arroja error.
-            //         if($_SESSION['sesion_exito']==2)
-            //             {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
-            //         if($_SESSION['sesion_exito']==3)
-            //             {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}  
+                       header('Location:index.php'); 
+                     } 
+                    if($_SESSION['sesion_exito']==2)
+                        {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
+                    if($_SESSION['sesion_exito']==3)
+                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}  
 
-                       include 'menuUsuario.php';   
+            if($_SESSION['menuID']==0){
+                include 'menuAdmin.php';
+            }
+            else{
+                include 'menuUsuario.php';   
+            }
+                     
                         include ('php/DatosUsuario.php');
                         include ('Conexion.php');
                        $funcion = new DatosUsuario;         

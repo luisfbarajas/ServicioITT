@@ -1,10 +1,5 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 header{
-		background: url("..img/header.jpg") no-repeat center top fixed;
+	background: url("..img/header.jpg") no-repeat center top fixed;
 	height: 650px;
 	width: 100%;
 
@@ -196,9 +191,13 @@ text-align: justify;
 .Fecha-Titulo{
 		text-align: center;
 		font-family: "Avenir", Futura, Helvetica, sans-serif;
-		font-size: 1.5em;
+		font-size: 1.8em;
 }
-
+#mainNav{
+	border-color: green; 
+	border-bottom-width: 5px;
+	width: 100%;
+}
 .galfo{
 	margin:auto;
 	align-content: center;

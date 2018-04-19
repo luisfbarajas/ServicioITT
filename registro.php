@@ -1,8 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang=""> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -17,24 +14,7 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
-      <!--PHP VARIBLES GLOBALES -->
-       <?php
-            session_start();
-            ob_start();
-                if(isset($_SESSION['sesion_exito']))
-                {
-                    //if($_SESSION['sesion_exito']==0) Como dije en el video, esto no es estrictamente necesario
-                    // {echo "inicie sesion por favor";} Ya que si lo dejamos, siempre que accedemos a index arroja error.
-                    if($_SESSION['sesion_exito']==2)
-                        {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
-                    if($_SESSION['sesion_exito']==3)
-                        {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
-                }
-                else
-                {
-                    $_SESSION['sesion_exito']=0;
-                }
-                ?>
+     
                 <!--MENU DE NAVEGACION -->
          <div class="header">
             <?php include 'menu.php'; ?>

@@ -1,7 +1,7 @@
 <?php
 //inicio de sesion
 //Conexion a la base de datos y tablas a usar 
-include ("conexion.php");
+include ("Conexion.php");
 //habilita uso de variables globales
 session_start();
     ob_start();
@@ -29,6 +29,7 @@ $Pass=$_POST['password'];
         
              //verificacion de contraseña encriptada
                if (password_verify($Pass, $consulta['pass'])) {
+                 $_SESSION['menuID']=$consulta['tipo'];
                  $_SESSION['emailUser'] =$Usuario;
                  // redireccionamiento a pagina de inicio logeado
                  $_SESSION['sesion_exito'] =1; 

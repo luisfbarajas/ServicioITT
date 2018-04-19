@@ -4,6 +4,12 @@
 	$basededatos = "ingles";    // sera el valor de nuestra BD 
 	$usuariodb = "root";    // sera el valor de nuestra BD 
 	$clavedb = "";    // sera el valor de nuestra BD 
+//Valores del servidor
+	// $host = "localhost";    // sera el valor de nuestra BD 
+	// $basededatos = "id5445121_ingles";    // sera el valor de nuestra BD 
+	// $usuariodb = "id5445121_trydemo";    // sera el valor de nuestra BD 
+	// $clavedb = "IttDemo2018";    // sera el valor de nuestra BD 
+
 
 	//Lista de Tablas
 	$alumno = "alumno";//tabla de datos del alumno 	   

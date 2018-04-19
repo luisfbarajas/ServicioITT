@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
    <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
          <link rel="stylesheet" href="css/icomoon.css">
@@ -40,7 +40,7 @@
      // $email= $funcion->UsuarioId('cesar.lopez@tectijuana.edu.mx');
       //consulta de datos 
       $Consulta= "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
-       alumno.semestre FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
+       alumno.semestre, alumno.id FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
        $resultados = mysqli_query($conexion,$Consulta);
        //ASIGNACION DE RESULTADOS
        $resultado = mysqli_fetch_array($resultados);
@@ -76,7 +76,7 @@
                         <div class="form-group">
                    <div class="input-group">
                    <div class="input-group-addon"><span class="glyphicon glyphicon-calendar" ></span></div>
-                      <input type="datetime-local" name="fechaP" class="form-control" id="fechaP" value="" placeholder="" >
+                      <input type="datetime-local" name="fechaP" id="fechaP" class="form-control" id="fechaP" value="" placeholder="" >
                        </div>
                      <span class="help-block" id="error"></span>                     
                      </div>
@@ -149,9 +149,9 @@
                 </div>
               </div>
               </div>
-
+              <label name="Userid" id="Userid" hidden=true><?php echo $resultado['id'];?> </label>
               <div class="row btn-Registro">
-              <button type="submit" class="btn btn-success btn-lg boton" id="btnRegistro">
+              <button type="submit" class="btn btn-success btn-lg boton" id="btnRegistro" name="btnRegistro">
                  <span class="glyphicon glyphicon-pencil RegistroExamen" ></span> Registrar
                  </button> 
               </div>    

@@ -236,27 +236,114 @@ VALIDACION DE CARRERA
 	/**************************************************
 	DATEPICKER EN REGISTRO DE FECHAS
 	 ****************************************************/
-	$("#Fechas").datepicker();
+	$("#Fechas").datepicker({
+		dateFormat: 'yy-mm-dd',
+		// Primer dia de la semana - lunes
+		firstDay: 1,
+		// Días largo traducido
+		dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+		// Dias cortos traducido
+		dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+		// Nombres largos de los meses traducido
+		monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+		// Nombres cortos de los meses traducido 
+		monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"],
+		  //restinge fechas pasadas
+		minDate: 0,
+		onChangeMonthYear: function (year, month, inst) { $(".ui-state-default:contains('27')").attr("style", "background-color:green !important;color:white;") },
+	  //quita fines de sem
+		  beforeShowDay: $.datepicker.noWeekends
+	}
+	);
+	$("#Fechas").focusin(function () {
+		var x = 9;
+		var d = 26;
+		if (x >= 10) {
+			$(".ui-state-default:contains('" + d + "')").attr("style", "background-color:red !important;color:white;");
+		   
+			
+		}
+		else {
+			$(".ui-state-default:contains('27')").attr("style", "background-color:green !important;color:white;");
+			$(".ui-state-default:contains('30')").attr("style", "background-color:green !important;color:white;");
+		}
+	});
+	$("#Fechas").click(function () {
+		var x = 15;
+		var d = 26;
+		if (x >= 10) {
+			$(".ui-state-default:contains('" + d + "')").attr("style", "background-color:red !important;color:white;");
+
+
+		}
+		else {
+			$(".ui-state-default:contains('27')").attr("style", "background-color:green !important;color:white;");
+			$(".ui-state-default:contains('30')").attr("style", "background-color:green !important;color:white;");
+		}
+	});
+	 //evita que se escriba en textbox
+	 $("#Fechas").keypress(function (e) { return false; });
 	/**************************************************
 	 Envio de datos por ajax en registro de fecha
 	 ****************************************************/
 	$("#btnRegistro").click(function(e){
 		e.preventDefault();
-		var valor= $("#FolioP").val();
-		var datos= {"folioP": valor }
+		var Folio= $("#FolioP").val(),FechaHr=$("#fechaP").val(),Userid = $("#Userid").text();
+		var datos= {"folio": Folio, "FechaHr": FechaHr,"Userid": Userid};
 		$.ajax({
 			url: "php/RegistroExamen.php",
 			method: "POST",
 			data: datos,
-			dataType: "json",
-			beforeSend: function(){console.log("enviando");},
-			success: function(dato){
-				console.log("envio");
-			},
+			beforeSend:function(){console.log("Enviando...");},
+			success: function(dato){console.log( dato);},
 			error: function(){
-				console.log("Fallo");
+				console.log("Error en envio");
 			}
 		});
 	});
-});
+		/**************************************************
+	Actualizacion de datos
+	 ****************************************************/
+	$("#btnUpdate").click(function(e){
+		e.preventDefault();
+		console.log("funciona");
+		var nombre= $("#nombre").val(),apellido = $("#apellido").val(),correo =$("#email").val(),numero=$("#Nctrl").val()
+		Semestre = $("#Semestre").val(),carrera = $("#Carrera").val(),Userid=$("#Userid").text();
+		
+		var datos = {"nombre": nombre, "apellido": apellido, "email":correo, "numero":numero, "semestre": Semestre,
+		"carrera":carrera, "id" : Userid};
+		console.log(Userid);
+		$.ajax({
+			url: "php/UpdateUser.php",
+			method: "POST",
+			data: datos,
+			beforeSend:function(){console.log("Enviando...");},
+			success: function(dato){console.log( dato);},
+			error: function(){
+				console.log("Error en envio");
+			}
+		});
 
+	});
+});
+/*****************************************************
+INICIO DE SESION
+******************************************************/
+$("#login").click(function(e){
+	e.preventDefault();
+	var username= $("#username").val(), pass= $("#password").val();
+	var datosLog = {"username":username, "password": pass};
+	$.ajax({
+		url:"sesion.php",
+		method: "POST",
+		data: datosLog,
+		beforeSend: function(){console.log("Iniciando sesion...");},
+		success: function(dato){
+			console.log("Sesion inicada");
+			window.location.href="home.php";
+		},
+		error: function(){
+			console.log("Error en inicio");
+		}
+	});
+});

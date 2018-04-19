@@ -12,11 +12,11 @@
               </div>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right" style="margin-right:2%;">
                 <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
                   <li><a href="registro.php"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
-                   <li><a href="infoFecha.php">Fechas</a></li>
-                   <li><a href="Proceso.php">Proceso</a></li>
+                   <li><a href="infoFecha.php"><i class="glyphicon glyphicon-calendar"></i> Fechas</a></li>
+                   <li><a href="Proceso.php"><i class="glyphicon glyphicon-paperclip"></i> Proceso</a></li>
               </ul>
           </div>
       </nav>
@@ -43,7 +43,7 @@
         <div class="panel-body">
             <div class="row">
               <div class="col-lg-12">
-        <form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
+        <form class="login-form " style="display: block;" role="form" >
         <div class="form-group">
                     <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
                   </div>
@@ -51,8 +51,7 @@
                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
                   </div>
                   <div class="form-group text-center">
-                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                    <label for="remember"> Recordarme</label><br/>
+                 
                     <a href="registro.php">Registrarse.</a>
                   </div>
                   <div class="form-group">

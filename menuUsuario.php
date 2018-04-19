@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" id="mainNav" style="border-color: green; border-bottom-width: 5px; margin-left: : 20px; width: 100%;">
+<nav class="navbar navbar-default navbar-fixed-top" id="mainNav" >
           <div class="container-fluid ">
               <div class="navbar-header ">
                       
@@ -12,11 +12,11 @@
               </div>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right" style="margin-right:2%;">
                 
-                 <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Actualizar datos</a></li>
+                 <li><a href="Actualizar.php"><i class="glyphicon glyphicon-refresh"></i> Actualizar datos</a></li>
                    <li><a href="fechas.php"><span class="glyphicon glyphicon-calendar"></span>Fechas</a></li>
-                   <li><form action="menuUsuario.php" method="POST"><a href="#"  id="cerrar" onclick="pregunta();">Cerrar sesion.</a></form></li>
+                   <li><a href="php/Cerrarsesion.php"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
                   
               </ul>
           </div>
