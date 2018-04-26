@@ -6,6 +6,7 @@ header{
 }
 body{
 	font-size:  16px;
+	overflow-x: hidden;
 
 }
 footer{
@@ -85,6 +86,9 @@ hr {
 }
 .app-texto{
 bottom:o;
+}
+.mt{
+	margin-top:3px;
 }
 .menu{
 	margin-bottom: 8rem;
@@ -237,6 +241,11 @@ border-radius: 10px 5px 10px 5px;
 .contiene-datos{
 	padding-top: 3%;
 }
+
+.pr{
+	padding-right: 10px;
+	padding-left: 10px;
+}
 /**********************************
 PANTALLA MEDIA
 *********************************/
@@ -252,7 +261,10 @@ PANTALLA MEDIA
 }
     footer{
     	size: 90% !important;
-    }
+	}
+	#tablafechas{
+		overflow: scroll;
+	}
 
 }
 @media all and (min-width:780px){
@@ -261,6 +273,7 @@ PANTALLA MEDIA
 	float: left;
 	text-align: left;	
 }
+
 }
 @media all and (min-width:1000px){
 
@@ -269,6 +282,6 @@ PANTALLA MEDIA
 	float: right;
 	text-align: left;	
 
-}
+	}	
 	}
 

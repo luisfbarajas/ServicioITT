@@ -4,7 +4,7 @@
 include ("Conexion.php");
 //habilita uso de variables globales
 session_start();
-    ob_start();
+    // ob_start();
 //recibir datos 
 $Usuario=$_POST['username'];
 $Pass=$_POST['password'];

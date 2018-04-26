@@ -1,4 +1,6 @@
-<?php include 'Conexion.php'; ?>
+<?php
+include_once "php/getDates.php";
+?>
 <!doctype html>
 <html class="no-js" lang=""> 
     <head>
@@ -19,87 +21,112 @@
     <div class="container-fluid menu">
     <?php include 'menuAdmin.php'; ?>
     </div>
-    <div class="container">
-        <h2 class="Fecha-Titulo">Agregar fecha.</h2>
-        <p class="Fecha-Texto">
-            Lleve a cabo el alta de nuevas fechas añadiendo los datos correspondientes. 
-            Estas fechas agregadas se veran reflejadas al momento de guardar los datos.
-            <span class="text-danger"><b>No olvide guardar antes de salir</b></span>
-        </p>
-        <br>
-        <div id="msj" style="display: none"></div>
-        
-        <form>
-            <div class="row">
-                <!--FECHA -->
-                <div class="col-md-3">
-                    <label for="txtFecha" class="label-control">Fecha: </label>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="glyphicon glyphicon-calendar" ></i>
-                             </div>
-                            <input type="date" name="txtFecha" id="txtFecha" class="form-control" >
+   <div class="container">
+   <h3 class="Fecha-Titulo">Agregar fecha.</h3>
+    <p class="Fecha-Texto">
+    Lleve a cabo el alta de nuevas fechas añadiendo los datos correspondientes.
+    Estas fechas agregadas se veran reflejadas al momento de guardar los datos.
+    <span class="text-danger"><b>No olvide guardar antes de salir.</b></span> 
+    </p>
+    <form>
+        <div class="row">
+            <!-- FECHA -->
+            <div class="col-md-4 pt">
+                <label for="txtAddFecha">Fecha:</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
                         </div>
-                        <span class="help-block" id="error"></span>                     
+                        <input type="date" class="form-control" name="txtAddFecha" id="txtAddFecha">
                     </div>
-                </div>
-                    
-                   
-                <!-- Horario -->               
-                <div class="col-md-3">
-                    <label for="txtHorario" class="label-control">Fecha: </label><br>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="glyphicon glyphicon-time" ></i>
-                                </div>
-                                    <input type="time" name="txtHorario" id="txtHorario" class="form-control" >
-                                </div>
-                                <span class="help-block" id="error"></span>                     
-                            </div>
-                        </div>
-                </div>
-            
-          
-             <!--FECHA -->
-             <div class="col-md-3">
-                    <label for="txtFecha" class="label-control">Fecha: </label>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="glyphicon glyphicon-calendar" ></i>
-                             </div>
-                            <input type="date" name="txtFecha" id="txtFecha" class="form-control" >
-                        </div>
-                        <span class="help-block" id="error"></span>                     
-                    </div>
-                </div>
-                    
-                   
-                <!-- Horario -->               
-                <div class="col-md-3">
-                    <label for="txtHorario" class="label-control">Fecha: </label><br>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                    <i class="glyphicon glyphicon-time" ></i>
-                                </div>
-                                    <input type="time" name="txtHorario" id="txtHorario" class="form-control" >
-                                </div>
-                                <span class="help-block" id="error"></span>                     
-                            </div>
-                        </div>
-                </div>
-            
-            <!-- Unidad -->
-            
-            <!-- Cupo -->
+                    <span class="help-block"></span>
+                </div>      
             </div>
-        </form>
+            <!-- HORA -->
+            <div class="col-md-4 pt">
+                <label for="txtAddHr" class="control-label">Hora:</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-time"></i>
+                        </div>
+                        <input type="time" class="form-control" name="txtAddHr" id="txtAddHr">
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <!-- UNIDAD -->
+            <div class="col-md-4 pt">
+                <label for="txtAddUnidad" class="control-label">Unidad:</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-place"></i>
+                    </div>
+                <select name="txtAddUnidad" id="txtAddUnidad" class="form-control">
+                    <option value="Tomas aquino">Tomas Aquino</option>
+                    <option value="Otay">Otay</option>
+                </select>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <!-- Salon -->
+            <div class="col-md-4 pt">
+                <label for="txtAddSalon" class="control-label">Salon:</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-"></i>
+                    </div>
+                    <input type="text" class="form-control" name="txtAddSalon" id="txtAddSalon">
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+            <div class="col-md-4 pt">
+                <label for="txtAddCupo" class="control-label">Cupo:</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-list"></i>
+                        </div>
+                        <input type="number" class="form-control" name="txtAddCupo" id="txtAddCupo">
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" name="btnAddFecha" id="btnAddFecha" class="btn btn-success btn-md boton mt">
+    <i class="glyphicon glyphicon-plus-sign"></i>&nbsp;  Agregar
+    </button>
+    </div> 
+  
+   </form>     
+   <h3 class="boton pt">Fechas actuales.</h3>
+   <div class="container" id="tablafechas">
+   <?php  echo obtenerFecha();?>
+   </div>
+    <!-- VENTANA MODAL PARA EDICION DE DATOS -->
+    <div class="modal fade" id="miModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Esto es un modal</h4>
+                </div>
+                <div class="modal-body">
+                    Texto del modal
+                </div>
+            </div>
+        </div>
     </div>
+   <!-- FIN MODAL -->
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/jquery-1.11.2.min.js"><script>
         <script src="js/jquery-ui.js"></script>
         <script src="js/main.js"></script>
     </body>
