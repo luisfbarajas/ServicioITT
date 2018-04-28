@@ -8,9 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
+        
         <link rel="stylesheet" href="css/bootstrap.min.css">
          <link rel="stylesheet" href="css/icomoon.css">
+         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
 
