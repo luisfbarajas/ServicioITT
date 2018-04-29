@@ -75,11 +75,11 @@
     </div>
 <footer class="app-footer">
   <div class="app-texto">
-   <h4>Instituto nacional de Mexico</h4>
+   <h4>Instituto Nacional de Mexico</h4>
    <h5>Instituto Tecnologico de Tijuana</h5>
    <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
       C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-   <img src="img/galgo.gif" alt="galgo">
+   <img src="img/galgos.jpg" alt="galgo">
   </div>
 </footer>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

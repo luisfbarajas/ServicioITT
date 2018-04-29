@@ -1,7 +1,7 @@
 header{
 	background: url("..img/header.jpg") no-repeat center top fixed;
-	height: 650px;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 
 }
 body{
@@ -43,7 +43,13 @@ footer{
 	box-shadow: none;
 	border-color: #ccc;
 }
-
+.logotecna{
+	width: 75%;
+	margin: 50px auto;
+}
+.logoitt{
+	margin: 50px auto;
+}
 .forma{
 	border-color: green;
 	margin-top: 20px;
@@ -272,7 +278,33 @@ PANTALLA MEDIA
 	#tablafechas{
 		overflow: scroll;
 	}
+	.logotecna{
+		width: 100%;
+		margin: 30px auto auto auto;
+	}
+	.logoitt{
+		margin: 30px auto auto auto;
+	}
+	header{
+		height: 80vh;
+	}
 
+}
+/*PANTALL CHICA/CEL*/
+@media screen and (max-width: 425px) {
+	header{
+		height: 100vh;
+		margin-bottom: 30px;
+	}
+	.logotecna{
+		width: 50%;
+		margin: 30px auto auto auto;
+	}
+	.logoitt{
+		width: 50%;
+		height: 60%;
+		margin: 30px auto auto auto;
+	}
 }
 @media all and (min-width:780px){
 	.intento{

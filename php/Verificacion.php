@@ -2,7 +2,7 @@
 class Verificacion{
 
    public function VerificacionEmail($email){
-    require ('Conexion.php');
+    require ('../Conexion.php');
         $Consulta ="SELECT COUNT(email) as total from $usuario WHERE email='$email'";
         $resultados= mysqli_query($conexion,$Consulta);
          $contador = mysqli_fetch_assoc($resultados);  
@@ -15,7 +15,7 @@ class Verificacion{
             mysqli_close($conexion);
     }
     public function VerificarNctrl($numero){
-        require 'Conexion.php';
+        require '../Conexion.php';
         $Consulta = "SELECT COUNT(nctrl) as total FROM $alumno WHERE nctrl = '$numero'";
         $resultado= mysqli_query($conexion,$Consulta);
         $verifica= mysqli_fetch_assoc($resultado);

@@ -1,26 +1,30 @@
 <?php 
 //Conexion a la base de datos y tablas a usar 
 //clases para verificaciones antes de registro 
-include ("Conexion.php");
-include ("php/Verificacion.php");
-include ("php/DatosUsuario.php");
+include ("../Conexion.php");
+include ("Verificacion.php");
+include ("DatosUsuario.php");
 $funcion = new Verificacion;
 $Usuarios= new DatosUsuario;
 	//asignacion de valores
 $Nombre=$_POST['Nombre'];
 $Apellido=$_POST['Apellido'];
-$NCtrl=intval($_POST['NCtrl']);
-$Carrera=$_POST['Carrera'];
-$pass=$_POST['password'];
+$NCtrl=$_POST['Nctrl'];
+$Carrera=$_POST['carrera'];
+$pass=$_POST['pass'];
 $correo=$_POST['email'];
 $confirmacionpass=$_POST['passconfirm'];
-//verificacion de semestre extendido o dentro del rango 
-if($_POST['Semestre']== null || $_POST['Semestre']=='Otro'){
-	$Semetre= $_POST['txtOtro'];
-}
-else{
-	$Semetre=$_POST['Semestre'];
-}
+$genero = $_POST['genero'];
+$Semetre = $_POST['semestre'];
+// $Nombre= "Alonso";
+// $Apellido="Ortega";
+// $NCtrl=12310365;
+// $Carrera="isc";
+// $pass="Alonso123@";
+// $correo="alonso.ortega@tectijuana.edu.mx";
+// $confirmacionpass="Alonso123@";
+// $genero ="M" ;
+// $Semetre = 2;
 
 //encriptacion de Contraseña
 $passHash = password_hash($pass, PASSWORD_BCRYPT);
@@ -43,7 +47,7 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 			if($funcion->VerificarNctrl($NCtrl)&& preg_match($ExNctrl,$NCtrl)){
 					if(preg_match($ExPass,$pass)&& $pass == $confirmacionpass){
 						//insercion de datos 
-						$DatosAlumno="INSERT INTO alumno(name,last_name,semestre,CARRERA,nctrl) VALUES('$Nombre','$Apellido','$Semetre','$Carrera','$NCtrl');";
+						$DatosAlumno="INSERT INTO alumno(name,last_name,semestre,CARRERA,nctrl,genero) VALUES('$Nombre','$Apellido','$Semetre','$Carrera','$NCtrl','$genero');";
 						$ingreso=mysqli_query($conexion,$DatosAlumno);
 						//OBTIENE ID DE ALUMNO PARA INSERTAR DATOS DE USUARIO 
 						$id= $Usuarios->Datos($NCtrl,$conexion,$alumno);							
@@ -53,7 +57,7 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 						$insercion= mysqli_query($conexion,$DatosUsuario);
 						//CIERRE DE CONEXION
 						mysqli_close($conexion);
-						echo "<script>alert('Usuario registrado correctamente'); history.go(-1);</script>";
+						echo "<script>alert('Usuario registrado correctamente'); </script>";
 					}
 					else{
 						echo "<script>alert('Contraseña debil/No coinciden.');history.go(-1);</script>";

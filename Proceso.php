@@ -108,7 +108,7 @@
 			<p class="paso1-texto">Ingresa y escoje la fecha para presentar tu examen.<br><span class="text-danger"><b>Importante Recuerda:</b></span></p>
 			<ul class="paso1-texto">
 				<li>Una vez que se escojiste la fecha no podras cambiarla.</li>
-				<li>El cupo es limitado a 30 alumnos por fecha.</li>
+				<li>El cupo es limitado a 25 alumnos por fecha.</li>
 			</ul>
 		</div>
 		<div  class="ccol-xs-12 col-sm-4">
@@ -128,7 +128,9 @@
 		</div>
 		<div class="col-xs-12 col-sm-7">
 			<h4 class="titulo-pasos">Preparate.</h4>
-			<p class="paso1-texto">Una vez que completaste el registro, solamente queda esperar la fecha que escojiste para tu examen. Estudia lo que creas necesario para aprobar. El dia de tu examen recuerda llevar tu recibo de pago, tu lapiz y borrador, es importante <span class="text-danger"><b>llegar 15 minutos antes</b></span> de la hora que se te cito.</p>
+			<p class="paso1-texto">Una vez que completaste el registro, 
+				solamente queda esperar la fecha que escojiste para tu examen.
+				  El dia de tu examen recuerda llevar tu recibo de pago y una identificacion, es importante <span class="text-danger"><b>llegar 15 minutos antes</b></span> de la hora que se te cito.</p>
 		</div>
 		<div  class="ccol-xs-12 col-sm-1">
 			<span class="numero">#4</span>
@@ -198,11 +200,11 @@
 
     <footer class="app-footer">
             <div class="app-texto">
-                <h4>Instituto nacional de Mexico</h4>
+                <h4>Instituto Nacional de Mexico</h4>
                 <h5>Instituto Tecnologico de Tijuana</h5>
                 <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
                      C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgo.gif">
+                     <img src="img/galgos.jpg">
             </div>
           
         </footer>

@@ -23,21 +23,21 @@ else{
 /**************************
 Validacion de nombre
 *****************************/
-$('#nombre').focusout(function(){
+$('#Nombre').focusout(function(){
    var nameregex = /^[a-zA-Z ]{4,}$/;
 
-   if ($('#nombre').val().match(nameregex)) {
+   if ($('#Nombre').val().match(nameregex)) {
    	$("#iconoNombre").remove();
-		$("#nombre").parent().parent().attr("class","form-group has-success has-feedback");
-		$("#nombre").parent().children("span").text("").remove();
-		$("#nombre").parent().append("<span id='iconoNombre' class='glyphicon glyphicon-ok form-control-feedback'></span>");
+		$("#Nombre").parent().parent().attr("class","form-group has-success has-feedback");
+		$("#Nombre").parent().children("span").text("").remove();
+		$("#Nombre").parent().append("<span id='iconoNombre' class='glyphicon glyphicon-ok form-control-feedback'></span>");
 		return true;
    }
    else{
    		$("#iconoNombre").remove();
-		$("#nombre").parent().parent().attr("class","form-group has-error has-feedback");
-		$("#nombre").parent().children("span").text("").remove();
-		$("#nombre").parent().append("<span id='iconoNombre' class='glyphicon glyphicon-remove form-control-feedback'></span>");
+		$("#Nombre").parent().parent().attr("class","form-group has-error has-feedback");
+		$("#Nombre").parent().children("span").text("").remove();
+		$("#Nombre").parent().append("<span id='iconoNombre' class='glyphicon glyphicon-remove form-control-feedback'></span>");
 		return false;
    }
    });
@@ -346,4 +346,40 @@ $("#login").click(function(e){
 			console.log("Error en inicio");
 		}
 	});
+});
+/**************************************************************
+ REGISTRO DE USUARIO
+ ****************************************************************/
+$("#btnRegistro").click(function(e){
+
+	e.preventDefault();
+	//obtencion de valores
+	var username = $("#Nombre").val(), userLastname = $("#Apellido").val(), Nctrl = $("#NCtrl").val(),
+	carrera = $("#Carrera").val(), email = $("#email").val(), semestre = $("#Semestre").val(), contra = $("#popover").val(),
+	contraConfim = $("#passconfirm").val(), genero = $('input:radio[name=Genero]:checked').val();
+	if (semestre == "Otro" ){
+		semestre = $("#txtOtro").val();
+	}
+	//json para envio a php
+	var datosRegistro = {"Nombre": username, "Apellido": userLastname, "Nctrl": Nctrl,
+	"carrera": carrera, "email": email, "semestre": semestre,"pass": contra, "passconfirm": contraConfim,
+	"genero": genero};
+	if(confirm("Se guardaran los datos. ¿Desea continuar?.")){
+		$.ajax({
+			url: "php/insercion.php",
+			method: "POST",
+			data: datosRegistro,
+			beforeSend: function(){console.log("Registrando...");},
+			success: function(dato){
+				console.log("Registrado con exito");
+				
+				alert(dato);
+				document.getElementById("Registro").reset();
+				
+			},
+			error: function(){
+				console.log("Ocurrio un error");
+			}
+		});
+	}
 });

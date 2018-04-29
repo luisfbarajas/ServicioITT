@@ -165,7 +165,7 @@
                 <h5>Instituto Tecnologico de Tijuana</h5>
                 <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
                      C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgo.gif" class="img-responsive img-footer">
+                     <img src="img/galgos.jpg" class="img-responsive img-footer">
             </div>
         </footer>
            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

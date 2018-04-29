@@ -11,7 +11,7 @@ class DatosUsuario{
             mysqli_close($conexion);
      }
      function UsuarioId($email){
-         require "Conexion.php";
+         require "../Conexion.php";
          $Consulta = "SELECT alumno.id, usuario.email from $usuario INNER JOIN $alumno WHERE usuario.id_alumno=alumno.id AND usuario.email='$email'";
          $resultado = mysqli_query($conexion,$Consulta);
          $resultados = mysqli_fetch_array($resultado);

@@ -26,7 +26,7 @@
     <div class="container" >       
           <div class="panel panel-login forma" >
            <div class="panel-body">              
-                <form class="login-form " action="insercion.php" style="display: block;" role="form" name="form" method="POST" id="Registro">
+                <form class="login-form " style="display: block;" role="form" name="form"  id="Registro">
                   <!--NOMBRE-->
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                             <div class="form-group">
@@ -35,7 +35,7 @@
                                  <div class="input-group-addon" >
                                     <span class="glyphicon glyphicon-user" id="Correos"></span>
                                  </div>
-                                 <input type="text" name="Nombre" id="nombre" tabindex="1" class="form-control" placeholder="Nombre" value="">
+                                 <input type="text" name="Nombre" id="Nombre" tabindex="1" class="form-control" placeholder="Nombre" value="">
                                 </div>
                                 <span class="help-block" id="error"></span>                     
                             </div>
@@ -72,24 +72,24 @@
                               <select class="form-control" id="Carrera" tabindex="4" name="Carrera" style="height: 45px;">
                                <option value="Arquitectura">Arquitectura</option>
                                <option value="contador publico">Contador publico</option>
-                               <option value="IAB">Ing. Ambiental</option>
-                               <option value="IBM">Ing. Biomedica</option>
-                               <option value="IBQ">Ing. Bioquimica</option>
-                               <option value="IC">Ing. Civil</option>
-                               <option value="IEM">Ing. Electromecanica</option>
-                               <option value="IET">Ing. Electronica</option>
-                               <option value="IAT">Ing. Aeronautica</option>
-                               <option value="IDI">Ing. en Diseño industrial</option>
-                               <option value="IGE">Ing. Gestion Empresarial</option>
-                               <option value="IIF">Ing. Informatica</option>
-                               <option value="IEL">Ing. en Logistica</option>
-                               <option value="IEN">Ing. en Nanotecnologia</option>
-                               <option value="ISC">Ing. en Sistemas Computacionales</option>
-                               <option value="TIC">Ing. en Tecnologias de la Informacion y Comunicaciones</option>
-                               <option value="IDT">Ing. Industrial</option>
-                               <option value="IQ">Ing. Quimica</option>
-                               <option value="IM">Ing. Mecanica</option>
-                               <option value="LEA">Lic. en Administracion</option>
+                               <option value="Ing. Ambiental">Ing. Ambiental</option>
+                               <option value="Ing. Biomedica">Ing. Biomedica</option>
+                               <option value="Ing. Bioquimica">Ing. Bioquimica</option>
+                               <option value="Ing. Civil">Ing. Civil</option>
+                               <option value="Ing. Electromecanica">Ing. Electromecanica</option>
+                               <option value="Ing. Electronica">Ing. Electronica</option>
+                               <option value="Ing. Aeronautica">Ing. Aeronautica</option>
+                               <option value="Ing. en Diseño industrial">Ing. en Diseño industrial</option>
+                               <option value="Ing. Gestion Empresarial">Ing. Gestion Empresarial</option>
+                               <option value="Ing. Informatica">Ing. Informatica</option>
+                               <option value="Ing. en Logistica">Ing. en Logistica</option>
+                               <option value="Ing. en Nanotecnologia">Ing. en Nanotecnologia</option>
+                               <option value="Ing. en Sistemas Computacionales">Ing. en Sistemas Computacionales</option>
+                               <option value="Ing. en Tecnologias de la Informacion y Comunicaciones">Ing. en Tecnologias de la Informacion y Comunicaciones</option>
+                               <option value="Ing. Industrial">Ing. Industrial</option>
+                               <option value="Ing. Quimica">Ing. Quimica</option>
+                               <option value="Ing. Mecanica">Ing. Mecanica</option>
+                               <option value="Lic. en Administracion">Lic. en Administracion</option>
                               </select>
                             </div>
                             <span class="help-block" id="error"></span> 
@@ -103,7 +103,7 @@
                               <div class="input-group-addon">
                                 <span class="icon-list-numbered icon"></span>
                               </div>
-                                <select class="form-control" id="Semestre" tabindex="5" name="Semestre" style="height: 45px;" onChange="CambioSemestre(this)" >
+                                <select class="form-control" id="Semestre" tabindex="6" name="Semestre" style="height: 45px;" onChange="CambioSemestre(this)" >
                                  <option value="1">1</option>
                                  <option value="2">2</option>
                                  <option value="3">3</option>
@@ -121,6 +121,7 @@
                              </div>
                              <span class="help-block" id="error"></span>     
                             </div>
+                            <!-- ESPECIFICANCION SEMESTRE DISTINTO -->
                              <div id="dOtro" style="display:none;">
                                 <label for="txtOtro">Especifique:</label>
                                 <input type="text" name="txtOtro" id="txtOtro" placeholder="Especifique." class="form-control">
@@ -135,7 +136,9 @@
                              <div class="input-group-addon">
                               <span class="glyphicon glyphicon-envelope" id="Correos"></span>
                              </div>
-                             <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" tabindex="6" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
+                             <input type="email" name="email" id="email" 
+                             class="form-control" placeholder="Correo electrónico" 
+                             tabindex="5" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
                           </div> 
                           <span class="help-block" id="error"></span>     
                          </div>
@@ -150,7 +153,12 @@
                             <div class="input-group-addon">
                               <span class="glyphicon glyphicon-lock" id="Correos"></span>
                             </div>
-                            <input type="password" name="password"  id="popover" data-toggle="popover" data-content=" 1 letra mayuscula 1caracter especial alfanumerica longitud de 8 a 15 caracteres" data-placement="right" tabindex="7" class="form-control" placeholder="Contraseña" title="La contraseña debe contener:" >
+                            <input type="password" name="password"  
+                            id="popover" data-toggle="popover" 
+                            data-content=" 1 letra mayuscula 1caracter 
+                            especial alfanumerica longitud de 8 a 15 caracteres" 
+                            data-placement="right" tabindex="7" class="form-control" 
+                            placeholder="Contraseña" title="La contraseña debe contener:" >
                           </div> 
                           <span class="help-block" id="error"></span>    
                         </div>
@@ -167,10 +175,25 @@
                          </div> 
                         </div>
                        </div>
+                       <!-- Genero -->
+                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="Genero">
+                        <div class="form-group">
+                         <label for="rbtnSexo" class="control-label">Sexo:</label>
+                         <fieldset>        
+                        <label>
+                            <input type="radio" name="Genero" value="H" > Hombre
+                        </label>
+                        <label>
+                            <input type="radio" name="Genero" value="M" > Mujer
+                        </label>
+                        
+                    </fieldset>
+                        </div>
+                       </div>
                    <!--botones--> 
                   <div class="form-group">                  
                       <div class="col-sm-6 col-sm-offset-3">
-                        <input type="button" name="login" id="Entrar" tabindex="9" class="form-control btn btn-success" value="Registrar" onclick="pregunta();" >
+                        <input type="submit" name="login" id="btnRegistro" tabindex="0" class="form-control btn btn-success" value="Registrar"  >
                       </div>
                   </div>
                 </form>         
@@ -230,31 +253,26 @@
 <!--FOOTER -->
     <footer class="app-footer">
             <div class="app-texto container-fluid">
-                <h4>Instituto nacional de Mexico</h4>
+                <h4>Instituto Nacional de Mexico</h4>
                 <h5>Instituto Tecnologico de Tijuana</h5>
                 <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
                      C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgo.gif">
+                     <img src="img/galgos.jpg">
             </div>
           
     </footer>
 <!--SCRIPTS -->
 <script>
-  //FUNCION DE CONFIRMACION DE ACCION
-    function pregunta(){
-        if(confirm('Se guardaran los datos. ¿Desea continuar?.')){
-                document.form.submit();
-        }else{
-              //sin accion
-        }
-}
       //FUNCION PARA AVILITAR CAMPO DE OTRO SEMESTRE 
        function CambioSemestre(sel) {
           var elemento=document.getElementById("dOtro");
+          var genero = document.getElementById("Genero");
              if (sel.value == "Otro") {
                 divT = document.getElementById("dOtro");
                  divT.style.display = "block";
                 document.getElementById("txtOtro").focus();
+                genero.classList.remove('col-lg-4');
+                genero.classList.add('col-lg-5');
                  
             } else {
 
@@ -263,10 +281,11 @@
 
                 divT = document.getElementById("dOtro");
                 divT.style.display = "none";
+                genero.classList.remove('col-lg-5');
+                genero.classList.add('col-lg-4');
                 
             }
         }
-        
 </script>
       
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
