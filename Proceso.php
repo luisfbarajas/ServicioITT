@@ -35,28 +35,24 @@
 
 
 
-  <header class="masthead text-center text-white d-flex border-0 proceso" style="background-image: url('img/proceso.jpg')" >
+   <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/fondo-itt.jpg')" >
       <div class="container my-auto">
-   
-          <div class="Proceso-intro" >
-         
-            <h1 class="text-uppercase">
-              <img src="img/logo.png"><br/>
-              <p> Instituto Nacional de Mexico.</p><br/>
-            </h1>
-            <h3>Instituto Tecnologico de Tijuana</h3>
-            <hr>
+        <div class="row" >
+          <div class="col-md-6 col-sm-6 col-lg-6">
+          <img src="img/logoteca.png" alt="Logo TecNac" class="img-responsive logotecna" >
           </div>
-          <div class="Proceso-intro" >
-            <p class="proceso-texto">Proceso para realizar tu examen de ingles .</p>
-          
+          <div class="col-md-6 col-sm-6 col-lg-6" >       
+              <img src="img/logo.png" alt="logoitt" class="img-responsive logoitt" ><br/>
           </div>
         </div>
-      </div>
+        <h3>Instituto Tecnologico de Tijuana</h3>
+        <hr>                
+        <b> <h3 class="Fecha-Titulo">Proceso para realizar tu examen de ingles.</h3></b>
     </header>
 
+
   <section class="indicaciones">
-    	<div class="titulo">Proceso.</div>
+    	
     	<p class="proceso-texto">Para poder realizar tu examen de ingles simplemente hay que seguir estos sencillos pasos.</p>
     </section>
     <section class="Paso1">

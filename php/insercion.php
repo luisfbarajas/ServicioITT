@@ -37,9 +37,9 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 	$ExNctrl ='/^[0-9]{8,}$/';
 	//VERIFICACION DE CAMPOS VACIOS 
 	if($Nombre=="" || $Nombre==null || $Apellido==""||$Apellido == null || $NCtrl=="" || $NCtrl==null ||$Carrera=="" || $Carrera == null
-	||$pass=="" || $pass==null ||$correo == ""|| $correo == null|| $confirmacionpass == "" || $confirmacionpass == null|| $Semetre=="" || $Semetre ==null){
-		echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');
-						</script>";
+	||$pass=="" || $pass==null ||$correo == ""|| $correo == null|| $confirmacionpass == "" || $confirmacionpass == null|| $Semetre=="" || $Semetre ==null
+	){
+		echo "4";
 	}
 	//verificacion de estructura de correo y existencia en DB
 	else if(preg_match($ExCorreo,$correo)&&$funcion->VerificacionEmail($correo)){
@@ -57,19 +57,18 @@ $passHash = password_hash($pass, PASSWORD_BCRYPT);
 						$insercion= mysqli_query($conexion,$DatosUsuario);
 						//CIERRE DE CONEXION
 						mysqli_close($conexion);
-						echo "<script>alert('Usuario registrado correctamente'); </script>";
+						echo "0";
 					}
 					else{
-						echo "<script>alert('Contraseña debil/No coinciden.');history.go(-1);</script>";
+						echo "1";
 					}
 				}
 				else{
-			 	echo "<script>alert('Solo se aceptan numeros/Numero de control ya registrado.'); history.go(-1);</script>";
+			 	echo "2";
 				 }	
 	}
 	else{
-		echo "<script type=\"text/javascript\">alert('Correo invalido/Ya registrado.');
-						history.go(-1);</script>";
+		echo "3";
 	}
 
 ?>

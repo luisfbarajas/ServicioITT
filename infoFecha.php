@@ -22,26 +22,23 @@
        </div>
        <br/>
        <br/> 
-       <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/infoFechas.jpg'); width: 100%;" >
-           <div class="container my-auto">
-              <div class="row">         
-                 <h1 class="text-uppercase">
-                 <img src="img/logo.png" alt="logo"><br/>
-                 <p> Instituto Nacional de Mexico.</p><br/>
-                 </h1>
-                 <h3>Instituto Tecnologico de Tijuana</h3>
-                 <hr>
-   
-                 <div >
-                    <b><p class="proceso-texto">Fechas de examen.</p></b>
-            
-                 </div>
-              </div>
-           </div>
-       </header>
+       <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/fondo-itt.jpg')" >
+      <div class="container my-auto">
+        <div class="row" >
+          <div class="col-md-6 col-sm-6 col-lg-6">
+          <img src="img/logoteca.png" alt="Logo TecNac" class="img-responsive logotecna" >
+          </div>
+          <div class="col-md-6 col-sm-6 col-lg-6" >       
+              <img src="img/logo.png" alt="logoitt" class="img-responsive logoitt" ><br/>
+          </div>
+        </div>
+        <h3>Instituto Tecnologico de Tijuana</h3>
+        <hr>                
+        <b> <h3 class="Fecha-Titulo">Fechas de examen</h3></b>
+    </header>
 
     <div class="container">
-     <b> <h3 class="Fecha-Titulo">Fechas de examen</h3></b><br>
+     <br>
       <p class="Fecha-Texto">Las Fechas de los examenes de ingles estan programadas en la fecha y lugar especificados. En cada fecha se cuenta con diferentes horarios en los cuales
        se puede presentar el examen para que se tenga la flexibilidad necesaria en cuanto horario se refiere.
       A continuacion se muestran las fechas de examenes disponibles en el semestre en curso.</p><br>      

@@ -25,11 +25,13 @@
          <br>
     <div class="container" >       
           <div class="panel panel-login forma" >
-           <div class="panel-body">              
+           <div class="panel-body">   
+                  <!-- div para mensaje de registro -->   
+             <div id="divmsj" ></div>        
                 <form class="login-form " style="display: block;" role="form" name="form"  id="Registro">
                   <!--NOMBRE-->
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                            <div class="form-group">
+                            <div class="form-group" id="divNombre">
                               <label for="nombre" class="control-label">Nombre(s):</label>
                                 <div class="input-group">
                                  <div class="input-group-addon" >
@@ -42,7 +44,7 @@
                   </div>
                     <!--APELLIDO-->
                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <div class="form-group">
+                        <div class="form-group" id="divApellido">
                          <label for="Apellido" class="control-label">Apellidos:</label>                                       
                          <input type="text" name="Apellido" id="Apellido" tabindex="2" class="form-control" placeholder="Apellido">
                         </div>
@@ -50,7 +52,7 @@
                      </div>
                         <!--NCTRL-->    
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">            
-                          <div class="form-group">  
+                          <div class="form-group" id="divNctrl">  
                            <label for="NCtrl" class="control-label">Número  de control:</label> 
                            <div class="input-group">
                              <div class="input-group-addon">
@@ -63,7 +65,7 @@
                       </div>
                        <!--CARRERA-->
                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                          <div class="form-group">
+                          <div class="form-group" id="divCarrera">
                             <label for="Carrera" class="control-label">Carrera:</label>
                             <div class="input-group">
                               <div class="input-group-addon">
@@ -97,7 +99,7 @@
                    </div>
                     <!--SEMESTRE-->                    
                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 intento" id="dSemestre">
-                            <div class="form-group" >
+                            <div class="form-group" id="divSemestre" >
                              <label for="Semestre" class="control-label">Semestre:</label>
                              <div class="input-group">
                               <div class="input-group-addon">
@@ -128,25 +130,23 @@
                            </div>
                    </div>
                        <!--CORREO ELECTRONICO-->
-                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <div class="form-group">
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">         
+                         <div class="form-group" id="divEmail">
                          <label for="email">Correo electrónico :</label>
-                         <div class="form-group">
                           <div class="input-group">
                              <div class="input-group-addon">
                               <span class="glyphicon glyphicon-envelope" id="Correos"></span>
                              </div>
                              <input type="email" name="email" id="email" 
                              class="form-control" placeholder="Correo electrónico" 
-                             tabindex="5" data-placement="right" data-toggle="popover" data-content="Es necesario Correo institucional.">
+                             tabindex="5" >
                           </div> 
-                          <span class="help-block" id="error"></span>     
-                         </div>
+                          <span class="help-block" id="error"></span>                            
                         </div>
                     </div>              
                     <!--CONTRASEñA-->
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                        <div class="form-group">
+                        <div class="form-group" id="divPass">
                            
                           <label for="password"> Contraseña:</label>
                           <div class="input-group">
@@ -165,7 +165,7 @@
                      </div>
                       <!--CONFIRMACION-->
                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <div class="form-group">
+                        <div class="form-group" id="divPassC">
                          <label for="passconfirm" class="control-label">Confirme contraseña:</label>
                          <div class="input-group">
                           <div class="input-group-addon">
@@ -177,7 +177,7 @@
                        </div>
                        <!-- Genero -->
                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="Genero">
-                        <div class="form-group">
+                        <div class="form-group" >
                          <label for="rbtnSexo" class="control-label">Sexo:</label>
                          <fieldset>        
                         <label>

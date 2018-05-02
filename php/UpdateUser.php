@@ -30,4 +30,3 @@ $Consulta = mysqli_query($conexion,$update);
 mysqli_close($conexion);
 echo "Datos actualizados."
 
-?>

@@ -67,7 +67,7 @@ Validacion de correo institucional
 });
 
 $('#email').keyup(function(){
-   var nameregex2 = /^[a-zA-Z(0-9)?]{4,}((\.)?[a-zA-Z(0-9)?]{3,})?@tectijuana\.edu\.mx$/;
+   var nameregex2 = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
 
    if ($('#email').val().match(nameregex2)) {
    	$("#iconoEmail").remove();
@@ -360,6 +360,9 @@ $("#btnRegistro").click(function(e){
 	if (semestre == "Otro" ){
 		semestre = $("#txtOtro").val();
 	}
+	if(genero!="H"|| genero !="M"){
+		genero=null;
+	}
 	//json para envio a php
 	var datosRegistro = {"Nombre": username, "Apellido": userLastname, "Nctrl": Nctrl,
 	"carrera": carrera, "email": email, "semestre": semestre,"pass": contra, "passconfirm": contraConfim,
@@ -371,15 +374,89 @@ $("#btnRegistro").click(function(e){
 			data: datosRegistro,
 			beforeSend: function(){console.log("Registrando...");},
 			success: function(dato){
-				console.log("Registrado con exito");
-				
-				alert(dato);
-				document.getElementById("Registro").reset();
-				
+				//valores retornados 
+				//0=exito
+				//1=Contraseña debil/No coinciden.
+				//2=Solo se aceptan numeros/Numero de control ya registrado.
+				//3=Correo invalido/Ya registrado.
+				//4=Todos los campos son necesarios.
+				if(dato=="0"){
+					console.log("Registrado con exito");
+					//Quitar iconos de validacion
+					$("#iconotexto").remove();
+					$("#iconoNombre").remove();
+					$("#iconoApellido").remove();
+					$("#iconoEmail").remove();
+					$("#iconoNControl").remove();
+					$("#iconoSemestre").remove();
+					$("#iconoSemestreOtro").remove();
+					$("#iconoCarrera").remove();	
+					$("#iconoPass").remove();
+					//quitar clases de validacion
+					$("#divNombre").removeClass("has-success has-feedback has-error");
+					$("#divApellido").removeClass("has-success has-feedback has-error");
+					$("#divCarrera").removeClass("has-success has-feedback has-error");
+					$("#divEmail").removeClass("has-success has-feedback has-error");
+					$("#divNctrl").removeClass("has-success has-feedback has-error");
+					$("#divSemestre").removeClass("has-success has-feedback has-error");
+					$("#divPass").removeClass("has-success has-feedback has-error");	
+					$("#divPassC").removeClass("has-success has-feedback has-error");
+					$("#dOtro").removeClass("has-success has-feedback has-error");
+					//mensaje de registro
+					$("#divmsj").show("slow").text("Usuario registrado").addClass("alert alert-success alert-dismissible msjAlerta").attr("role","alert");
+					//reinicio de formulario
+					document.getElementById("Registro").reset();
+				}
+				else{
+					if(dato=="1"){
+						//mensaje de registro
+					$("#divmsj").show("slow").text("Contraseña debil/No coinciden.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
+					}
+					if(dato=="2"){
+						//mensaje de registro
+					$("#divmsj").show("slow").text("Solo se aceptan numeros/Numero de control ya registrado.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
+					}
+					if(dato=="3"){
+						//mensaje de registro
+					$("#divmsj").show("slow").text("Correo invalido/Ya registrado.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
+					}
+					if(dato=="4"){
+						//mensaje de registro
+					$("#divmsj").show("slow").text("Todos los campos son necesarios.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
+					}
+				}
 			},
 			error: function(){
 				console.log("Ocurrio un error");
 			}
 		});
 	}
+});
+/*******************************************************************
+AGREGAR NUEVA FECHA
+********************************************************************/
+$("#btnAddFecha").click(function(e){
+	e.preventDefault();
+	var accion=1, fecha= $("#txtAddFecha").val(),hora = $("#txtAddHr").val(), unidad = $("#txtAddUnidad").val(),
+	salon = $("#txtAddSalon").val(), cupo = $("#txtAddCupo").val();
+
+	var datosAddFecha = {"accion": accion,"fecha":fecha,"hora": hora, "unidad": unidad, "salon": salon
+	,"cupo": cupo};
+	
+	console.log(datosAddFecha);
+	$.ajax({
+		url: "php/Dates.php",
+		method: "POST",
+		data: datosAddFecha,
+		beforeSend: function(){console.log("Enviando...");},
+		success: function(dato){
+			console.log("Enviado...");
+			alert("Fecha agregada");
+			$("#tablafechas").load(" #tablafechas");
+		},
+		error: function(){
+			console.log("Error...");
+		}
+	});
+
 });

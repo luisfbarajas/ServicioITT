@@ -172,6 +172,9 @@ font-size: 5.5em;
 
 
 }
+#divmsj{
+	display: none;
+}
 .indicacion-fecha{
 	letter-spacing: 2px;
 text-align: justify;
@@ -221,6 +224,10 @@ text-align: justify;
 	 display: flex;
   justify-content: center;
  
+}
+.msjAlerta{
+	display:block;
+	text-align: center;
 }
 .alerta{
 	color:#FF0000;
