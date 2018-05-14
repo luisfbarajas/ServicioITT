@@ -62,6 +62,9 @@ font-family: cursive;
 	text-shadow: all;
 
 }
+.input-modal{
+	width: 166px !important;
+}
 #cerrar{
 	margin-right: 1rem;
 }

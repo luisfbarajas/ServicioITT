@@ -123,10 +123,10 @@ include_once "php/getDates.php";
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title" id="myModalLabel">Esto es un modal</h4>
+                        <h3 class="modal-title" id="myModalLabel">Editar fecha. </h3>
                     </div>
                     <div class="modal-body">
-                        Texto del modal
+                      Texto del modal
                     </div>
                 </div>
             </div>
@@ -144,6 +144,13 @@ include_once "php/getDates.php";
             </div>
           
     </footer>
+    <script>
+    function abrir(url,url2){
+        // location.href=url;
+        // location.href=url2;
+        alert("");
+    }
+    </script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/jquery-1.11.2.min.js"><script>

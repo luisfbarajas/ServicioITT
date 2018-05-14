@@ -18,7 +18,7 @@
             <i class="glyphicon glyphicon-calendar"></i>
             Fechas <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Administrar</a></li>
+            <li><a href="dateAdd.php">Administrar</a></li>
             <li><a href="#">....</a></li>
           </ul>
         </li>

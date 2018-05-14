@@ -25,8 +25,8 @@ while($resultados=mysqli_fetch_array($resultado)){
     <td>".$resultados["SALON"]."</td>
     <td>".$resultados["UNIDAD"]."</td>
     <td>".$resultados["cupo"]."</td>
-    <td><a href='#?\$id=".$resultados["id"]."' data-toggle='modal' data-target='#miModal' ><i class='glyphicon glyphicon-pencil pr' style='color:#82E0AA;'></i></a>
-        <a href='#' ><i class='glyphicon glyphicon-trash' style='color:#C70039;'></i></a>
+    <td><a href='dateAdd.php?id=".$resultados['id']."' class='modalopen' ><i class='glyphicon glyphicon-pencil pr' style='color:#82E0AA;'></i></a>
+        <a href='?id=".$resultados["id"]."'><i class='glyphicon glyphicon-trash' style='color:#C70039;'></i></a>
         </td>
   
  </tr>";

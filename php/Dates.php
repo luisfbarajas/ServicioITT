@@ -24,7 +24,7 @@ if ($funcion == "3"){
 }
 class adminFechas{
     function AgregarFecha($conexion,$tabla,$fecha,$hora,$unidad,$salon,$cupo){
-       $sql="INSERT INTO $tabla (FECHA,HORARIO,SALON,UNIDAD,cupo) VALUES('$fecha','$hora','$unidad','$salon','$cupo')";
+       $sql="INSERT INTO $tabla (FECHA,HORARIO,SALON,UNIDAD,cupo) VALUES('$fecha','$hora','$salon','$unidad','$cupo')";
        $query = mysqli_query($conexion,$sql);     
     }
     function EditarFecha($conexion){

@@ -460,3 +460,7 @@ $("#btnAddFecha").click(function(e){
 	});
 
 });
+$("#abrir").click(function(e){
+e.preventDefault();
+$("#miModal").modal();
+});
