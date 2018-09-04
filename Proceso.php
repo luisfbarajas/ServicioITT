@@ -25,7 +25,7 @@
 
 
     </head>
-    <body>
+    <body style="background-image: url('img/fondo-itt.jpg')">
        
          <div class="header">
        <?php include 'menu.php'; ?>
@@ -35,20 +35,9 @@
 
 
 
-   <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/fondo-itt.jpg')" >
-      <div class="container my-auto">
-        <div class="row" >
-          <div class="col-md-6 col-sm-6 col-lg-6">
-          <img src="img/logoteca.png" alt="Logo TecNac" class="img-responsive logotecna" >
-          </div>
-          <div class="col-md-6 col-sm-6 col-lg-6" >       
-              <img src="img/logo.png" alt="logoitt" class="img-responsive logoitt" ><br/>
-          </div>
-        </div>
-        <h3>Instituto Tecnologico de Tijuana</h3>
-        <hr>                
-        <b> <h3 class="Fecha-Titulo">Proceso para realizar tu examen de ingles.</h3></b>
-    </header>
+          
+        <b> <h2 class="Fecha-Titulo pt">Proceso para realizar tu examen de ingles.</h2></b>
+
 
 
   <section class="indicaciones">

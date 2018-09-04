@@ -12,8 +12,10 @@ body{
 footer{
 	margin-top:  2%;
     height: 150px;
-    bottom: 0;
-    width: 100%;
+    bottom: 100px;
+	width: 100%;
+	position: fixed;
+	
 }
 .icon-bar{
 	color: green;
@@ -131,9 +133,10 @@ bottom:o;
 }
 .proceso-texto{
 	letter-spacing: 2px;
-text-align: center;
-		font-size: 1.5em;
+	text-align: center;
+	font-size: 1.25em;
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
+	padding-bottom: 3%;
 }
 .numero{
 	color: #0080d6;
@@ -314,6 +317,9 @@ PANTALLA MEDIA
 		width: 50%;
 		height: 60%;
 		margin: 30px auto auto auto;
+	}
+	#brand-menu{
+		font-size: 1em;
 	}
 }
 @media all and (min-width:780px){

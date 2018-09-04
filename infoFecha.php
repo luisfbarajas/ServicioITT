@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body>
+    <body style="background-image: url('img/fondo-itt.jpg')">
        <?php
           include ("Conexion.php");                
          ?>
@@ -22,20 +22,9 @@
        </div>
        <br/>
        <br/> 
-       <header class="masthead text-center text-white d-flex border-0 header" style="background-image: url('img/fondo-itt.jpg')" >
-      <div class="container my-auto">
-        <div class="row" >
-          <div class="col-md-6 col-sm-6 col-lg-6">
-          <img src="img/logoteca.png" alt="Logo TecNac" class="img-responsive logotecna" >
-          </div>
-          <div class="col-md-6 col-sm-6 col-lg-6" >       
-              <img src="img/logo.png" alt="logoitt" class="img-responsive logoitt" ><br/>
-          </div>
-        </div>
-        <h3>Instituto Tecnologico de Tijuana</h3>
-        <hr>                
+
         <b> <h3 class="Fecha-Titulo">Fechas de examen</h3></b>
-    </header>
+
 
     <div class="container">
      <br>

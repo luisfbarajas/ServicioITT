@@ -22,6 +22,7 @@ include_once "php/getDates.php";
     <?php include 'menuAdmin.php'; ?>
     </div>
    <div class="container">
+        <?php if(!$_GET || $_GET['accion']==1):  ?>
         <div class="row">
             <div class="col-md-6 col-lg-6 col-sm-6">
                 <h3 class="Fecha-Titulo">Agregar fecha.</h3>
@@ -108,6 +109,103 @@ include_once "php/getDates.php";
                    
                 </form>     
             </div>
+            <?php endif  ?>
+            <?php if($_GET && $_GET['accion']==2):  ?>
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <h3 class="Fecha-Titulo">Editar fecha.</h3>
+                <p>
+                Lleve a cabo la edicion de los datos que necesite 
+                <span class="text-danger"><b>No olvide guardar antes de salir.</b></span> 
+                </p>
+                <form>
+                    <div class="">
+                        <!-- FECHA -->
+                        <div class="col-md-6 col-lg-6 pt">
+                            <label for="txtEditFecha">Fecha:</label>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </div>
+                                    <input type="date" class="form-control" name="txtEditFecha" id="txtEditFecha"
+                                    value="<?php echo $vuelve['FECHA']; ?>">
+                                </div>
+                                <span class="help-block"></span>
+                            </div>      
+                        </div>
+                        <!-- HORA -->
+                        <div class="col-md-6 col-lg-6 pt">
+                            <label for="txtEditHr" class="control-label">Hora:</label>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-time"></i>
+                                    </div>
+                                    <input type="time" class="form-control" name="txtEditHr" id="txtEditHr"
+                                    value="<?php echo $vuelve['HORARIO']; ?>">
+                                </div>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <!-- UNIDAD -->
+                        <div class="col-md-6 col-lg-6 pt">
+                            <label for="txtEditUnidad" class="control-label">Unidad:</label>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-place"></i>
+                                </div>
+                            <select name="txtEditUnidad" id="txtEditUnidad" class="form-control" >
+                            <option value="<?php echo $vuelve['UNIDAD']; ?>"><?php echo $vuelve['UNIDAD']; ?></option>
+                            <?php if($vuelve['UNIDAD']=='Tomas aquino'):?>
+                                
+                                <option value="Otay">Otay</option>
+                                <?php endif ?>
+                                <?php if($vuelve['UNIDAD']=='Otay'):?>
+                                <option value="Tomas aquino">Tomas Aquino</option>
+                                <?php endif ?>
+                            </select>
+                                </div>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <!-- Salon -->
+                        <div class="col-md-6 col-lg-6 pt">
+                            <label for="txtEditSalon" class="control-label">Salon:</label>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="glyphicon glyphicon-"></i>
+                                </div>
+                                <input type="text" class="form-control" name="txtEditSalon" id="txtEditSalon" value="<?php echo $vuelve['SALON']; ?>">
+                                </div>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 pt">
+                            <label for="txtEditCupo" class="control-label">Cupo:</label>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-list"></i>
+                                    </div>
+                                    <input type="number" class="form-control" name="txtEditCupo" id="txtEditCupo"
+                                    value="<?php echo $vuelve['cupo']; ?>">
+                                </div>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 " >
+                    <button type="submit" name="btnEditFecha" id="btnEditFecha" class="btn btn-success btn-md boton-add mt">
+                    <i class="glyphicon glyphicon-pencil"></i>&nbsp;  Editar
+                    </button>
+                    </div>
+                   
+                   
+                </form>     
+            </div>
+            <?php endif  ?>
             <div class="" >
                 <h3 class="boton pt">Fechas actuales.</h3>
                 <div class="col-md-6 col-lg-6 col-sm-6" id="tablafechas">
@@ -115,23 +213,7 @@ include_once "php/getDates.php";
                 </div>
             </div>
         </div>  
-        <!-- VENTANA MODAL PARA EDICION DE DATOS -->
-        <div class="modal fade" id="miModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h3 class="modal-title" id="myModalLabel">Editar fecha. </h3>
-                    </div>
-                    <div class="modal-body">
-                      Texto del modal
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FIN MODAL -->
+
     </div>
     <!--FOOTER -->
     <footer class="app-footer">

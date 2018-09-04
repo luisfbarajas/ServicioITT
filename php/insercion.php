@@ -16,15 +16,7 @@ $correo=$_POST['email'];
 $confirmacionpass=$_POST['passconfirm'];
 $genero = $_POST['genero'];
 $Semetre = $_POST['semestre'];
-// $Nombre= "Alonso";
-// $Apellido="Ortega";
-// $NCtrl=12310365;
-// $Carrera="isc";
-// $pass="Alonso123@";
-// $correo="alonso.ortega@tectijuana.edu.mx";
-// $confirmacionpass="Alonso123@";
-// $genero ="M" ;
-// $Semetre = 2;
+
 
 //encriptacion de Contraseña
 $passHash = password_hash($pass, PASSWORD_BCRYPT);

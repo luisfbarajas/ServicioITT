@@ -15,6 +15,7 @@
 	$alumno = "alumno";//tabla de datos del alumno 	   
 	$usuario="usuario";//tabla de usuarios regristrados 
 	$Fechas="fechas_examen"; //tabla de fechas 
+	$RegistroExamen = "r_examen"; //Registro de Fecha de examen
 	
 	//cadena de conexion
 	$conexion = mysqli_connect($host,$usuariodb,$clavedb,$basededatos);

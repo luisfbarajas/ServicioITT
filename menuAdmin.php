@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="mainNav" name="mainNav">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php">Departamento de ingles</a>
+      <a class="navbar-brand" href="home.php" id="brand-menu">Coordinacion de lenguas extranjeras.</a>
       <button class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border-color: green; ">
 
 <span class="icon-bar" style="background-color: green;"></span>

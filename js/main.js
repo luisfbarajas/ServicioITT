@@ -217,7 +217,7 @@ VALIDACION DE CARRERA
 	 ****************************************************/
 	$("#fechaP").focusout(function(){
 		var RegexFechaP = /^2(\d{3})(\/|-)(0[1-9]|1[0-2])(\/|-)([0-2][0-9]|3[0-1])T([0-1][0-9]|2[0-3])(:)([0-5][0-9])$/;
-		console.log($("#fechaP").val());
+
 		if($("#fechaP").val().match(RegexFechaP)){
 			$("#iconoFechaP").remove();
 			$("#fechaP").parent().parent().attr("class","form-group has-success has-feedback");
@@ -283,24 +283,7 @@ VALIDACION DE CARRERA
 	});
 	 //evita que se escriba en textbox
 	 $("#Fechas").keypress(function (e) { return false; });
-	/**************************************************
-	 Envio de datos por ajax en registro de fecha
-	 ****************************************************/
-	$("#btnRegistro").click(function(e){
-		e.preventDefault();
-		var Folio= $("#FolioP").val(),FechaHr=$("#fechaP").val(),Userid = $("#Userid").text();
-		var datos= {"folio": Folio, "FechaHr": FechaHr,"Userid": Userid};
-		$.ajax({
-			url: "php/RegistroExamen.php",
-			method: "POST",
-			data: datos,
-			beforeSend:function(){console.log("Enviando...");},
-			success: function(dato){console.log( dato);},
-			error: function(){
-				console.log("Error en envio");
-			}
-		});
-	});
+
 		/**************************************************
 	Actualizacion de datos
 	 ****************************************************/
@@ -464,3 +447,63 @@ $("#abrir").click(function(e){
 e.preventDefault();
 $("#miModal").modal();
 });
+/***********************
+ * EDICION DE FECHAS 
+ * 
+ **********************/
+$("#btnEditFecha").click(function(e){
+e.preventDefault();
+var id = getParameterByName("id"), fecha=$("#txtEditFecha").val(),Hora = $("#txtEditHr").val(),
+ Unidad = $("#txtEditUnidad").val(), Salon = $("#txtEditSalon").val(), cupo = $("#txtEditCupo").val();
+ var datos = {
+	"accion": 2,
+	"id": id,
+	"fecha": fecha,
+	"hora": Hora,
+	"unidad": Unidad,
+	"salon" : Salon,
+	"cupo": cupo
+ };
+$.ajax({
+	url: "php/Dates.php",
+	method: "POST",
+	data: datos,
+	beforeSend: function(){console.log("Enviando...");},
+	success: function(dato){
+		console.log("Excito...");
+		alert("Fecha Editada");
+		$("#tablafechas").load(" #tablafechas");
+		//regresa a la opcion de agregar
+		window.location.assign(window.location.href.replace(window.location.search,''));
+	},
+	error: function(){
+		console.log("Error...");
+	}
+});
+});
+//obtiene valor del id en el url
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+/***********************
+ *  FIN EDICION DE FECHAS 
+ * 
+ **********************/
+ /*******BORRAR FECHA****************/
+//  $("#lkEliminar").on('click',function(e){
+// e.preventDefault();
+// var id= getParameterByName("id");
+// console.log(id);
+
+//  });
+
+function pregunta(e){
+
+
+}
+
+
+ /********************************* */
