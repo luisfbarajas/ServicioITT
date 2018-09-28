@@ -14,8 +14,11 @@ footer{
     height: 150px;
     bottom: 100px;
 	width: 100%;
-	position: fixed;
+
 	
+}
+.qr{
+	width: 15rem;
 }
 .icon-bar{
 	color: green;

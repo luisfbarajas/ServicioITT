@@ -10,7 +10,7 @@ $FechaPago = $_POST['FechaPago'];
 
 $Query = "INSERT INTO $RegistroExamen (ID_FECHAS,ID_ALUMNO,HORA,FechaPago,FolioPago) VALUES (11,$Id,'8:00AM','$FechaPago','$FolioP')";
 
-$execute = mysqli_query($conexion,$Query);
+$execute = mysqli_query($conexion, $Query);
 
 mysqli_close($conexion);
 

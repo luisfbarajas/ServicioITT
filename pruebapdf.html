@@ -31,33 +31,83 @@
         .contenedor {
             margin: 0 2%;
         }
+
+        .gridContainer {
+            display: grid;
+            grid-template-columns: auto;
+            padding: 10px;
+           
+        }
+
+        .grap {
+
+            display: grid;
+            grid-column-gap: 50px;
+            grid-template-columns: 1% auto;
+            padding: 10px;
+
+        }
+
+        .row {
+            display: grid;
+            grid-row-gap: 100%;
+            grid-template-columns: 50% 50%;
+          
+        }
     </style>
-    <div>
-        <h1 class="Titulo">Instituto Tecnologico de Tijuana</h1>
-        <h3 class="Titulo">Coordicación de lenguas extranjeras.</h3>
-        <hr>
-        <img src="img/logo.png" alt="logo" class="imagen">
-        <div>
-            <h4>Comprobante de inscripción</h4>
-        </div>
-        <div class="Datos-Persona contenedor">
+    <div class="gridContainer">
+        <div class="grap">
+            <img src="img/logo.png" alt="logo" class="imagen">
             <div>
-                <strong><label>Nombre: </label> </strong>
-                <p>Luis Francisco Barajas</p>
+                <h1 class="Titulo">Instituto Tecnologico de Tijuana</h1>
+                <h3 class="Titulo">Coordicación de lenguas extranjeras.</h3>
             </div>
-            <strong><label>Carrera: </label></strong></strong>
-            <p>Ing. en Sistemas Computacionales</p>
-            <strong><label>Semestre</label></strong>
-            <p>12</p>
-            <strong><label>Folío de pago: </label></strong>
-            <p>123456789</p>
-            <strong><label>Fecha de examen:</label></strong>
-            <p>10/10/2018</p>
-            <strong><label>Hora:</label></strong>
-            <p>10:30AM</p>
+
+
+
+
 
         </div>
-        <div>
+        <hr>
+
+
+        <div class="gridContainer">
+            <div>
+                <h4>Comprobante de inscripción</h4>
+            </div>
+            <div class="Datos-Persona contenedor">
+                <div class="row">
+                    <div>
+                        <p> <strong><label>Nombre: </label> </strong>Luis Francisco Barajas</p>
+                    </div>
+                    <div>
+                            
+                            <p><strong><label>Carrera: </label></strong></strong>Ing. en Sistemas Computacionales</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <p> <strong><label>Semestre: </label> </strong>12</p>
+                    </div>
+                    <div>
+                            
+                            <p><strong><label>Folío de pago: </label></strong></strong>123456789</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <p> <strong><label>Fecha de examen: </label> </strong>12/12/2018</p>
+                    </div>
+                    <div>
+                            
+                            <p><strong><label>Hora: </label></strong></strong>10:30AM</p>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+            </div>
+
             <h4>Comprobante QR</h4>
             <div>
                 <img src='php//temp/test.png' alt="Tec" class="qr">

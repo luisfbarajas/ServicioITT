@@ -1,6 +1,7 @@
 <?php
 
-class qrgenerator{
+class qrgenerator
+{
     //propiedades
     private $Id;
     private $Nombre;
@@ -13,7 +14,8 @@ class qrgenerator{
     private $Hr;
 
         //constructor
-    public function __construct($Id,$Nombre,$Semestre,$Apellidos,$Carrera,$F_Examen,$FolioPago,$SalonExamen,$Hr){
+    public function __construct($Id, $Nombre, $Semestre, $Apellidos, $Carrera, $F_Examen, $FolioPago, $SalonExamen, $Hr)
+    {
         $this->Id = $Id;
         $this->Nombre = $Nombre;
         $this->Apellidos = $Apellidos;
@@ -24,7 +26,8 @@ class qrgenerator{
         $this->SalonExamen = $SalonExamen;
         $this->Hr = $Hr;
     }
-    public function generate(){
+    public function generate()
+    {
         include_once '../libs/phpqrcode/qrlib.php';
 
         //Declaramos una carpeta temporal para guardar la imagenes generadas
@@ -35,7 +38,7 @@ class qrgenerator{
             mkdir($dir);
 
             //Declaramos la ruta y nombre del archivo a generar
-        $filename = $dir.'test.png';
+        $filename = $dir . 'test.png';
 
             //Parametros de Condiguración
 
@@ -48,32 +51,33 @@ class qrgenerator{
         QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
 
             //Mostramos la imagen generada
-        return '<img src="'.$dir.basename($filename).'" /><hr/>';  
+        return '<img src="' . $dir . basename($filename) . '" /><hr/>';
     }
-    public function DeleteQrFile( $dir){
-         $count = 0;
-        $dir = rtrim($dir, "/\\"). "/";
+    public function DeleteQrFile($dir)
+    {
+        $count = 0;
+        $dir = rtrim($dir, "/\\") . "/";
 
-         $list = dir($dir);
-        
-         while(($file = $list->read()) !== false) { 
-             if($file === "." || $file === "..") continue;
-             if(is_file($dir . $file)){
-                 unlink($dir . $file);
-                 $count++;
-             } elseif (is_dir($dir . $file)){
-                 $count += DeleteQrFile($dir . $file);
-             }
-         }
-         rmdir($dir);
-        return $count;
-    
+        $list = dir($dir);
+
+        while (($file = $list->read()) !== false) {
+            if ($file === "." || $file === "..") continue;
+            if (is_file($dir . $file)) {
+                unlink($dir . $file);
+                $count++;
+            } elseif (is_dir($dir . $file)) {
+                $count += DeleteQrFile($dir . $file);
+            }
         }
+        rmdir($dir);
+        return $count;
+
+    }
 
 }
 
-$funcion=new qrGenerator(6,'luis',11,'barajas','isc','10/10/2018',1236544789,'lab-idiomas','13:00');
- $dir = 'temp';
+$funcion = new qrGenerator(6, 'luis', 11, 'barajas', 'isc', '10/10/2018', 1236544789, 'lab-idiomas', '13:00');
+$dir = 'temp';
 // $qr = $funcion->DeleteQrFile($dir);
 $qr = $funcion->generate();
 echo $qr;
