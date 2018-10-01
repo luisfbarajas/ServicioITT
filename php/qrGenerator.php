@@ -42,7 +42,7 @@ class qrgenerator
 
             //Parametros de Condiguración
 
-        $tamaño = 2.5; //Tamaño de Pixel
+        $tamaño = 3; //Tamaño de Pixel
         $level = 'H'; //Precisión Baja
         $framSize = 3; //Tamaño en blanco
         $contenido = 5; //Texto
