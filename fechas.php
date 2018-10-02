@@ -1,30 +1,11 @@
-<!doctype html>
- <html class="no-js" lang=""> 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Departamento de ingles|Registro.</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/jquery-ui.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
- 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-         <link rel="stylesheet" href="css/icomoon.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/default.css">
-        <link rel="stylesheet" href="css/default.date.css">
-        <link rel="stylesheet" href="css/rtl.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
+<?php
+include_once 'php/headerHTML.php';
+?>
 <!--menu -->
 <div class="header menu">
     <?php
     session_start();
-            ob_start();
+    ob_start();
              
             //         if($_SESSION['sesion_exito']==0) //Como dije en el video, esto no es estrictamente necesario
             //          {echo "inicie sesion por favor";
@@ -36,28 +17,28 @@
             //         if($_SESSION['sesion_exito']==3)
             //             {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
     include 'menuUsuario.php';
-    include ('php/DatosUsuario.php');
-    include ('Conexion.php');
-   $funcion = new DatosUsuario;         
-      $email= $funcion->UsuarioId($_SESSION['emailUser']);
+    include('php/DatosUsuario.php');
+    include('Conexion.php');
+    $funcion = new DatosUsuario;
+    $email = $funcion->UsuarioId($_SESSION['emailUser']);
      // $email= $funcion->UsuarioId('cesar.lopez@tectijuana.edu.mx');
       //consulta de datos 
-      $Consulta= "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
+    $Consulta = "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
        alumno.semestre, alumno.id FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
-       $resultados = mysqli_query($conexion,$Consulta);
+    $resultados = mysqli_query($conexion, $Consulta);
        //ASIGNACION DE RESULTADOS
-       $resultado = mysqli_fetch_array($resultados);
+    $resultado = mysqli_fetch_array($resultados);
       //CONSULTA PARA FECHAS DISPONIBLES
-       $FechaConsulta="SELECT*FROM $Fechas";
-       $fechaResultado=mysqli_query($conexion,$FechaConsulta);
-       $name =$resultado['name'];
-       $lastname = $resultado['last_name'];
-       $semestre = $resultado['semestre'];
-       $carrera = $resultado['CARRERA'];
-       $nctrl = $resultado['nctrl'];
-       $id = $resultado['id'];
-       $correo = $resultado['email'];
-       $arrayData = array($name,$lastname,$semestre,$carrera,$nctrl,$correo,$id);
+    $FechaConsulta = "SELECT*FROM $Fechas";
+    $fechaResultado = mysqli_query($conexion, $FechaConsulta);
+    $name = $resultado['name'];
+    $lastname = $resultado['last_name'];
+    $semestre = $resultado['semestre'];
+    $carrera = $resultado['CARRERA'];
+    $nctrl = $resultado['nctrl'];
+    $id = $resultado['id'];
+    $correo = $resultado['email'];
+    $arrayData = array($name, $lastname, $semestre, $carrera, $nctrl, $correo, $id);
     ?>
 </div>
  <section class="titulo">
@@ -104,7 +85,7 @@
                          <div class="form-group">
                           <div class="input-group">
                            <div class="input-group-addon"><span class="glyphicon glyphicon-user" id="Correos"></span></div>
-                              <input type="text" id="nombre" name="nombre" class="form-control" value="<?php echo $resultado['name'];?> " readonly="true">
+                              <input type="text" id="nombre" name="nombre" class="form-control" value="<?php echo $resultado['name']; ?> " readonly="true">
                             </div>
                             <span class="help-block" id="error"></span>                     
                            </div>
@@ -112,7 +93,7 @@
                     <div class="col-xs-12 col-sm-4">
                        <div class="form-group">
                       <label for="Apellidos">Apellidos:</label><br>
-                      <input type="text" name="Apellidos" id="Apellidos" class="form-control" value="<?php echo $resultado['last_name'];?>" readonly="true">
+                      <input type="text" name="Apellidos" id="Apellidos" class="form-control" value="<?php echo $resultado['last_name']; ?>" readonly="true">
                     </div>
                     <span class="help-block" id="error"></span>    
                     </div>
@@ -122,7 +103,7 @@
                           <div class="input-group">
                              <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" id="Correos"></span></div>
                                 <input name="email" type="text" id="email" class="form-control" placeholder="Correo electronico"
-                                 value="<?php echo $resultado['email'];?>" readonly="true">
+                                 value="<?php echo $resultado['email']; ?>" readonly="true">
                               </div> 
                               <span class="help-block" id="error"></span>                     
                             </div>
@@ -133,21 +114,21 @@
                     <label>Numero de control:</label><br>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-credit-card icon"></span></div>
-                        <input type="text" name="Nctrl" id="Nctrl" class="form-control" value="<?php echo $resultado['nctrl'];?>" readonly="true">
+                        <input type="text" name="Nctrl" id="Nctrl" class="form-control" value="<?php echo $resultado['nctrl']; ?>" readonly="true">
                     </div>
                   </div>
                   <div class="col-xs-12 col-sm-4">
                     <label>Semestre:</label><br>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-list-numbered icon"></span></div>
-                      <input type="text" id="Semestre" name="Semestre" class="form-control" value="<?php echo $resultado['semestre'];?>" readonly="true">
+                      <input type="text" id="Semestre" name="Semestre" class="form-control" value="<?php echo $resultado['semestre']; ?>" readonly="true">
                     </div>
                   </div>
                   <div class="col-xs-12 col-sm-4">
                           <label>Carrera</label>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-book icon"></span></div>
-                       <input type="text" name="Carrera" id="Carrera" class="form-control" value="<?php echo $resultado['CARRERA'];?>" readonly="true">
+                       <input type="text" name="Carrera" id="Carrera" class="form-control" value="<?php echo $resultado['CARRERA']; ?>" readonly="true">
                     </div>
                   </div>
                 </div>
@@ -160,7 +141,7 @@
                 </div>
               </div>
               </div>
-              <label name="Userid" id="Userid" hidden=true><?php echo $resultado['id'];?> </label>
+              <label name="Userid" id="Userid" hidden=true><?php echo $resultado['id']; ?> </label>
               <div class="row btn-Registro">
               <button type="submit" class="btn btn-success btn-lg boton" id="btnRegistroExamen" name="btnRegistro">
                  <span class="glyphicon glyphicon-pencil RegistroExamen" ></span> Registrar
@@ -169,32 +150,15 @@
           </form>
          
         </section>
-          <footer class="app-footer">
-            <div class="app-texto">
-                <h4>Instituto nacional de Mexico</h4>
-                <h5>Instituto Tecnologico de Tijuana</h5>
-                <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
-                     C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgos.jpg" class="img-responsive img-footer">
-            </div>
-          </footer>
-           <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <!-- <script src="js/main.js"></script> -->
-        <script src="js/registrarExamen.js"></script>
-        <script src="js/picker.js"></script>
-        <script src="js/picker.date.js"></script>
-        <script src="js/picker.time.js"></script>
-        <script src="js/legacy.js"></script>
-        <script src="js/es_ES.js"></script>
+
         <script>
-        var datos =['<?php echo implode("','",$arrayData); ?>'];
+        var datos =['<?php echo implode("','", $arrayData); ?>'];
         var nombre  = document.getElementsByName("name").value;
         console.log(nombre);
         var n =$("#Semestre").val();
         console.log(n);
        
         </script>
-    </body>
-    </html>
+    <?php 
+    include_once 'php/footer.HTML.php';
+    ?>
