@@ -1,5 +1,5 @@
 <?php
-include_once 'php/headeHTML.php';
+include_once 'php/headerHTML.php';
 ?>
 
          <div class="header">
