@@ -76,6 +76,8 @@ $(document).ready(function () {
     });
     });
     $('#Fechas').click(function () {
-        $("#Fechas").pickadate();
+        $("#Fechas").pickadate({
+            format: "yyyy/mm/dd"
+        });
     });
 });
