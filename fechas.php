@@ -6,22 +6,25 @@ include_once 'php/headerHTML.php';
     <?php
     session_start();
     ob_start();
-             
-            //         if($_SESSION['sesion_exito']==0) //Como dije en el video, esto no es estrictamente necesario
-            //          {echo "inicie sesion por favor";
 
-            //            header('Location:index.php'); 
-            //          } //Ya que si lo dejamos, siempre que accedemos a index arroja error.
-            //         if($_SESSION['sesion_exito']==2)
-            //             {echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";}
-            //         if($_SESSION['sesion_exito']==3)
-            //             {echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";}
+    if ($_SESSION['sesion_exito'] == 0) 
+    {
+      
+
+      header('Location:index.php');
+    } 
+    if ($_SESSION['sesion_exito'] == 2) {
+      echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
+    }
+    if ($_SESSION['sesion_exito'] == 3) {
+      echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";
+    }
     include 'menuUsuario.php';
     include('php/DatosUsuario.php');
     include('Conexion.php');
     $funcion = new DatosUsuario;
     $email = $funcion->UsuarioId($_SESSION['emailUser']);
-     // $email= $funcion->UsuarioId('cesar.lopez@tectijuana.edu.mx');
+
       //consulta de datos 
     $Consulta = "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
        alumno.semestre, alumno.id FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
