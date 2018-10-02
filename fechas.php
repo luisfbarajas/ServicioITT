@@ -160,5 +160,5 @@ include_once 'php/headerHTML.php';
        
         </script>
     <?php 
-    include_once 'php/footer.HTML.php';
+    include_once 'php/footerHTML.php';
     ?>
