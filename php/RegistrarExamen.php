@@ -12,6 +12,10 @@ $Query = "INSERT INTO $RegistroExamen (ID_FECHAS,ID_ALUMNO,HORA,FechaPago,FolioP
 
 $execute = mysqli_query($conexion, $Query);
 
+if(!$execute){
+   return trigger_error(mysqli_error($conexion));
+}
+
 mysqli_close($conexion);
 
 echo $execute;
