@@ -44,7 +44,7 @@
             <div class="row">
               <div class="col-lg-12">
         <form class="login-form " style="display: block;" role="form" >
-        <div class="form-group">
+         <div class="form-group">
                     <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
                   </div>
                   <div class="form-group">
@@ -61,7 +61,7 @@
                       </div>
                     </div>
                   </div>
-          </form>     
+        </form>     
             </div>
           </div>
         </div>

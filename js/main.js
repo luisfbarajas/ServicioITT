@@ -233,56 +233,6 @@ VALIDACION DE CARRERA
 			return false;
 		}
 	});
-	/**************************************************
-	DATEPICKER EN REGISTRO DE FECHAS
-	 ****************************************************/
-	// $("#Fechas").datepicker({
-	// 	dateFormat: 'yy-mm-dd',
-	// 	// Primer dia de la semana - lunes
-	// 	firstDay: 1,
-	// 	// Días largo traducido
-	// 	dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
-	// 	// Dias cortos traducido
-	// 	dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
-	// 	// Nombres largos de los meses traducido
-	// 	monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
-	// 	// Nombres cortos de los meses traducido 
-	// 	monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"],
-	// 	  //restinge fechas pasadas
-	// 	minDate: 0,
-	// 	onChangeMonthYear: function (year, month, inst) { $(".ui-state-default:contains('27')").attr("style", "background-color:green !important;color:white;") },
-	//   //quita fines de sem
-	// 	  beforeShowDay: $.datepicker.noWeekends
-	// }
-	// );
-	// $("#Fechas").focusin(function () {
-	// 	var x = 9;
-	// 	var d = 26;
-	// 	if (x >= 10) {
-	// 		$(".ui-state-default:contains('" + d + "')").attr("style", "background-color:red !important;color:white;");
-		   
-			
-	// 	}
-	// 	else {
-	// 		$(".ui-state-default:contains('27')").attr("style", "background-color:green !important;color:white;");
-	// 		$(".ui-state-default:contains('30')").attr("style", "background-color:green !important;color:white;");
-	// 	}
-	// });
-	// $("#Fechas").click(function () {
-	// 	var x = 15;
-	// 	var d = 26;
-	// 	if (x >= 10) {
-	// 		$(".ui-state-default:contains('" + d + "')").attr("style", "background-color:red !important;color:white;");
-
-
-	// 	}
-	// 	else {
-	// 		$(".ui-state-default:contains('27')").attr("style", "background-color:green !important;color:white;");
-	// 		$(".ui-state-default:contains('30')").attr("style", "background-color:green !important;color:white;");
-	// 	}
-	// });
-	//  //evita que se escriba en textbox
-	//  $("#Fechas").keypress(function (e) { return false; });
 
 		/**************************************************
 	Actualizacion de datos
@@ -322,8 +272,15 @@ $("#login").click(function(e){
 		data: datosLog,
 		beforeSend: function(){console.log("Iniciando sesion...");},
 		success: function(dato){
-			console.log("Sesion inicada");
-			window.location.href="home.php";
+			console.log("Validando sesion");
+			if(dato){
+				console.log('paso');
+				window.location.href="home.php";
+			}else{
+				alert('Correo o contraseña incorrectos');
+			}
+
+			
 		},
 		error: function(){
 			console.log("Error en inicio");
