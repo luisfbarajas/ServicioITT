@@ -274,9 +274,11 @@ $("#login").click(function(e){
 		success: function(dato){
 			console.log("Validando sesion");
 			if(dato){
-				console.log('paso');
-				window.location.href="home.php";
+				console.log(dato);
+				dato=null;
+				//window.location.href="home.php";
 			}else{
+				console.log(dato);
 				alert('Correo o contraseña incorrectos');
 			}
 
