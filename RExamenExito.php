@@ -1,26 +1,21 @@
 <?php
-if(isset($_POST)){
-    $try = json_decode($_POST['json']);
-    echo var_dump($try);
-//require_once 'php/headerHTML.php';
-//require_once 'menuUsuario.php';
-
-}
 session_start();
 ob_start();
 
-if ($_SESSION['sesion_exito'] == 0) 
-{
-  
 
-  header('Location:index.php');
-} 
+if ($_SESSION['sesion_exito'] == 0) {
+    echo "inicie sesion por favor";
+
+    header('Location:index.php');
+}
 if ($_SESSION['sesion_exito'] == 2) {
-  echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
+    echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
 }
 if ($_SESSION['sesion_exito'] == 3) {
-  echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";
+    echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";
 }
+require_once 'php/headerHTML.php';
+require_once 'menuUsuario.php';
 ?>
 <div class="container" style="margin-top:105px">
     <h3>Registro Exitoso.</h3><hr>

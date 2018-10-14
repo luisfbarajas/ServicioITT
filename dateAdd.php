@@ -4,6 +4,8 @@ ob_start();
 
 if ($_SESSION['sesion_exito'] == 0) {
 
+    echo "inicie sesion por favor";
+
 
     header('Location:index.php');
 }

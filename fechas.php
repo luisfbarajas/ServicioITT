@@ -7,12 +7,13 @@ include_once 'php/headerHTML.php';
     session_start();
     ob_start();
 
-    if ($_SESSION['sesion_exito'] == 0) 
-    {
-      
+
+    if ($_SESSION['sesion_exito'] == 0) {
+      echo "inicie sesion por favor";
 
       header('Location:index.php');
-    } 
+    }
+
     if ($_SESSION['sesion_exito'] == 2) {
       echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
     }
@@ -163,5 +164,5 @@ include_once 'php/headerHTML.php';
        
         </script>
     <?php 
-    include_once 'php/footer.HTML.php';
+    include_once 'php/footerHTML.php';
     ?>

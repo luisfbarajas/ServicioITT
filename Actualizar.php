@@ -1,33 +1,33 @@
+<?php 
+session_start();
+ob_start();
 
-        <?php 
-        session_start();
-        ob_start();
+if ($_SESSION['sesion_exito'] == 0) {
+    echo "inicie sesion por favor";
 
-        if ($_SESSION['sesion_exito'] == 0) {
-
-
-            header('Location:index.php');
-        }
-        if ($_SESSION['sesion_exito'] == 2) {
-            echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
-        }
-        if ($_SESSION['sesion_exito'] == 3) {
-            echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";
-        }
-        include('php/DatosUsuario.php');
-        include('Conexion.php');
-        include_once 'php/headerHTML.php';
+    header('Location:index.php');
+}
+if ($_SESSION['sesion_exito'] == 2) {
+    echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
+}
+if ($_SESSION['sesion_exito'] == 3) {
+    echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";
+}
+include_once 'php/headerHTML.php';
+include('php/DatosUsuario.php');
+include('Conexion.php');
         //creacion de objeto para clase
-        $funcion = new DatosUsuario;  
+$funcion = new DatosUsuario;  
          //llamada a funcion       
-        $email = $funcion->UsuarioId($_SESSION['emailUser']);
+$email = $funcion->UsuarioId($_SESSION['emailUser']);
         //consulta de datos
-        $Consulta = "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
+$Consulta = "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
         alumno.semestre, alumno.id FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
-        $resultados = mysqli_query($conexion, $Consulta);
+$resultados = mysqli_query($conexion, $Consulta);
+
         //ASIGNACION DE RESULTADOS
-        $resultado = mysqli_fetch_array($resultados);
-        ?>
+$resultado = mysqli_fetch_array($resultados);
+?>
     <div class="menu">
     <?php include 'menuUsuario.php'; ?>
     </div>
@@ -99,14 +99,7 @@
                     <i class="glyphicon glyphicon-refresh"></i>&nbsp; Actualizar
                     </button>
                     <label name="Userid" id="Userid" hidden=true ><?php echo $resultado['id']; ?> </label>
-                <footer class="app-footer">
-            <div class="app-texto">
-                <h4>Instituto nacional de Mexico</h4>
-                <h5>Instituto Tecnologico de Tijuana</h5>
-                <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
-                     C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgos.jpg" class="img-responsive img-footer">
-            </div>
-        <?php
-        include_once 'php/footerHTML.php';
-        ?>
+
+               <?php
+                include_once 'php/footerHTML.php';
+                ?>

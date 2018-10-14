@@ -1,8 +1,8 @@
 <?php
 require_once '../Conexion.php';
 
-$Id = $_POST['id'];
-$FolioP = $_POST['FolioP'];
+$Id = (int)$_POST['id'];
+$FolioP =(int) $_POST['FolioP'];
 $FechaExamen = $_POST['FechaExamen'];
 $FechaPago = $_POST['FechaPago'];
 
