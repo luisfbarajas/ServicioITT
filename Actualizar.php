@@ -24,6 +24,7 @@ $email = $funcion->UsuarioId($_SESSION['emailUser']);
 $Consulta = "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usuario.email,
         alumno.semestre, alumno.id FROM alumno INNER JOIN usuario where usuario.id_alumno=alumno.id and usuario.email='$email'";
 $resultados = mysqli_query($conexion, $Consulta);
+
         //ASIGNACION DE RESULTADOS
 $resultado = mysqli_fetch_array($resultados);
 ?>
@@ -98,6 +99,7 @@ $resultado = mysqli_fetch_array($resultados);
                     <i class="glyphicon glyphicon-refresh"></i>&nbsp; Actualizar
                     </button>
                     <label name="Userid" id="Userid" hidden=true ><?php echo $resultado['id']; ?> </label>
+
                <?php
                 include_once 'php/footerHTML.php';
                 ?>

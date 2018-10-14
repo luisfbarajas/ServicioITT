@@ -1,6 +1,7 @@
 <?php
           include ("Conexion.php");   
           include_once 'php/headerHTML.php';             
+
          ?>
        <div class="header">
         <?php include 'menu.php'; ?>

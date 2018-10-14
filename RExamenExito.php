@@ -2,6 +2,7 @@
 session_start();
 ob_start();
 
+
 if ($_SESSION['sesion_exito'] == 0) {
     echo "inicie sesion por favor";
 
