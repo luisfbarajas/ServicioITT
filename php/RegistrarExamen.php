@@ -1,4 +1,5 @@
 <?php
+
 class RegistroExamen
 {
     private $Examen = null;
@@ -17,6 +18,8 @@ class RegistroExamen
         $this->Folio = $this->parseInt($folio);
         $this->conexion = $conexion;
     }
+
+
 
     private function getDate($fecha)
     {
