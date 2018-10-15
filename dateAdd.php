@@ -1,28 +1,29 @@
 <?php
+session_start();
+ob_start();
+
+if ($_SESSION['sesion_exito'] == 0) {
+
+    echo "inicie sesion por favor";
+
+
+    header('Location:index.php');
+}
+if ($_SESSION['sesion_exito'] == 2) {
+    echo "<script type=\"text/javascript\">alert('Todos los campos son necesarios.');</script>";
+}
+if ($_SESSION['sesion_exito'] == 3) {
+    echo "<script type=\"text/javascript\">alert('Usuario o Contraseña incorrectos.');</script>";
+}
 include_once "php/getDates.php";
+include_once 'php/headerHTML.php';
 ?>
-<!doctype html>
-<html class="no-js" lang=""> 
-    <head>
-    <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Departamento de ingles|Registro.</title>
-        <meta name="description" content="Departamento de ingles del Instituto Tecnologico de Tijuana">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>      
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-         <link rel="stylesheet" href="css/icomoon.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
+
     <div class="container-fluid menu">
     <?php include 'menuAdmin.php'; ?>
     </div>
    <div class="container">
-        <?php if(!$_GET || $_GET['accion']==1):  ?>
+        <?php if (!$_GET || $_GET['accion'] == 1) : ?>
         <div class="row">
             <div class="col-md-6 col-lg-6 col-sm-6">
                 <h3 class="Fecha-Titulo">Agregar fecha.</h3>
@@ -109,8 +110,8 @@ include_once "php/getDates.php";
                    
                 </form>     
             </div>
-            <?php endif  ?>
-            <?php if($_GET && $_GET['accion']==2):  ?>
+            <?php endif ?>
+            <?php if ($_GET && $_GET['accion'] == 2) : ?>
         <div class="row">
             <div class="col-md-6 col-lg-6 col-sm-6">
                 <h3 class="Fecha-Titulo">Editar fecha.</h3>
@@ -158,11 +159,11 @@ include_once "php/getDates.php";
                                 </div>
                             <select name="txtEditUnidad" id="txtEditUnidad" class="form-control" >
                             <option value="<?php echo $vuelve['UNIDAD']; ?>"><?php echo $vuelve['UNIDAD']; ?></option>
-                            <?php if($vuelve['UNIDAD']=='Tomas aquino'):?>
+                            <?php if ($vuelve['UNIDAD'] == 'Tomas aquino') : ?>
                                 
                                 <option value="Otay">Otay</option>
                                 <?php endif ?>
-                                <?php if($vuelve['UNIDAD']=='Otay'):?>
+                                <?php if ($vuelve['UNIDAD'] == 'Otay') : ?>
                                 <option value="Tomas aquino">Tomas Aquino</option>
                                 <?php endif ?>
                             </select>
@@ -205,27 +206,18 @@ include_once "php/getDates.php";
                    
                 </form>     
             </div>
-            <?php endif  ?>
+            <?php endif ?>
             <div class="" >
                 <h3 class="boton pt">Fechas actuales.</h3>
                 <div class="col-md-6 col-lg-6 col-sm-6" id="tablafechas">
-                    <?php  echo obtenerFecha();?>
+                    <?php echo obtenerFecha(); ?>
                 </div>
             </div>
         </div>  
 
     </div>
     <!--FOOTER -->
-    <footer class="app-footer">
-            <div class="app-texto container-fluid">
-                <h4>Instituto Nacional de Mexico</h4>
-                <h5>Instituto Tecnologico de Tijuana</h5>
-                <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
-                     C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
-                     <img src="img/galgos.jpg">
-            </div>
-          
-    </footer>
+  
     <script>
     function abrir(url,url2){
         // location.href=url;
@@ -233,10 +225,6 @@ include_once "php/getDates.php";
         alert("");
     }
     </script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/jquery-1.11.2.min.js"><script>
-        <script src="js/jquery-ui.js"></script>
-        <script src="js/main.js"></script>
-    </body>
-    </html>
+   <?php
+    include_once 'php/footerHTML.php';
+    ?>

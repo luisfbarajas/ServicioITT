@@ -34,8 +34,8 @@ $(document).ready(function () {
         }
         var json = JSON.stringify(jsonData);
         console.log(datos);
-        $.when(
-            $.ajax({
+
+        $.ajax({
                 url: "php/RegistrarExamen.php",
                 data: datos,
                 method: "POST",
@@ -45,8 +45,9 @@ $(document).ready(function () {
                 success: function (data) {
                     console.log("Excito en envio de info...");
                     if (data == 1) {
-                       
+                        location.href = "RExamenExito.php";
                     } else {
+                        console.log(data);
                         alert("Error en registro, intentelo nuevamente.");
                     }
 
@@ -54,26 +55,7 @@ $(document).ready(function () {
                 error: function () {
                     console.log("Fallo en envio");
                 }
-            }),
-            $.ajax({
-                url: "try.php",
-                method: "post",
-                data: json,
-                contentType: 'application/json',
-                beforeSend: function () {
-                    console.log("Enviando datos");
-                },
-                success: function (data) {
-
-                    
-                },
-                error: function () {
-                    console.log("Fallo en envio");
-                }
             })
-        ).then(function(r1,r2){
-            location.href="RExamenExito.php";
-    });
     });
     $('#Fechas').click(function () {
         $("#Fechas").pickadate({
