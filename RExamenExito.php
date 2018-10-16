@@ -1,6 +1,14 @@
 <?php
 session_start();
 ob_start();
+include_once 'php/getDataExamen.php';
+include_once 'Conexion.php';
+if (isset($_GET)) {
+    $id = $_GET['id'];
+    $call = new DataExamen($id, $conexion);
+    $data = $call->dataUser();
+    $dateExamen = $call->getDateExamen();
+}
 
 if ($_SESSION['sesion_exito'] == 0) {
     echo "inicie sesion por favor";
@@ -30,21 +38,21 @@ require_once 'menuUsuario.php';
                     Nombre:&nbsp;
                 </label>
             </strong>
-            <p>Luis Barajas</p>
+            <p><?php echo "{$data['name']} {$data['last_name']}"; ?></p>
             <br>
             <strong>
                 <label>
                     Número de control:&nbsp;
                 </label>
             </strong>
-            <p>13210365</p>
+            <p><?php echo $data['nctrl']; ?></p>
             <br> 
             <strong>
                 <label>
                     Correo:&nbsp;
                 </label>
             </strong>
-            <p>luis.barajas17@tectijuana.edu.mx</p>
+            <p><?php echo $data['email']; ?></p>
             <br>
             </div>
             <div class="col-md-3"> 
@@ -53,19 +61,19 @@ require_once 'menuUsuario.php';
                     Carrera:&nbsp;
                 </label>
             </strong>
-            <p>ISC</p><br>
+            <p><?php echo $data['CARRERA']; ?></p><br>
             <strong>
                 <label>
                     Semestre:&nbsp;
                 </label>
             </strong>
-            <p>13</p> <br>
+            <p><?php echo $data['semestre']; ?></p> <br>
             <strong>
                 <label>
                     Fecha de examen:&nbsp; 
                 </label>
             </strong> 
-            <p>12/12/2018</p>
+            <p><?php echo $dateExamen['FECHA']; ?></p>
         </div>
           
            
