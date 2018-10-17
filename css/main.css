@@ -1,41 +1,51 @@
-header{
+header {
 	background: url("..img/header.jpg") no-repeat center top fixed;
 	height: 100vh;
 	width: 100vw;
 
 }
-.body-background{
+
+.body-background {
 	background-image: url('img/fondo-itt.jpg');
 }
-body{
-	font-size:  16px;
+
+body {
+	font-size: 16px;
 	overflow-x: hidden;
 
 }
-footer{
-	margin-top:  2%;
-    height: 150px;
-    bottom: 100px;
+
+footer {
+	margin-top: 2%;
+	height: 150px;
+	bottom: 100px;
 	width: 100%;
 
-	
+
 }
-.qr{
+
+.qr {
 	width: 15rem;
 }
-.icon-bar{
+
+.icon-bar {
 	color: green;
 }
-.btn-Registro{
+
+.btn-Registro {
 	margin-top: 2%;
 }
+
 .panel-login {
 	border-color: #ccc;
-	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
 }
-.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+
+.panel-login input[type="text"],
+.panel-login input[type="email"],
+.panel-login input[type="password"] {
 	height: 45px;
 	border: 1px solid #ddd;
 	font-size: 16px;
@@ -43,140 +53,174 @@ footer{
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
 }
+
 .panel-login input:hover,
 .panel-login input:focus {
-	outline:none;
+	outline: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
 	border-color: #ccc;
 }
-.logotecna{
+
+.logotecna {
 	width: 75%;
 	margin: 50px auto;
 }
-.logoitt{
+
+.logoitt {
 	margin: 50px auto;
 }
-.forma{
+
+.forma {
 	border-color: green;
 	margin-top: 20px;
 }
-.intro{
-font-family: cursive;
+
+.intro {
+	font-family: cursive;
 	font-size: 16;
 	font-style: italic;
 	color: black;
 	text-shadow: all;
 
 }
-.input-modal{
+
+.input-modal {
 	width: 166px !important;
 }
-#cerrar{
+
+#cerrar {
 	margin-right: 1rem;
 }
-.boton{
+
+.boton {
 	margin: auto;
 }
-hr { 
-   width: 100%;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
+
+hr {
+	width: 100%;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: inset;
 	border-width: 1px;
 	background-color: green;
 	height: 2.5px;
-} 
-.imagenes{
+}
+
+.imagenes {
 	width: 100%;
 	height: 200px;
 }
-.app-footer{
+
+.app-footer {
 	text-align: center;
 	background: #f7f8fa;
 	letter-spacing: 2px;
 	margin-bottom: 0%;
 	padding-top: 2%;
 }
-.app-texto{
-bottom:o;
+
+.app-texto {
+	bottom: o;
 }
-.mt{
-	margin-top:3px;
+
+.mt {
+	margin-top: 3px;
 }
-.menu{
+
+.menu {
 	margin-bottom: 8rem;
 }
-#fechaV{
- text-align: center;
- font-family: 'Times New Roman', Times, serif;
- font-size: 2em;
+
+#fechaV {
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 2em;
 }
-.pt{
+
+.pt {
 	padding-top: 2%;
 }
-.proceso{
-		background: url("..img/proceso.jpg") no-repeat center top fixed;
+
+.mt-4 {
+	margin-top: 5%;
+}
+
+.proceso {
+	background: url("..img/proceso.jpg") no-repeat center top fixed;
 	height: 650px;
 	width: 100%;
 }
-.titulo{
+
+.titulo {
 	text-align: center;
-	
+
 	letter-spacing: 2px;
 	text-transform: uppercase;
-		font-size: 2.5em;
+	font-size: 2.5em;
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
 }
-.indicaciones{
+
+.indicaciones {
 	background: #f7f8fa;
 }
-.Proceso-intro{
+
+.Proceso-intro {
 	color: white;
 }
-.proceso-texto{
+.fecha{
+	margin-bottom: 5%;
+}
+.proceso-texto {
 	letter-spacing: 2px;
 	text-align: center;
 	font-size: 1.25em;
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
 	padding-bottom: 3%;
 }
-.numero{
+
+.numero {
 	color: #0080d6;
-font-size: 5.5em;
+	font-size: 5.5em;
 
 }
-.tec{
+
+.tec {
 	color: green;
 }
-.img-footer{
+
+.img-footer {
 	margin: auto;
 }
-.paso1-texto{
+
+.paso1-texto {
 	text-align: justify;
 	letter-spacing: 2px;
-	
+
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
-			font-size: 1em;
+	font-size: 1em;
 }
-.Paso2{
+
+.Paso2 {
 	background: #AED6F1;
 }
-.titulo-pasos{
+
+.titulo-pasos {
 	text-align: center;
 	text-transform: uppercase;
 	font-family: "Avenir", Futura, Helvetica, sans-serif;
-			font-size: 1.5em;
+	font-size: 1.5em;
 }
-.mipanel{
-		border-color: green solid;
-		border-width: .5em;
-	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+
+.mipanel {
+	border-color: green solid;
+	border-width: .5em;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
 	background-color: #D0D3D4;
 	background: rgba(0, 0, 0, 0.1);
 	margin: auto;
@@ -184,25 +228,12 @@ font-size: 5.5em;
 
 
 }
-#divmsj{
+
+#divmsj {
 	display: none;
 }
-.indicacion-fecha{
-	letter-spacing: 2px;
-text-align: justify;
-		font-size: 1em;
-	font-family: "Avenir", Futura, Helvetica, sans-serif;
-	padding-right: 150px;
-	padding-left: 150px;
-}
-#Correos{
-	color: black;
-	size: 2em;
-}
-.icon{
-	color: black;
-}
-.Fecha-Texto{
+
+.indicacion-fecha {
 	letter-spacing: 2px;
 	text-align: justify;
 	font-size: 1em;
@@ -210,139 +241,187 @@ text-align: justify;
 	padding-right: 150px;
 	padding-left: 150px;
 }
-.RegistroExamen{
+
+#Correos {
+	color: black;
+	size: 2em;
+}
+
+.icon {
+	color: black;
+}
+
+.Fecha-Texto {
+	letter-spacing: 2px;
+	text-align: justify;
+	font-size: 1em;
+	font-family: "Avenir", Futura, Helvetica, sans-serif;
+	padding-right: 150px;
+	padding-left: 150px;
+}
+
+.RegistroExamen {
 	padding-right: 10px;
 }
-.Fecha-Titulo{
-		text-align: center;
-		font-family: "Avenir", Futura, Helvetica, sans-serif;
-		font-size: 1.8em;
+
+.Fecha-Titulo {
+	text-align: center;
+	font-family: "Avenir", Futura, Helvetica, sans-serif;
+	font-size: 1.8em;
 }
-#mainNav{
-	border-color: green; 
+
+#mainNav {
+	border-color: green;
 	border-bottom-width: 5px;
 	width: 100%;
 }
-.galfo{
-	margin:auto;
+
+.galfo {
+	margin: auto;
 	align-content: center;
 }
-.popover{
-    width:200px;
+
+.popover {
+	width: 200px;
 
 }
-.boton{
+
+.boton {
 	margin-left: auto;
-	 display: flex;
-  justify-content: center;
- 
+	display: flex;
+	justify-content: center;
+
 }
-.msjAlerta{
-	display:block;
+
+.msjAlerta {
+	display: block;
 	text-align: center;
 }
-.alerta{
-	color:#FF0000;
+
+.alerta {
+	color: #FF0000;
 }
-.mover{
+
+.mover {
 	margin-top: 5em;
 }
-.foto-usuario{
+
+.foto-usuario {
 	border-radius: 50%;
 }
-.caja{
-	-webkit-box-shadow: 0px 2px 42px 1px rgba(0,0,0,0.44);
--moz-box-shadow: 0px 2px 42px 1px rgba(0,0,0,0.44);
-box-shadow: 0px 2px 42px 1px rgba(0,0,0,0.44);
-background-color: #ebe9e4;
-padding-bottom: 6%;
-border-radius: 10px 5px 10px 5px;
+
+.caja {
+	-webkit-box-shadow: 0px 2px 42px 1px rgba(0, 0, 0, 0.44);
+	-moz-box-shadow: 0px 2px 42px 1px rgba(0, 0, 0, 0.44);
+	box-shadow: 0px 2px 42px 1px rgba(0, 0, 0, 0.44);
+	background-color: #ebe9e4;
+	padding-bottom: 6%;
+	border-radius: 10px 5px 10px 5px;
 }
-.letra-datos{
+
+.letra-datos {
 	font-size: 1.25em;
 	padding-top: 3%;
 	font-family: 'Times New Roman', Times, serif;
 }
-.contiene-datos{
+
+.contiene-datos {
 	padding-top: 3%;
 }
-.boton-add{
-	display:block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-	
-	
+
+.boton-add {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+
+
 }
-.pr{
+
+.pr {
 	padding-right: 10px;
 	padding-left: 10px;
 }
+
 /**********************************
 PANTALLA MEDIA
 *********************************/
 @media screen and (max-width: 800px) {
-    body{font-size: 14px;}
-    .indicacion-fecha{
-    	padding-right: 10px;
-	padding-left: 10px;
-    }
-    .Fecha-Texto{
-	padding-right: 10px;
-	padding-left: 10px;
-}
-    footer{
-    	size: 90% !important;
+	body {
+		font-size: 14px;
 	}
-	#tablafechas{
+
+	.indicacion-fecha {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	.Fecha-Texto {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	footer {
+		size: 90% !important;
+	}
+
+	#tablafechas {
 		overflow: scroll;
 	}
-	.logotecna{
+
+	.logotecna {
 		width: 100%;
 		margin: 30px auto auto auto;
 	}
-	.logoitt{
+
+	.logoitt {
 		margin: 30px auto auto auto;
 	}
-	header{
+
+	header {
 		height: 80vh;
 	}
 
 }
+
 /*PANTALL CHICA/CEL*/
 @media screen and (max-width: 425px) {
-	header{
+	header {
 		height: 100vh;
 		margin-bottom: 30px;
 	}
-	.logotecna{
+
+	.logotecna {
 		width: 50%;
 		margin: 30px auto auto auto;
 	}
-	.logoitt{
+
+	.logoitt {
 		width: 50%;
 		height: 60%;
 		margin: 30px auto auto auto;
 	}
-	#brand-menu{
+
+	#brand-menu {
 		font-size: 1em;
 	}
 }
-@media all and (min-width:780px){
-	.intento{
-	clear: left;
-	float: left;
-	text-align: left;	
-}
 
-}
-@media all and (min-width:1000px){
-
-		.intento{
-	clear: right;
-	float: right;
-	text-align: left;	
-
-	}	
+@media all and (min-width:780px) {
+	.intento {
+		clear: left;
+		float: left;
+		text-align: left;
 	}
 
+}
+
+@media all and (min-width:1000px) {
+
+	.intento {
+		clear: right;
+		float: right;
+		text-align: left;
+
+	}
+}
