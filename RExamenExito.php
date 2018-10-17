@@ -10,6 +10,7 @@ if (isset($_GET)) {
     $dateExamen = $call->getDateExamen();
 }
 
+
 if ($_SESSION['sesion_exito'] == 0) {
     echo "inicie sesion por favor";
 
