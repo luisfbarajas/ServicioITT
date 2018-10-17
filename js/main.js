@@ -492,18 +492,4 @@ function getParameterByName(name) {
  *  FIN EDICION DE FECHAS 
  * 
  **********************/
- /*******BORRAR FECHA****************/
-//  $("#lkEliminar").on('click',function(e){
-// e.preventDefault();
-// var id= getParameterByName("id");
-// console.log(id);
 
-//  });
-
-function pregunta(e){
-
-
-}
-
-
- /********************************* */
