@@ -29,15 +29,4 @@ class Verificacion
     }
 
 }
-// $funcion = new Verificacion;
-
-// if ($funcion->VerificacionEmail('luis.barajas17@tectijuana.edu.mx'))
-// echo 'no existe';
-// else
-// echo 'existe';
-
-// if ($funcion->VerificarNctrl('13210365'))
-// echo 'no existe';
-// else
-// echo 'existe';
 ?>

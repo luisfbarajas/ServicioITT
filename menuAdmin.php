@@ -29,6 +29,15 @@
              <li><a href="#">....</a></li>
             </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="glyphicon glyphicon-indent-right"></i>
+             Estadisticas <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+             <li><a href="estadistica.php">Alumnos</a></li>
+             <li><a href="#">....</a></li>
+            </ul>
+        </li>
         <li><a href="php/Cerrarsesion.php"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
       </ul>
     </div>
