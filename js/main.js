@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
  /***************************************
 validacion de contraseña igual
 ********************************************/
