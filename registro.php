@@ -170,7 +170,7 @@ include_once 'php/headerHTML.php';
                             <input type="radio" name="Genero" value="H" > Hombre
                         </label>
                         <label>
-                            <input type="radio" name="Genero" value="M" > Mujer
+                            <input type="radio" name="Genero" value="F" > Mujer
                         </label>
                         
                     </fieldset>

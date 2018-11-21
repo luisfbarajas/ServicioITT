@@ -14,8 +14,8 @@ class InsertUser
 	private $confirmacionpass = null;
 	private $genero = null;
 	private $ExPass = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/';
-	private $ExCorreo = '/^[a-zA-Z(0-9)?]{4,}((\.)?[a-zA-Z(0-9)?]{3,})?@([a-zA-Z]{2,})\.([a-zA-Z]{2,3})(\.([a-zA-Z]{2,3})$)*/';
-	private $ExNctrl = '/^[c|C]*[0-9]{8,9}$/';
+	private $ExCorreo = '/^[a-zA-Z(0-9)?]{4,}((\.)?[a-zA-Z(0-9)?]{3,})*@([a-zA-Z]{2,})\.([a-zA-Z]{2,3})(\.([a-zA-Z]{2,3}))?$/';
+	private $ExNctrl = '/^[c|C]{1}[0-9]{8}$|^[0-9]{8}$/';
 	private $conexion = null;
 	protected $TUsuario;
 	protected $TAlumno;
@@ -68,11 +68,25 @@ class InsertUser
 				return 'Datos invalidos';
 				break;
 			case 1:
-				return 'Correo o número de control ya registrados';
+				return $this->errorMail();
 				break;
 			case 2:
-				return 'Correo o contraseña invalidos';
+				return $this->checkMailAndPass();
 				break;
+		}
+	}
+	private function errorMail(){
+		if(!$this->verificacion->VerificacionEmail($this->correo)){
+			return 'Correo ya registrado';
+		}else {
+			return 'Número de control ya registrado';
+		}
+	}
+	private function checkMailAndPass(){
+		if (preg_match($this->ExPass, $this->pass)){
+			return 'Correo invalido';
+		}else{
+			return 'Contraseña debil';
 		}
 	}
 	private function checkEmailAndNctrl()
@@ -86,7 +100,7 @@ class InsertUser
 
 	private function insertAlumno()
 	{
-		$query = "INSERT INTO {$this->TAlumno} (`name`, `last_name`, `nctrl`, `CARRERA`, `semestre`, `genero`) VALUES ( '{$this->Nombre}', '{$this->Apellido}',{$this->Nctrl}, '{$this->Carrera}', {$this->Semetre}, '{$this->genero}')";
+		$query = "INSERT INTO {$this->TAlumno} (`name`, `last_name`, `nctrl`, `CARRERA`, `semestre`, `genero`) VALUES ( '{$this->Nombre}', '{$this->Apellido}','{$this->Nctrl}', '{$this->Carrera}', {$this->Semetre}, '{$this->genero}')";
 		$execute = mysqli_query($this->conexion, $query);
 	}
 
@@ -123,7 +137,7 @@ class InsertUser
 if ($_POST) {
 	$Nombre = $_POST['Nombre'];
 	$Apellido = $_POST['Apellido'];
-	$NCtrl = $_POST['Nctrl'];
+	$Nctrl = $_POST['Nctrl'];
 	$Carrera = $_POST['carrera'];
 	$pass = $_POST['pass'];
 	$correo = $_POST['email'];
