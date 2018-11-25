@@ -20,7 +20,7 @@ include "../Conexion.php";
 $update = "UPDATE $alumno INNER JOIN $usuario ON usuario.id_alumno=alumno.id SET 
 alumno.name= '$Name',
 alumno.last_name='$Last_Name',
-alumno.nctrl = $Nctrl,
+alumno.nctrl = '$Nctrl',
 alumno.CARRERA = '$Carrera',
 alumno.semestre = $Semestre,
 usuario.email = '$Correo'
