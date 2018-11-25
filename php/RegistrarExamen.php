@@ -59,16 +59,11 @@ class RegistroExamen
     }
 }
 
-if (isset($_POST)) {
+if ($_POST) {
     $Id = $_POST['id'];
     $FolioP = $_POST['FolioP'];
     $FechaExamen = $_POST['FechaExamen'];
     $FechaPago = $_POST['FechaPago'];
-    // $Id = 14;
-    // $FolioP = 123545698;
-    // $FechaExamen = '2018-12-31';
-    // $FechaPago = '2018-12-31';
-
     include_once '../Conexion.php';
     $registro = new RegistroExamen($Id, $FolioP, $FechaExamen, $FechaPago, $conexion);
 

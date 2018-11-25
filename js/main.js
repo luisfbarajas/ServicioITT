@@ -1,5 +1,11 @@
 $(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
+	/************POPOVER***************** */
+	$('#popover').focusin(function(){
+		$('#popover').popover({ trigger: "click"});
+		setTimeout("$('.popover').hide();", 5000);
+	});
+	/**************************** */
+
  /***************************************
 validacion de contraseña igual
 ********************************************/
@@ -62,12 +68,12 @@ $('#Apellido').focusout(function(){
 		return false;
    }
 /***********************************
-Validacion de correo institucional
+Validacion de correo 
 ************************************/
 });
 
 $('#email').keyup(function(){
-   var nameregex2 = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
+   var nameregex2 = /^[a-zA-Z(0-9)?]{4,}((\.)?[a-zA-Z(0-9)?]{3,})*@([a-zA-Z]{2,})\.([a-zA-Z]{2,3})(\.([a-zA-Z]{2,3}))?$/;
 
    if ($('#email').val().match(nameregex2)) {
    	$("#iconoEmail").remove();
@@ -88,7 +94,7 @@ $('#email').keyup(function(){
 VALIDACION DE NUMERO DE CONTROL
 *****************************************/
 $('#NCtrl').keyup(function(){
-   var control = /^[0-9]{8,}$/;
+   var control = /^[c|C]{1}[0-9]{8}$|^[0-9]{8}$/;
 
    if ($('#NCtrl').val().match(control)) {
    	$("#iconoNControl").remove();
@@ -300,13 +306,14 @@ $("#btnRegistro").click(function(e){
 	if (semestre == "Otro" ){
 		semestre = $("#txtOtro").val();
 	}
-	if(genero!="H"|| genero !="M"){
+	if(genero!="H" && genero !="F"){
 		genero=null;
 	}
 	//json para envio a php
 	var datosRegistro = {"Nombre": username, "Apellido": userLastname, "Nctrl": Nctrl,
 	"carrera": carrera, "email": email, "semestre": semestre,"pass": contra, "passconfirm": contraConfim,
 	"genero": genero};
+	console.log(datosRegistro);
 	if(confirm("Se guardaran los datos. ¿Desea continuar?.")){
 		$.ajax({
 			url: "php/insercion.php",
@@ -314,62 +321,50 @@ $("#btnRegistro").click(function(e){
 			data: datosRegistro,
 			beforeSend: function(){console.log("Registrando...");},
 			success: function(dato){
-				//valores retornados 
-				//0=exito
-				//1=Contraseña debil/No coinciden.
-				//2=Solo se aceptan numeros/Numero de control ya registrado.
-				//3=Correo invalido/Ya registrado.
-				//4=Todos los campos son necesarios.
-				if(dato=="0"){
-					console.log("Registrado con exito");
-					//Quitar iconos de validacion
-					$("#iconotexto").remove();
-					$("#iconoNombre").remove();
-					$("#iconoApellido").remove();
-					$("#iconoEmail").remove();
-					$("#iconoNControl").remove();
-					$("#iconoSemestre").remove();
-					$("#iconoSemestreOtro").remove();
-					$("#iconoCarrera").remove();	
-					$("#iconoPass").remove();
-					//quitar clases de validacion
-					$("#divNombre").removeClass("has-success has-feedback has-error");
-					$("#divApellido").removeClass("has-success has-feedback has-error");
-					$("#divCarrera").removeClass("has-success has-feedback has-error");
-					$("#divEmail").removeClass("has-success has-feedback has-error");
-					$("#divNctrl").removeClass("has-success has-feedback has-error");
-					$("#divSemestre").removeClass("has-success has-feedback has-error");
-					$("#divPass").removeClass("has-success has-feedback has-error");	
-					$("#divPassC").removeClass("has-success has-feedback has-error");
-					$("#dOtro").removeClass("has-success has-feedback has-error");
-					//mensaje de registro
+				console.log(dato);
+				if(dato === 1 || dato === '1'){
+				//mensaje de registro
+					$("#divmsj").removeClass("alert alert-danger alert-dismissible msjAlerta");
 					$("#divmsj").show("slow").text("Usuario registrado").addClass("alert alert-success alert-dismissible msjAlerta").attr("role","alert");
-					//reinicio de formulario
-					document.getElementById("Registro").reset();
+					setTimeout("$('#divmsj').hide();",5000);
+					resetForm();
 				}
 				else{
-					if(dato=="1"){
-						//mensaje de registro
-					$("#divmsj").show("slow").text("Contraseña debil/No coinciden.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
-					}
-					if(dato=="2"){
-						//mensaje de registro
-					$("#divmsj").show("slow").text("Solo se aceptan numeros/Numero de control ya registrado.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
-					}
-					if(dato=="3"){
-						//mensaje de registro
-					$("#divmsj").show("slow").text("Correo invalido/Ya registrado.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
-					}
-					if(dato=="4"){
-						//mensaje de registro
-					$("#divmsj").show("slow").text("Todos los campos son necesarios.").addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
-					}
+					// mensaje de registro
+					$("#divmsj").removeClass("alert alert-success alert-dismissible msjAlerta");
+					$("#divmsj").show("slow").text(dato).addClass("alert alert-danger alert-dismissible msjAlerta").attr("role","alert");
+					setTimeout("$('#divmsj').hide();",5000);
 				}
 			},
 			error: function(){
 				console.log("Ocurrio un error");
 			}
 		});
+	}
+	function resetForm(){
+		//Quitar iconos de validacion
+		$("#iconotexto").remove();
+		$("#iconoNombre").remove();
+		$("#iconoApellido").remove();
+		$("#iconoEmail").remove();
+		$("#iconoNControl").remove();
+		$("#iconoSemestre").remove();
+		$("#iconoSemestreOtro").remove();
+		$("#iconoCarrera").remove();	
+		$("#iconoPass").remove();
+		//quitar clases de validacion
+		$("#divNombre").removeClass("has-success has-feedback has-error");
+		$("#divApellido").removeClass("has-success has-feedback has-error");
+		$("#divCarrera").removeClass("has-success has-feedback has-error");
+		$("#divEmail").removeClass("has-success has-feedback has-error");
+		$("#divNctrl").removeClass("has-success has-feedback has-error");
+		$("#divSemestre").removeClass("has-success has-feedback has-error");
+		$("#divPass").removeClass("has-success has-feedback has-error");	
+		$("#divPassC").removeClass("has-success has-feedback has-error");
+		$("#dOtro").removeClass("has-success has-feedback has-error");
+			
+		//reinicio de formulario
+		document.getElementById("Registro").reset();
 	}
 });
 /*******************************************************************
