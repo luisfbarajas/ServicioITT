@@ -108,7 +108,7 @@ class InsertUser
 	{
 		$id_alumno = $this->getUserID();
 		$this->pass = $this->encrypPass($this->pass);
-		$Query = "INSERT INTO {$this->TUsuario} (`id_alumno`, `email`, `pass`, `active`, `tipo`) VALUES ($id_alumno, '{$this->correo}', '{$this->pass}', '0', '0')";
+		$Query = "INSERT INTO {$this->TUsuario} (`id_alumno`, `email`, `pass`, `active`, `tipo`) VALUES ($id_alumno, '{$this->correo}', '{$this->pass}', '0', '1')";
 		$execute = mysqli_query($this->conexion,$Query);
 	}
 

@@ -40,7 +40,20 @@ $(document).ready(function () {
     });
     $('#Fechas').click(function () {
         $("#Fechas").pickadate({
-            format: "yyyy/mm/dd"
+            format: "yyyy/mm/dd",
+            // Strings and translations
+            monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            weekdaysFull: ['Domigo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+            weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vier', 'Sab'],
+            showMonthsShort: undefined,
+            showWeekdaysFull: undefined,
+            // Buttons
+            today: 'Hoy',
+            clear: 'Limpiar',
+            close: 'Cerrar',
+            editable: false,
+
         });
     });
 });

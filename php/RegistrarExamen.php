@@ -8,8 +8,10 @@ class RegistroExamen
     private $Folio = null;
     private $conexion = null;
     private $hora = null;
+    private $date = null; 
     protected $Fechas = "fechas_examen";
     private $idFecha = 0;
+    
     public function __construct($id, $folio, $Examen, $Pago, $conexion)
     {
         $this->id = $this->parseInt($id);
@@ -17,10 +19,8 @@ class RegistroExamen
         $this->Examen = $Examen;
         $this->Folio = $this->parseInt($folio);
         $this->conexion = $conexion;
+        $this->date = date('Y-m-d', strtotime('-1 day'));
     }
-
-
-
     private function getDate($fecha)
     {
         $result = date_create_from_format('d/m/y', $fecha);
@@ -42,7 +42,7 @@ class RegistroExamen
     {
         try {
             $this->setDateData();
-            $Query = "INSERT INTO `r_examen` (`id`, `ID_FECHAS`, `ID_ALUMNO`, `HORA`, `FechaPago`, `FolioPago`) VALUES (NULL, {$this->idFecha}, $this->id, '{$this->hora}', '{$this->Pago}', {$this->Folio});";
+            $Query = "INSERT INTO `r_examen` (`id`, `ID_FECHAS`, `ID_ALUMNO`, `HORA`, `FechaPago`, `FolioPago`,`FechaActual`) VALUES (NULL, {$this->idFecha}, $this->id, '{$this->hora}', '{$this->Pago}', {$this->Folio},'{$this->date}');";
             $execute = mysqli_query($this->conexion, $Query);
             mysqli_close($this->conexion);
         } catch (Exception $e) {
@@ -69,4 +69,7 @@ if ($_POST) {
 
     $excecute = $registro->InsertData();
     echo $excecute;
+}
+else{
+    echo "No post detecte";   
 }

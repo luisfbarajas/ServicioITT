@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/default.css">
         <link rel="stylesheet" href="css/default.date.css">
-        <link rel="stylesheet" href="css/rtl.css">
+        <!-- <link rel="stylesheet" href="css/rtl.css"> -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/af-2.3.2/b-1.5.4/b-colvis-1.5.4/b-flash-1.5.4/b-html5-1.5.4/kt-2.5.0/r-2.2.2/rg-1.1.0/sc-1.5.0/sl-1.2.6/datatables.min.css"/>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
