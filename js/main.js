@@ -30,7 +30,7 @@ else{
 Validacion de nombre
 *****************************/
 $('#Nombre').focusout(function(){
-   var nameregex = /^[a-zA-Z ]$/;
+   var nameregex = /^[a-zA-Z]{1,}$/;
 
    if ($('#Nombre').val().match(nameregex)) {
    	$("#iconoNombre").remove();
@@ -51,7 +51,7 @@ $('#Nombre').focusout(function(){
 Validacion Apellido
 ***************************/
 $('#Apellido').focusout(function(){
-   var Apellido = /^[a-zA-Z ]$/;
+   var Apellido = /^[a-zA-Z]{1,}$/;
 
    if ($('#Apellido').val().match(Apellido)) {
    	$("#iconoApellido").remove();

@@ -10,21 +10,25 @@ class qrgenerator
     private $Semestre;
     private $F_Examen;
     private $FolioPago;
-    private $SalonExamen;
-    private $Hr;
+    private $email;
+    private $ncontrol;
 
         //constructor
-    public function __construct($Id, $Nombre, $Semestre, $Apellidos, $Carrera, $F_Examen, $FolioPago, $SalonExamen, $Hr)
+    public function __construct($Id, $Nombre, $Semestre, $Apellidos, $Carrera, $F_Examen, $FolioPago, $email, $ncontrol)
     {
-        $this->Id = $Id;
+        $this->Id = $this->cleanSpaces($Id);
         $this->Nombre = $Nombre;
         $this->Apellidos = $Apellidos;
         $this->Carrera = $Carrera;
         $this->Semestre = $Semestre;
         $this->F_Examen = $F_Examen;
         $this->FolioPago = $FolioPago;
-        $this->SalonExamen = $SalonExamen;
-        $this->Hr = $Hr;
+        $this->email = $email;
+        $this->ncontrol = $ncontrol;
+    }
+    private function cleanSpaces($dataToClean){
+        $cleanData = trim($dataToClean," ");
+        return $cleanData;
     }
     public function generate()
     {
@@ -38,20 +42,26 @@ class qrgenerator
             mkdir($dir);
 
             //Declaramos la ruta y nombre del archivo a generar
-        $filename = $dir . 'test.png';
+        $filename = $dir . "{$this->Id}.png";
 
             //Parametros de Condiguración
 
         $tamaño = 3; //Tamaño de Pixel
         $level = 'H'; //Precisión Baja
         $framSize = 3; //Tamaño en blanco
-        $contenido = 5; //Texto
 
             //Enviamos los parametros a la Función para generar código QR 
-        QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
+        QRcode::png($this->MakeContentQR(), $filename, $level, $tamaño, $framSize); 
 
             //Mostramos la imagen generada
         return '<img src="' . $dir . basename($filename) . '" /><hr/>';
+    }
+    //genera el contenido para insertar en codigo QR
+    private function MakeContentQR(){
+        $content = "{$this->Nombre} {$this->Apellidos}\n{$this->email}\n{$this->Carrera}\n
+                    {$this->Semestre}\n{$this->ncontrol}\n{$this->FolioPago}\n{$this->F_Examen}";
+
+        return $content;
     }
     public function DeleteQrFile($dir)
     {
@@ -76,8 +86,8 @@ class qrgenerator
 
 }
 
-$funcion = new qrGenerator(6, 'luis', 11, 'barajas', 'isc', '10/10/2018', 1236544789, 'lab-idiomas', '13:00');
-$dir = 'temp';
-// $qr = $funcion->DeleteQrFile($dir);
+if($_POST){
+$funcion = new qrGenerator($_POST['id'], $_POST['nombre'], $_POST['semestre'], $_POST['apellido'], $_POST['carrera'], $_POST['FechaExamen'], $_POST['FolioP'], $_POST['email'], $_POST['nControl']);
 $qr = $funcion->generate();
 echo $qr;
+}
