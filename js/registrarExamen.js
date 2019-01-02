@@ -41,13 +41,11 @@ $(document).ready(function () {
             },
             success: function (data) {
                 console.log("Excito en envio de info...");
-                if (data == 1) {
-                    //location.href = `RExamenExito.php?id=${id}`;
-                } else {
+                if (data != 1) {
                     console.log(data);
-                    alert("Error en registro, intentelo nuevamente.");
-                }
-
+                    alert(data);
+                   location.reload();
+                } 
             },
             error: function () {
                 console.log("Fallo en envio");
