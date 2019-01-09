@@ -159,8 +159,8 @@ include_once 'php/headerHTML.php';
         var datos =['<?php echo implode("','", $arrayData); ?>'];
         var nombre  = document.getElementsByName("name").value;
         console.log(nombre);
-        var n =$("#Semestre").val();
-        console.log(n);
+        // var n =$("#Semestre").val();
+        // console.log(n);
        
         </script>
     <?php 

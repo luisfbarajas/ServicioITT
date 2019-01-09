@@ -9,8 +9,6 @@ if (isset($_GET)) {
     $data = $call->dataUser();
     $dateExamen = $call->getDateExamen();
 }
-
-
 if ($_SESSION['sesion_exito'] == 0) {
     echo "inicie sesion por favor";
 
@@ -80,10 +78,11 @@ require_once 'menuUsuario.php';
            
         </div>
         <div class="col-md-2">
-            <img src="php/temp/test.png" alt="Qrcode" class="qr">
+            <img src="php/temp/<?php echo $_GET['id'];?>.png" alt="Qrcode" class="qr">
         </div>
     </div>
 </div>
+        <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 <?php 
 require_once 'php/footerHTML.php';
