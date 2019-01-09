@@ -11,6 +11,15 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" style="margin-right:2%;">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="glyphicon glyphicon-book"></i>
+             Calificaciones <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+             <li><a href="uploadCal.php">Subir</a></li>
+             <li><a href="readCal.php">Consultar</a></li>
+            </ul>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="glyphicon glyphicon-calendar"></i>

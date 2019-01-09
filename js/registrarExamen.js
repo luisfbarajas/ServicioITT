@@ -32,7 +32,7 @@ $(document).ready(function () {
         };
         console.log(datos);
 
-        var promise = $.ajax({
+        var Registro = $.ajax({
             url: "php/RegistrarExamen.php",
             data: datos,
             method: "POST",
@@ -40,37 +40,57 @@ $(document).ready(function () {
                 console.log("Enviando datos");
             },
             success: function (data) {
-                console.log("Excito en envio de info...");
+                console.log("Excito en envio de info..."+data);
                 if (data != 1) {
                     console.log(data);
                     alert(data);
-                   location.reload();
-                } 
+                    location.reload();
+                }else{
+                    ajaxGenerarQR(completeData);
+                }
             },
             error: function () {
                 console.log("Fallo en envio");
             }
         });
-
-        promise.promise().done(function(){
-            //Generacion de QR
-            $.ajax({
-                url: "php/qrGenerator.php",
-                data: completeData,
-                method: "POST",
-                beforeSend: console.log("Enviando QR"),
-                success: function(data){
-                    if(data){
-                        location.href = `RExamenExito.php?id=${id}`;
-                    }else{
-                        console.log("Error en generacion de QR");
-                    }
-                },
-                error:function(){
-                    console.log("Error en QR");
-                }
-            });
-        });
+function ajaxGenerarQR(completeData)
+{
+    $.ajax({
+        url: "php/qrGenerator.php",
+        data: completeData,
+        method: "POST",
+        beforeSend: console.log("Enviando QR"),
+        success: function (data) {
+            if (data) {
+                location.href = `RExamenExito.php?id=${id}`;
+            } else {
+                console.log("Error en generacion de QR");
+            }
+        },
+        error: function () {
+            console.log("Error en QR");
+        }
+    }); 
+}
+        // Registro.promise().done(function () {
+        //     //Generacion de QR
+        //     $.ajax({
+        //         url: "php/qrGenerator.php",
+        //         data: completeData,
+        //         method: "POST",
+        //         beforeSend: console.log("Enviando QR"),
+        //         success: function (data) {
+        //             if (data) {
+        //                 location.href = `RExamenExito.php?id=${id}`;
+        //             } else {
+        //                 console.log("Error en generacion de QR");
+        //             }
+        //         },
+        //         error: function () {
+        //             console.log("Error en QR");
+        //         }
+        //     });
+        // });
     });
 
     //Configuracion de calendario
