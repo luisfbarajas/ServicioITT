@@ -14,7 +14,7 @@ foreach ($datesregister as $row => $key) {
     <tr>
         <td>{$key[0]}</td>
         <td> {$key[1]} </td>
-        <td> {$key[2]} {$key[3]}</td>
+        <td> {$key[3]} {$key[2]}</td>
         <td> {$key[4]} </td>
         <td> {$key[5]} </td>
         <td> {$key[6]} </td>

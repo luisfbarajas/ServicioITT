@@ -61,6 +61,16 @@ class RegistroExamen
 
 
     }
+
+    private getcupo($fecha){
+        try{
+            $query = "SELECT CUPO FROM {$this->Fechas} WHERE fecha = {$fecha}";
+            $execute = mysqli_query($this->conexion,$query);
+            return $result = mysqli_fetch_assoc($excecute);
+        } catch(Exception $e){
+            echo $e->getMessage();
+        }
+    }
     private function checkFolioPago()
     {
         try {
