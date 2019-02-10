@@ -1,7 +1,7 @@
 <footer class="app-footer">
             <div class="app-texto">
-                <h4>Instituto nacional de Mexico</h4>
-                <h5>Instituto Tecnologico de Tijuana</h5>
+                <h4>Tecnológico Nacional de México</h4>
+                <h5>Instituto Tecnológico de Tijuana</h5>
                 <p>Calzada Del Tecnológico S/N, Fraccionamiento Tomas Aquino. Tijuana, Baja California.<br/> 
                      C.P. 22414 Teléfono: +52 (664) 607 8400<br/></p>
                      <img src="img/galgos.jpg" class="img-responsive img-footer">

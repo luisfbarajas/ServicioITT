@@ -194,7 +194,11 @@ hr {
     margin-right: 0.25em;
     /* 4px */
 }
-
+.button{
+	border-radius: 50%;
+	color: #f1e5e6;
+	background-color: #08A51B;
+}
 
 /* style 1 */
 

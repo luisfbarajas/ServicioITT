@@ -82,7 +82,7 @@ include_once 'php/headerHTML.php';
                     </div>
                   </div>
                 <hr/>           
-                <h4 id="fechaV">Verifica que tus datos sean correctos antes de registrar la fecha de tu examen!. </h4>
+                <h4 id="fechaV">¡Verifica que tus datos sean correctos antes de registrar la fecha de tu examen! </h4>
                   <div class="row pt">
                      <div class="col-xs-12 col-sm-4 ">
                          <label for="nombre">Nombre(s):</label><br>
@@ -102,11 +102,11 @@ include_once 'php/headerHTML.php';
                     <span class="help-block" id="error"></span>    
                     </div>
                      <div class="col-xs-12 col-sm-4">
-                        <label>Correo electronico:</label><br>
+                        <label>Correo electrónico:</label><br>
                         <div class="form-group">
                           <div class="input-group">
                              <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" id="Correos"></span></div>
-                                <input name="email" type="text" id="email" class="form-control" placeholder="Correo electronico"
+                                <input name="email" type="text" id="email" class="form-control" placeholder="Correo electrónico"
                                  value="<?php echo $resultado['email']; ?>" readonly="true">
                               </div> 
                               <span class="help-block" id="error"></span>                     
@@ -115,7 +115,7 @@ include_once 'php/headerHTML.php';
                        </div>
                 <div class="row">
                   <div class="col-xs-12 col-sm-4">
-                    <label>Numero de control:</label><br>
+                    <label>Número de control:</label><br>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-credit-card icon"></span></div>
                         <input type="text" name="Nctrl" id="Nctrl" class="form-control" value="<?php echo $resultado['nctrl']; ?>" readonly="true">
@@ -154,13 +154,30 @@ include_once 'php/headerHTML.php';
           </form>
          
         </section>
+        <div class="alert alert-info">
+          <p>
+            <strong>Pruebas.</strong> En este formulario solamente es necesario capturar el folio de pagó,
+            la fecha y hora en que se pago y una fecha registrada para realizar el examen. <br>
+            <strong>Datos ejemplo</strong>:
+            <ul>
+              <li><strong>Folio:</strong> 9685321475</li>
+              <li><strong>Fecha y hora:</strong> 30/01/2019 23:59</li>
+              <li><strong>Fecha de examen:</strong> 2019/01/23</li>
+            </ul>
+            <strong>Importante!</strong> La fecha de examen debe ser alguna de las registradas en el sistema como 
+            fecha de examen para ser aceptada, las fechas aceptadas en el sistema actualmente son: 
+            <ul>
+              <li>2019/01/23</li>
+              <li>2019-01-01</li>
+              <li>2018-05-08</li>
+            </ul>
+          </p>
+        </div>
 
         <script>
         var datos =['<?php echo implode("','", $arrayData); ?>'];
         var nombre  = document.getElementsByName("name").value;
         console.log(nombre);
-        // var n =$("#Semestre").val();
-        // console.log(n);
        
         </script>
     <?php 

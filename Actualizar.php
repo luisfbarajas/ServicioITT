@@ -3,7 +3,7 @@ session_start();
 ob_start();
 
 if ($_SESSION['sesion_exito'] == 0) {
-    echo "inicie sesion por favor";
+    echo "Inicie sesión por favor";
 
     header('Location:index.php');
 }
@@ -31,10 +31,10 @@ $resultado = mysqli_fetch_array($resultados);
     <div class="menu">
     <?php include 'menuUsuario.php'; ?>
     </div>
-    <h3 class="Fecha-Titulo">Actualizacion de datos.</h3>
+    <h3 class="Fecha-Titulo">Actualización de datos.</h3>
  
     <div class="container">
-        <p class="intro">Realice unicamente las correcciones en los datos con errores, si los datos estan correctos
+        <p class="intro">Realice únicamente las correcciones en los datos con errores, si los datos están correctos
             no los modifique.
             <b>
                 <span class="text-danger"> Recuerda guardar los cambios.</span>
@@ -59,7 +59,7 @@ $resultado = mysqli_fetch_array($resultados);
                     <span class="help-block" id="error"></span>    
                     </div>
                      <div class="col-xs-12 col-sm-4">
-                        <label>Correo electronico:</label><br>
+                        <label>Correo electrónico:</label><br>
                         <div class="form-group">
                           <div class="input-group">
                              <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" id="Correos"></span></div>
@@ -72,7 +72,7 @@ $resultado = mysqli_fetch_array($resultados);
                        </div>
                 <div class="row">
                   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <label>Numero de control:</label><br>
+                    <label>Número de control:</label><br>
                     <div class="input-group">
                       <div class="input-group-addon"><span class="icon-credit-card icon"></span></div>
                         <input type="text" name="Nctrl" id="Nctrl" class="form-control" value="<?php echo $resultado['nctrl']; ?>">

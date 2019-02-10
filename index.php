@@ -15,9 +15,9 @@ include_once 'php/headerHTML.php';
               <img src="img/logo.png" alt="logoitt" class="img-responsive logoitt" ><br/>
           </div>
         </div>
-        <h3>Instituto Tecnologico de Tijuana</h3>
+        <h3>Instituto Tecnológico de Tijuana</h3>
         <hr>                
-        <p class="intro">Registrate en linea para realizar tu examen de ingles.</p>
+        <p class="intro">Regístrate en línea para realizar tu examen de inglés.</p>
         <div class="boton">
           <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Ingresar</button>
     </header>
@@ -39,7 +39,7 @@ include_once 'php/headerHTML.php';
         <img src="img/registro.png" alt="registro" >
         <div class="caption">
           <h4 style="text-align: center;">Registro.</h4>
-          <p>¿Aun no te registras?. Que esperas no tomas mas de 5 minutos de tu tiempo.</p>
+          <p>¿Aun no te registras? Qué esperas no tomas más de 5 minutos de tu tiempo.</p>
         </div>
       </a>
     </div>

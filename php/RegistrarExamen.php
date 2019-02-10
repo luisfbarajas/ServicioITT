@@ -40,34 +40,55 @@ class RegistroExamen
     }
     public function InsertData()
     {
+        $cupo = $this->getcupo($this->Examen);
+        $current_Date = getdate();
+        $fecha_actual = $current_Date['year'] . "/" . $current_Date['mon'] . "/" . $current_Date['mday'];
+        $fecha_e = strtotime($fecha_actual);
+        $fecha_entrada = strtotime($this->Examen);
+        if ($fecha_e > $fecha_entrada) {
+            return 'Fecha pasada, escoge otra fecha.';
+        } else {
 
-        try {
-            $this->setDateData();
-            if ($this->checkFolioPago()) {
-                $Query = "INSERT INTO `r_examen` (`id`, `ID_FECHAS`, `ID_ALUMNO`, `HORA`, `FechaPago`, `FolioPago`,`FechaActual`) VALUES (NULL, {$this->idFecha}, $this->id, '{$this->hora}', '{$this->Pago}', {$this->Folio},'{$this->date}');";
-                $execute = mysqli_query($this->conexion, $Query);
-                if ($execute) {
-                    return $execute;
+            try {
+                $this->setDateData();
+                if ($this->checkFolioPago()) {
+                    if ($cupo > 0) {
+                        $Query = "INSERT INTO `r_examen` (`id`, `ID_FECHAS`, `ID_ALUMNO`, `HORA`, `FechaPago`, `FolioPago`,`FechaActual`) VALUES (NULL, {$this->idFecha}, $this->id, '{$this->hora}', '{$this->Pago}', {$this->Folio},'{$this->date}');";
+                        $execute = mysqli_query($this->conexion, $Query);
+                        if ($execute) {
+                            $this->lesscupo($cupo - 1);
+                            return $execute;
+                        } else {
+                            return $this->ErrorValidate();
+                        }
+                    } else {
+                        return 'Grupo saturado, escoge otra fecha';
+                    }
+
                 } else {
-                    return $this->ErrorValidate();
+                    return 'Folio ya registrado. Contacte con el coordinador de lenguas extranjeras.';
                 }
-            } else {
-                return 'Folio ya registrado. Contacte con el coordinador de lenguas extranjeras.';
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
             }
 
-        } catch (Exception $e) {
-            echo $e->getMessage();
         }
-
-
+    }
+    private function lesscupo($cupo)
+    {
+        $query = "UPDATE {$this->Fechas} SET cupo = {$cupo} WHERE id = {$this->idFecha}";
+        $execute = mysqli_query($this->conexion, $query);
     }
 
-    private getcupo($fecha){
-        try{
-            $query = "SELECT CUPO FROM {$this->Fechas} WHERE fecha = {$fecha}";
-            $execute = mysqli_query($this->conexion,$query);
-            return $result = mysqli_fetch_assoc($excecute);
-        } catch(Exception $e){
+    public function getcupo($fecha)
+    {
+        try {
+            $query = "SELECT cupo FROM {$this->Fechas} WHERE FECHA = '{$fecha}'";
+            $execute = mysqli_query($this->conexion, $query);
+            $result = mysqli_fetch_assoc($execute);
+            return $result['cupo'];
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
@@ -89,8 +110,6 @@ class RegistroExamen
     }
     private function ErrorValidate()
     {
-
-        // echo $this->ValidateDate();
         if (!$this->ValidateDate()) {
             return 'Fecha no registrada para examen';
         } elseif ($this->validateStudent()) {
@@ -153,8 +172,8 @@ if ($_POST) {
     $FechaExamen = $_POST['FechaExamen'];
     $FechaPago = $_POST['FechaPago'];
 // $Id = 14;
-// $FolioP = 978335412365;
-// $FechaExamen = '2018/12/31';
+// $FolioP = 30659;
+// $FechaExamen = '2019-02-09';
 // $FechaPago = '2018/12/31';
     include_once '../Conexion.php';
     $registro = new RegistroExamen($Id, $FolioP, $FechaExamen, $FechaPago, $conexion);

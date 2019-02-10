@@ -11,11 +11,12 @@ foreach ($_FILES as $key) {
 
     $destino = "{$ruta}\\{$nombre_archivo}";
     $explo = explode(".", $nombre);
+
     if ($explo[1] != "csv") {
-        $alert = 1;
+       echo "No es CSV";
     } else {
         if (move_uploaded_file($ruta_temporal, $destino)) {
-            $alert = 2;
+            $alert=2;
         }
 
     }
@@ -37,7 +38,8 @@ while (($datos = fgetcsv($fichero, 1000)) != false) {
             $datos[3] = 0;
         }
         $data[] = "({$datos[0]},'{$datos[1]}','{$fecha}',{$datos[3]})";
-        $query = "INSERT INTO Calificaciones (`Ncontrol`, `nombre`, `fecha`, `calificacion`) VALUES {$data[$index]}";
+        $query = "INSERT INTO calificaciones (`Ncontrol`, `nombre`, `fecha`, `calificacion`) VALUES {$data[$index]}";
         $execute = mysqli_query($conexion, $query);
     }
 }
+header('Location:../readCal.php');

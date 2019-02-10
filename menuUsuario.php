@@ -8,7 +8,7 @@
                       <span class="icon-bar" style="background-color: green;"></span>
                       <span class="icon-bar" style="background-color: green;"></span>
                   </button>
-                  <a class="navbar-brand" href="home.php" style="position: absolute;" id="brand-menu">Coordinacion de lenguas extranjeras.</a>  
+                  <a class="navbar-brand" href="home.php" style="position: absolute;" id="brand-menu">Coordinación de lenguas extranjeras.</a>  
               </div>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

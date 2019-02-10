@@ -29,7 +29,7 @@ include_once 'php/headerHTML.php';
                 <h3 class="Fecha-Titulo">Agregar fecha.</h3>
                 <p>
                 Lleve a cabo el alta de nuevas fechas añadiendo los datos correspondientes.
-                Estas fechas agregadas se veran reflejadas al momento de guardar los datos.
+                Estas fechas agregadas se verán reflejadas al momento de guardar los datos.
                 <span class="text-danger"><b>No olvide guardar antes de salir.</b></span> 
                 </p>
                 <form>
@@ -78,7 +78,7 @@ include_once 'php/headerHTML.php';
                         </div>
                         <!-- Salon -->
                         <div class="col-md-6 col-lg-6 pt">
-                            <label for="txtAddSalon" class="control-label">Salon:</label>
+                            <label for="txtAddSalon" class="control-label">Salón:</label>
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="glyphicon glyphicon-"></i>
@@ -116,7 +116,7 @@ include_once 'php/headerHTML.php';
             <div class="col-md-6 col-lg-6 col-sm-6">
                 <h3 class="Fecha-Titulo">Editar fecha.</h3>
                 <p>
-                Lleve a cabo la edicion de los datos que necesite 
+                Lleve a cabo la edición de los datos que necesite 
                 <span class="text-danger"><b>No olvide guardar antes de salir.</b></span> 
                 </p>
                 <form>
@@ -173,7 +173,7 @@ include_once 'php/headerHTML.php';
                         </div>
                         <!-- Salon -->
                         <div class="col-md-6 col-lg-6 pt">
-                            <label for="txtEditSalon" class="control-label">Salon:</label>
+                            <label for="txtEditSalon" class="control-label">Salón:</label>
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="glyphicon glyphicon-"></i>

@@ -201,7 +201,7 @@ VALIDACION DE CARRERA
 	 VALIDACION DE FOLIO DE PAGO 
 	 ****************************************************/
 	$("#FolioP").focusout(function(){
-		var control = /^[0-9]{4,}$/;
+		var control = /^[0-9]{5,}$/;
 		if($("#FolioP").val().match(control)){
 			$("#iconoFolio").remove();
 			$("#FolioP").parent().parent().attr("class","form-group has-success has-feedback");

@@ -65,7 +65,7 @@ class InsertUser
 	{
 		switch ($type) {
 			default:
-				return 'Datos invalidos';
+				return 'Datos inválidos';
 				break;
 			case 1:
 				return $this->errorMail();
@@ -86,7 +86,7 @@ class InsertUser
 		if (preg_match($this->ExPass, $this->pass)){
 			return 'Correo invalido';
 		}else{
-			return 'Contraseña debil';
+			return 'Contraseña débil';
 		}
 	}
 	private function checkEmailAndNctrl()
