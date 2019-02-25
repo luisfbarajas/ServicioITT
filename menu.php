@@ -8,7 +8,7 @@
                       <span class="icon-bar" style="background-color: green;"></span>
                       <span class="icon-bar" style="background-color: green;"></span>
                   </button>
-                  <a class="navbar-brand" href="index.php" style="position: absolute;" id="brand-menu">Coordinacion de lenguas extranjeras.</a>  
+                  <a class="navbar-brand" href="index.php" style="position: absolute;" id="brand-menu">Coordinación de lenguas extranjeras.</a>  
               </div>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,7 +31,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Iniciar sesion.</h4>
+          <h4 class="modal-title">Iniciar sesión.</h4>
         </div>
         <div class="modal-body">
       
@@ -45,7 +45,7 @@
               <div class="col-lg-12">
         <form class="login-form " style="display: block;" role="form" >
          <div class="form-group">
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Correo electrónico" value="">
                   </div>
                   <div class="form-group">
                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">

@@ -6,11 +6,11 @@ include_once 'php/headerHTML.php';
          <div class="header">
        <?php include 'menu.php'; ?>
       </div><br/><br/>       
-        <b> <h2 class="Fecha-Titulo pt">Proceso para realizar tu examen de ingles.</h2></b>
+        <b> <h2 class="Fecha-Titulo pt">Proceso para realizar tu examen de inglés.</h2></b>
 
   <section class="indicaciones">
     	
-    	<p class="proceso-texto">Para poder realizar tu examen de ingles simplemente hay que seguir estos sencillos pasos.</p>
+    	<p class="proceso-texto">Para poder realizar tu examen de inglés simplemente hay que seguir estos sencillos pasos.</p>
     </section>
     <section class="Paso1">
 	<div class="container">
@@ -21,7 +21,7 @@ include_once 'php/headerHTML.php';
 		</div>
 		<div class="col-xs-12 col-sm-7">
 			<h4 class="titulo-pasos">Realiza tu pago.</h4>
-			<p class="paso1-texto">Con tu numero de control, acude al departamento de servicios financieros del <span class="tec"><b>Instituto Tecnologico de Tijuana</b></span> y realiza el pago correspondiente. Es importante que <span class="text-danger"><b>conserve su comprobante</b></span> ya que contiene datos que seran necesarios mas adelante.</p>
+			<p class="paso1-texto">Con tu número de control, acude al departamento de servicios financieros del <span class="tec"><b>Instituto Tecnológico de Tijuana</b></span> y realiza el pago correspondiente. Es importante que <span class="text-danger"><b>conserve su comprobante</b></span> ya que contiene datos que serán necesarios más adelante.</p>
 		</div>
 		<div  class="ccol-xs-12 col-sm-4">
 			<img src="img/pago.png" class="img-responsive ">
@@ -39,8 +39,8 @@ include_once 'php/headerHTML.php';
 				<img src="img/inscribite.png" class="img-responsive " style="height: 60%; width: 60%;">
 		</div>
 		<div class="col-xs-12 col-sm-7">
-			<h4 class="titulo-pasos">Registrate en linea.</h4>
-			<p class="paso1-texto">Lleva a cabo tu registro en la pagina para poder acceder y registrarte en la fecha que deseas. Recuerda Unicamente puedes <span class="text-danger"><b>utilizar correo institucional para registrarte</b></span>. Si no cuentas con tu correo institucional solicitalo cuanto antes!.</p>
+			<h4 class="titulo-pasos">Regístrate en línea.</h4>
+			<p class="paso1-texto">Lleva a cabo tu registro en la página para poder acceder y registrarte en la fecha que deseas. Recuerda Únicamente puedes <span class="text-danger"><b>utilizar correo institucional para registrarte</b></span>. Si no cuentas con tu correo institucional ¡solicítalo cuanto antes! ¡Verifica que tus datos sean correctos antes de registrar la fecha de tu examen!</p>
 		</div>
 		<div  class="ccol-xs-12 col-sm-1">
 			<span class="numero">#2</span>
@@ -57,11 +57,11 @@ include_once 'php/headerHTML.php';
 			<span class="numero">#3</span>
 		</div>
 		<div class="col-xs-12 col-sm-7">
-			<h4 class="titulo-pasos">Escoje la fecha.</h4>
-			<p class="paso1-texto">Ingresa y escoje la fecha para presentar tu examen.<br><span class="text-danger"><b>Importante Recuerda:</b></span></p>
+			<h4 class="titulo-pasos">Escoge la fecha.</h4>
+			<p class="paso1-texto">Ingresa y escoge la fecha para presentar tu examen.<br><span class="text-danger"><b>Importante Recuerda:</b></span></p>
 			<ul class="paso1-texto">
-				<li>Una vez que se escojiste la fecha no podras cambiarla.</li>
-				<li>El cupo es limitado a 25 alumnos por fecha.</li>
+				<li>Una vez que se escogiste la fecha no podrás cambiarla.</li>
+				<li>El cupo es limitado a 30 alumnos por fecha.</li>
 			</ul>
 		</div>
 		<div  class="ccol-xs-12 col-sm-4">
@@ -80,10 +80,10 @@ include_once 'php/headerHTML.php';
 				<img src="img/examen.jpg" class="img-responsive " style="height: 60%; width: 60%; margin-top: 10px;">
 		</div>
 		<div class="col-xs-12 col-sm-7">
-			<h4 class="titulo-pasos">Preparate.</h4>
+			<h4 class="titulo-pasos">Prepárate.</h4>
 			<p class="paso1-texto">Una vez que completaste el registro, 
-				solamente queda esperar la fecha que escojiste para tu examen.
-				  El dia de tu examen recuerda llevar tu recibo de pago y una identificacion, es importante <span class="text-danger"><b>llegar 15 minutos antes</b></span> de la hora que se te cito.</p>
+				solamente queda esperar la fecha que escogiste para tu examen.
+				  El día de tu examen recuerda llevar tu recibo de pago y una identificación, es importante <span class="text-danger"><b>llegar 15 minutos antes</b></span> de la hora que se te cito.</p>
 		</div>
 		<div  class="ccol-xs-12 col-sm-1">
 			<span class="numero">#4</span>
@@ -101,7 +101,7 @@ include_once 'php/headerHTML.php';
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Iniciar sesion.</h4>
+          <h4 class="modal-title">Iniciar sesión.</h4>
         </div>
         <div class="modal-body">
       

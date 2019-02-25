@@ -34,12 +34,28 @@ $Consulta = "SELECT alumno.name,alumno.last_name,alumno.nctrl,alumno.CARRERA,usu
 $resultados = mysqli_query($conexion, $Consulta);
                            //ASIGNACION DE RESULTADOS
 $resultado = mysqli_fetch_array($resultados);
+
+$querycal = "SELECT calificacion FROM `calificaciones` WHERE Ncontrol = {$resultado['nctrl']} ORDER by id DESC LIMIT 1";
+$executecal = mysqli_query($conexion, $querycal);
+$resultadocal = mysqli_fetch_assoc($executecal);
+
+if (!is_null($resultadocal['calificacion']) || !empty($resultadocal['calificacion'])) {
+    $datos1 = " <label class='letra-datos'>Nombre(s):" . $resultado['name'] . " </label><br>
+    <label class='letra-datos'>Apellidos: " . $resultado['last_name'] . " </label><br>
+    <label class='letra-datos'>Carrera: " . $resultado['CARRERA'] . " </label><br>
+    <label class='letra-datos'>Carrera: " . $resultadocal['calificacion'] . " </label><br>";
+
+} else {
                            //despliegue de datos primera columna   
-$datos1 = " <label class='letra-datos'>Nombre(s):" . $resultado['name'] . " </label><br>
-                        <label class='letra-datos'>Apellidos: " . $resultado['last_name'] . " </label><br>
-                        <label class='letra-datos'>Carrera: " . $resultado['CARRERA'] . " </label><br>";
+    $datos1 = " <label class='letra-datos'>Nombre(s):" . $resultado['name'] . " </label><br>
+                           <label class='letra-datos'>Apellidos: " . $resultado['last_name'] . " </label><br>
+                           <label class='letra-datos'>Carrera: " . $resultado['CARRERA'] . " </label><br>";
+
+}
+// die;
+
                         //despliegue de datos segunda columna
-$datos2 = " <label class='letra-datos'>Numero de control: " . $resultado['nctrl'] . "</label><br>
+$datos2 = " <label class='letra-datos'>Número de control: " . $resultado['nctrl'] . "</label><br>
                         <label class='letra-datos'>Semestre: " . $resultado['semestre'] . "</label><br>
                         <label class='letra-datos'>Correo: " . $resultado['email'] . "</label><br>";
 ?>

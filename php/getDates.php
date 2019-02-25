@@ -13,7 +13,7 @@ function obtenerFecha()
 <tr>
  <th>Fecha</th>
  <th>Horario</th>
- <th>Salon</th>
+ <th>Salón</th>
  <th>Unidad</th>
  <th>Cupo</th>
  <th>Acciones</th>

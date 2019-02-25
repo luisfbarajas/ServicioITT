@@ -13,11 +13,11 @@ $llamada = new adminFechas;
 //verificacion de accion a realizar
 //agregar
 if ($funcion == "1") {
-    $llamada->AgregarFecha($conexion, $Fechas, $fecha, $hora, $unidad, $salon, $cupo);
+   return $llamada->AgregarFecha($conexion, $Fechas, $fecha, $hora, $unidad, $salon, $cupo);
 }
  //editar
 if ($funcion == "2") {
-    $resulta = $llamada->EditarFecha($conexion, $Fechas, $fecha, $hora, $unidad, $salon, $cupo, $id);
+   return $resulta = $llamada->EditarFecha($conexion, $Fechas, $fecha, $hora, $unidad, $salon, $cupo, $id);
 
 }
 class adminFechas
@@ -26,7 +26,7 @@ class adminFechas
     {
         $sql = "INSERT INTO $tabla (FECHA,HORARIO,SALON,UNIDAD,cupo) VALUES('$fecha','$hora','$salon','$unidad','$cupo')";
         $query = mysqli_query($conexion, $sql);
-        mysqli_close($conexion);
+        return $query;
     }
     function EditarFecha($conexion, $tabla, $fecha, $hora, $unidad, $salon, $cupo, $id)
     {
@@ -38,7 +38,7 @@ class adminFechas
         cupo = $cupo
         WHERE id=$id ";
         $ejecutar = mysqli_query($conexion, $Editar);
-        mysqli_close($conexion);
+        return $ejecutar;
 
     }
 }

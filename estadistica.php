@@ -22,7 +22,7 @@ $doceavo = $call->getSemestreCount($alumno,12,1);
 $mayorQ = $call->getSemestreCount($alumno,13,2);
 ?>
 <div class="container mt-4">
-	<h2 class="text-center">Estadisticas de alumnos</h2>
+	<h2 class="text-center">Estadísticas de alumnos</h2>
 
 	<div class="row">
 		<div class="col-lg-6">
@@ -42,11 +42,6 @@ $mayorQ = $call->getSemestreCount($alumno,13,2);
 			<div id="semestre" style="width:80;height:500px;">
 			</div>
 		</div>
-		<!-- <div class="col-lg-6">
-			<h3>Carrera</h3><br>
-			<div id="Carrera" >
-			</div>
-		</div> -->
  	</div>
 </div>
 <script>

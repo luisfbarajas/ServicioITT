@@ -24,7 +24,31 @@ class Estadisticas
         $result = mysqli_fetch_assoc($execute);
         return $result;
     }
-  
+    
+    public function getCal($table){
+        $query = "SELECT COUNT(calificacion) as cont FROM {$table} WHERE calificacion BETWEEN 0 AND 69 ";
+        $execute = mysqli_query($this->conexion,$query);
+        $result = mysqli_fetch_assoc($execute);
+        return $result;
+    }
+
+    public function getCalAproved($table){
+        $query = "SELECT COUNT(calificacion) as cont FROM {$table} WHERE calificacion BETWEEN 70 AND 100 ";
+        $execute = mysqli_query($this->conexion,$query);
+        $result = mysqli_fetch_assoc($execute);
+        return $result;
+    }
+    public function getCalDynamic($table,$range1,$range2){
+        $query = "SELECT COUNT(calificacion) as cont FROM {$table} WHERE calificacion BETWEEN {$range1} AND {$range2} ";
+        $execute = mysqli_query($this->conexion,$query);
+       if($execute == true){
+        $result = mysqli_fetch_assoc($execute);
+        return $result;
+       }else{
+           return 0;
+       }
+    
+    }
     // 1 = ingeniería en sistemas computacionales
     // 2 = ingeniería Biomedica
     // 3 = Contador publico
@@ -124,3 +148,9 @@ class Estadisticas
         return $result;
     }
 }
+
+
+// include '../Conexion.php';
+// $clase = new Estadisticas($conexion);
+// $cali1 = $clase->getCalDynamic("calificaciones",11,20);
+// echo var_dump($cali1);

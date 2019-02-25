@@ -14,7 +14,7 @@ foreach ($datesregister as $row => $key) {
     <tr>
         <td>{$key[0]}</td>
         <td> {$key[1]} </td>
-        <td> {$key[2]} {$key[3]}</td>
+        <td> {$key[3]} {$key[2]}</td>
         <td> {$key[4]} </td>
         <td> {$key[5]} </td>
         <td> {$key[6]} </td>
@@ -25,10 +25,10 @@ foreach ($datesregister as $row => $key) {
 
 ?>
 
-<h1 class="text-center mt-4">Examenes Registrados.</h1>
+<h1 class="text-center mt-4">Exámenes Registrados.</h1>
 <div class="container">
     <div class="row">
-        <p class="proceso-texto">Para mostrar los examanes registrados es necesario filtrarlos por fecha. Escoja la fecha de la cual desea 
+        <p class="proceso-texto">Para mostrar los exámanes registrados es necesario filtrarlos por fecha. Escoja la fecha de la cual desea 
         ver el registro.</p>
         <div class="col-md-12 col-lg-12 col-sm-12 col-ms-12">
             <div class="col-md-2 col-lg-1 col-sm-2">

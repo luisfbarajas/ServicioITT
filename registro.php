@@ -184,9 +184,23 @@ include_once 'php/headerHTML.php';
                   </div>
                 </form>         
             
-             
+          
            </div>
           </div>
+          <div class="alert alert-info">
+                <p>
+                <strong>Pruebas:</strong>
+                Para efectos de prueba del formulario de registro pueden se brinda como ejemplo los siguientes datos:
+                <ul>
+                  <li><strong>Nombre y aprellido:</strong> Pruebas</li>
+                  <li><strong>Número de control: </strong>12345678/c12345678</li>
+                  <li><Strong>Correo: </Strong>pruebas@gmail.com</li>
+                  <li><strong>Contraseña:</strong> Pruebas123@</li>
+                </ul>
+                Estos son ejemplos de datos validos al llenar el formulario, los datos faltantes solo se necesitan escoger 
+                el valor deseado.
+                </p>
+             </div>
     </div>
 <!--ventana modal para login -->
      <div class="modal fade" id="myModal" role="dialog">
@@ -195,7 +209,7 @@ include_once 'php/headerHTML.php';
           <div class="modal-content">
              <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Iniciar sesion.</h4>
+              <h4 class="modal-title">Iniciar sesión.</h4>
              </div>
              <div class="modal-body">
               <div class="container">
@@ -207,7 +221,7 @@ include_once 'php/headerHTML.php';
                           <div class="col-lg-12">
                               <form class="login-form " style="display: block;" role="form" action="sesion.php" method="POST">
                                   <div class="form-group">
-                                    <input type="text" name="username" id="username2" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+                                    <input type="text" name="username" id="username2" tabindex="1" class="form-control" placeholder="Correo electrónico" value="">
                                   </div>
                                   <div class="form-group">
                                     <input type="password" name="password" id="password2" tabindex="2" class="form-control" placeholder="Contraseña">
