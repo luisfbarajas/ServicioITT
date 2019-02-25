@@ -3,9 +3,12 @@ include_once 'php/headerHTML.php';
 include_once 'menuAdmin.php';
 include_once 'php/readCal.php';
 include_once 'Conexion.php';
-
+//instancia a clase
 $class = new readCal($conexion);
-$data  = $class->calStudents();
+if($_GET){
+$fecha = $_GET['fecha'];
+$top = $_GET['top'];
+$data  = $class->getFilterCal($fecha,$top);
 $bodyTable = null;
 foreach($data as $row => $key){
     $bodyTable.="
@@ -17,6 +20,23 @@ foreach($data as $row => $key){
     </tr>
     ";
 }
+}else{
+
+    $data  = $class->calStudents();
+    $bodyTable = null;
+    foreach($data as $row => $key){
+        $bodyTable.="
+        <tr>
+            <td>{$key[1]}</td>
+            <td>{$key[2]}</td>
+            <td>{$key[3]}</td>
+            <td>{$key[4]}</td>
+        </tr>
+        ";
+    }
+}
+
+
 ?>
 <div class="container mt-4">
 <h2 class="text-center">Consulta de calificaciones</h2>

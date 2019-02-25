@@ -25,21 +25,39 @@ foreach ($_FILES as $key) {
 $x = 0;
 $data = array();
 $fichero = fopen($destino, "r");
+$url = null;
+$top = 0;
+$succes = false;
 
 while (($datos = fgetcsv($fichero, 1000)) != false) {
     $fecha = null;
-    $fecha2 = null;
     $x++;
     if ($x > 1) {
         $index = $x - 2;
         $fecha = str_replace('/', '-', $datos[2]);
- 
+        $url = $fecha;
+        $top = $x;
+
         if (empty($datos[3])) {
             $datos[3] = 0;
         }
+
         $data[] = "({$datos[0]},'{$datos[1]}','{$fecha}',{$datos[3]})";
         $query = "INSERT INTO calificaciones (`Ncontrol`, `nombre`, `fecha`, `calificacion`) VALUES {$data[$index]}";
         $execute = mysqli_query($conexion, $query);
+        $succes = $execute;
+        if(!$succes){
+            echo "Fallo en inserción de calificaciones. Revise que los datos tengan el formato correcto.";
+            echo var_dump($succes);
+            print_r($data[$index]);
+            die();
+        }
     }
+  
 }
-header('Location:../readCal.php');
+$top = $top-1;
+if($succes){
+header("Location:../readCal.php?fecha={$url}&top={$top}");
+}else{
+    echo "Fallo en inserción de calificaciones.";
+}

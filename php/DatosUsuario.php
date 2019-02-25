@@ -1,6 +1,14 @@
 <?php
 class DatosUsuario
 {
+
+    public function getAllStudents($table,$conexion)
+    {
+        $query = "SELECT * FROM {$table} INNER JOIN usuario ON alumno.id = usuario.id_alumno";
+        $execute = mysqli_query($conexion, $query);
+        $result = mysqli_fetch_all($execute);
+        return $result;
+    }
     public function Datos($nombre, $conexion, $tabla)
     {
        // require "../Conexion.php";
@@ -22,6 +30,8 @@ class DatosUsuario
         mysqli_close($conexion);
     }
 }
-    // $funcion = new DatosUsuario;
-    // echo $funcion->UsuarioId('cesar.lopez16@tectijuana.edu.mx');
+// include_once '../Conexion.php';
+//     $funcion = new DatosUsuario;
+//     // echo $funcion->UsuarioId('cesar.lopez16@tectijuana.edu.mx');
+//     echo var_dump($funcion->getAllStudents('alumno',$conexion));
 ?>

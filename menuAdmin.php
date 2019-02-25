@@ -32,10 +32,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="glyphicon glyphicon-list-alt"></i>
-             Examen <span class="caret"></span></a>
+             Listas <span class="caret"></span></a>
              <ul class="dropdown-menu">
-             <li><a href="ExamenRegistrado.php">Registrados</a></li>
-             <li><a href="#">....</a></li>
+             <li><a href="ExamenRegistrado.php">Examenes</a></li>
+             <li><a href="estudiantes.php">Alumnos</a></li>
             </ul>
         </li>
         <li class="dropdown">

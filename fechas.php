@@ -46,7 +46,7 @@ include_once 'php/headerHTML.php';
     ?>
 </div>
  <section class="titulo">
-         <h1>Resgistrar fecha de examen.</h1>
+         <h1>Registrar fecha de examen.</h1>
         </section>      
         <section class="indicaciones">
          <p class="text indicacion-fecha">Completa los datos siguientes para llevar a cabo el registro de tu examen en la fecha indicada. Para completar los datos es necesario que cuentes con tu recibo de pago.</p>
